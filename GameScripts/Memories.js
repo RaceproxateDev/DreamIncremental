@@ -10,12 +10,12 @@ function GenMemory() {
     let can = true;
 
     if (can) {
-        Data['tier0'].Memory = Data['tier0'].Memory.add(calcMemoryMult())
+        Data.Memory = Data.Memory.add(calcMemoryMult())
     }
 }
 
 function UpdateMemoryHtml() {
-    MemoryDisplayTxt.textContent = `Memory: ${format(Data['tier0'].Memory)} [+${format(calcMemoryMult())}/s]`
+    MemoryDisplayTxt.textContent = `Memory: ${format(Data.Memory)} [+${format(calcMemoryMult())}/s]`
 }
 
 setInterval(() => {

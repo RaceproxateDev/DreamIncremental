@@ -1,37 +1,37 @@
 let preventSave = false
 
 var Data = {
-    ["tier0"]: {
-        Memory: new OmegaNum(0),
+    
+    Memory: new OmegaNum(0),
 
-        Buyables: {
-            1: {
-                amount: new OmegaNum(0),
-                max: new OmegaNum(100),
-                price: new OmegaNum(10),
-                scale: new OmegaNum(2.5),
-            },
+    Buyables: {
+        1: {
+            amount: new OmegaNum(0),
+            max: new OmegaNum(100),
+            price: new OmegaNum(10),
+            scale: new OmegaNum(2.5),
         },
+    },
 
-        Upgrades: [],
-    }
+    Upgrades: [],
+    
 }
 
 var Template = {
-    ["tier0"]: {
-        Memory: new OmegaNum(0),
+    
+    Memory: new OmegaNum(0),
 
-        Buyables: {
-            1: {
-                amount: new OmegaNum(0),
-                max: new OmegaNum(100),
-                price: new OmegaNum(10),
-                scale: new OmegaNum(2.5),
-            },
+    Buyables: {
+        1: {
+            amount: new OmegaNum(0),
+            max: new OmegaNum(100),
+            price: new OmegaNum(10),
+            scale: new OmegaNum(2.5),
         },
+    },
 
-        Upgrades: [],
-    }
+    Upgrades: [],
+    
 }
 
 function saveData() {
