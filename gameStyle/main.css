@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body {
+    background-color: gray;
+    font-family: 'JetBrains Mono';
+    color: white;
+    text-align: center;
+}
+
+button {
+    font-family: 'JetBrains Mono';
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.tab {
+    color: white;
+    background-color: black;
+    border: 2px solid darkgray;
+    height: auto;
+    width: 150px;
+    border-radius: 5px;
+}
