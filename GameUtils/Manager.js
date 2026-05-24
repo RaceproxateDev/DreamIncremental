@@ -24,7 +24,7 @@ function BuyUpg(id, curr) {
 
 function buyOneTimeUpg(id, curr, cost) {
     if (Data[curr].gte(cost) && !Data.Upgrades.includes(id)) {
-        Data[curr].sub(cost)
+        Data[curr] = Data[curr].sub(cost)
         Data.Upgrades.push(id)
     }
 }
