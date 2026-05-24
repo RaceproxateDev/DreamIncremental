@@ -21,10 +21,27 @@ var Data = {
             price: new OmegaNum(50),
             scale: new OmegaNum(3),
         },
+
+        3: {
+            // Dream Buyable 1
+            amount: new OmegaNum(0),
+            max: new OmegaNum(1000),
+            price: new OmegaNum(1),
+            scale: new OmegaNum(2),
+        },
+
+        4: {
+            // Dream Buyable 2
+            amount: new OmegaNum(0),
+            max: new OmegaNum(50),
+            price: new OmegaNum(3),
+            scale: new OmegaNum(3),
+        },
     },
 
     Upgrades: [],
     Unlocks: [],
+    Achievements: [],
 }
 
 var Template = {
@@ -48,10 +65,27 @@ var Template = {
             price: new OmegaNum(50),
             scale: new OmegaNum(3),
         },
+
+        3: {
+            // Dream Buyable 1
+            amount: new OmegaNum(0),
+            max: new OmegaNum(1000),
+            price: new OmegaNum(1),
+            scale: new OmegaNum(2),
+        },
+
+        4: {
+            // Dream Buyable 2
+            amount: new OmegaNum(0),
+            max: new OmegaNum(50),
+            price: new OmegaNum(3),
+            scale: new OmegaNum(3),
+        },
     },
 
     Upgrades: [],
     Unlocks: [],
+    Achievements: [],
 }
 
 function saveData() {

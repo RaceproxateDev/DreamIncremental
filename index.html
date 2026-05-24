@@ -12,10 +12,11 @@
         <div id="world1" class="world">
             <h3 id="MemoriesDisplayTxt">Memory: 0 [+1/s]</h3>
 
-            <section>
+            <section style="overflow-x: auto;">
                 <button class="tab" onclick="displayContent('Settings')">Settings</button>
                 <button class="tab" onclick="displayContent('MemoryUpgrades')">Memory Upgrades</button>
                 <button class="tab" onclick="displayContent('DreamReset')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamifyTab">Dreamify</button>
+                <button class="tab" onclick="displayContent('DreamUpgrades')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamUpgsTab">Dream Upgrades</button>
             </section>
 
             <div id="Settings" class="content" style="display: none;">
@@ -52,7 +53,20 @@
                 <h3 style="color: purple">Dreamifying will reset your Memory and Memory Upgrades.</h3>
                 <s style="color: purple;">Wake up</s>
                 <h3 style="color: purple" id="CalcDreamsGainTxt">+0 Dreams on Reset</h3>
-                <button style="background-image: linear-gradient(purple, pink, purple);" class="ResetLayerBtn" id="DreamifyResetBtn">Dreamify</button>
+                <button style="background-image: linear-gradient(purple, pink, purple); font-size: 20pt;" class="ResetLayerBtn" id="DreamifyResetBtn" onclick="DreamReset(false)">Dreamify</button>
+            </div>
+
+            <div class="content" id="DreamUpgrades" style="display: none;">
+                <h3 style="color: purple;" id="DreamsDisplayTxt">Dream Upgrades [0.00 Dreams]</h3>
+
+                <button class="BuyableBtn" id="DreamBuyable1Btn" style="background-image: linear-gradient(purple, pink, purple); border-color: purple;" onclick="BuyUpg(3, 'Dreams')">
+                    1.5x Memories [0/1000] <br>
+                    1 Dreams
+                </button>
+                <button class="BuyableBtn" id="DreamBuyable2Btn" style="background-image: linear-gradient(purple, pink, purple); border-color: purple;" onclick="BuyUpg(4, 'Dreams')">
+                    +50% Dreams [0/50] <br>
+                    3 Dreams
+                </button>
             </div>
         </div>
 
