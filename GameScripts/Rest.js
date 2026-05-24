@@ -5,6 +5,7 @@ let RestResetBtn = document.getElementById("RestResetBtn")
 // Rest milestones
 let RestMilestone1 = document.getElementById("RestMilestone1")
 let RestMilestone2 = document.getElementById("RestMilestone2")
+let RestMilestone3 = document.getElementById("RestMilestone3")
 
 function calcRestReq() {
     let Breq = new OmegaNum(100)
@@ -26,9 +27,12 @@ function UpdateRestHtml() {
 
     // Rest Milestones
     RestMilestone1.style.borderColor = (Data.Rest.gte(1)) ? "lightgreen" : "blue"
-    
+
     RestMilestone2.style.display = (Data.Rest.gte(1)) ? "block" : "none"
     RestMilestone2.style.borderColor = (Data.Rest.gte(2)) ? "lightgreen" : "blue"
+
+    RestMilestone3.style.display = (Data.Rest.gte(2)) ? "block" : "none"
+    RestMilestone3.style.borderColor = (Data.Rest.gte(3)) ? "lightgreen" : "blue"
 }
 
 function RestReset(force) {
