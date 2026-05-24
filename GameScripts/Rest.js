@@ -26,6 +26,7 @@ function UpdateRestHtml() {
 
     // Rest Milestones
     RestMilestone1.style.borderColor = (Data.Rest.gte(1)) ? "lightgreen" : "blue"
+    RestMilestone2.style.display = (Data.Rest.gte(1)) ? "block" : "none"
     RestMilestone2.style.borderColor = (Data.Rest.gte(2)) ? "lightgreen" : "blue"
 }
 
