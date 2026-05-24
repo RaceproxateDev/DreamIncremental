@@ -43,6 +43,9 @@ var Data = {
     Upgrades: [],
     Unlocks: [],
     Automation: [],
+    Settings: {
+        MemoryUpgsAutobuyer: true,
+    },
 }
 
 var Template = {
@@ -88,6 +91,9 @@ var Template = {
     Upgrades: [],
     Unlocks: [],
     Automation: [],
+    Settings: {
+        MemoryUpgsAutobuyer: true,
+    },
 }
 
 function saveData() {

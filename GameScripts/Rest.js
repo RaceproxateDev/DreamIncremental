@@ -7,6 +7,7 @@ let RestMilestone1 = document.getElementById("RestMilestone1")
 let RestMilestone2 = document.getElementById("RestMilestone2")
 let RestMilestone3 = document.getElementById("RestMilestone3")
 let RestMilestone4 = document.getElementById("RestMilestone4")
+let RestMilestone5 = document.getElementById("RestMilestone5")
 
 function calcRestReq() {
     let Breq = new OmegaNum(100)
@@ -37,6 +38,9 @@ function UpdateRestHtml() {
 
     RestMilestone4.style.display = (Data.Rest.gte(3)) ? "block" : "none"
     RestMilestone4.style.borderColor = (Data.Rest.gte(4)) ? "lightgreen" : "blue"
+
+    RestMilestone5.style.display = (Data.Rest.gte(4)) ? "block" : "none"
+    RestMilestone5.style.borderColor = (Data.Rest.gte(8)) ? "lightgreen" : "blue"
 }
 
 function RestReset(force) {
@@ -54,8 +58,24 @@ function RestReset(force) {
     }
 }
 
+function EnableRestAutomation() {
+    if (Data.Rest.gte(8) && !Data.Automation.includes("MemoryUpgs")) {
+        Data.Automation.push("MemoryUpgs")
+    }
+}
+
+// automation functions
+function automateMemoryUpgs() {
+    if (Data.Automation.includes("MemoryUpgs") && Data.Settings.MemoryUpgsAutobuyer == true) {
+        BuyUpg(1, 'Memory')
+        BuyUpg(2, 'Memory')
+    }
+}
+
 setInterval(() => {
     calcRestGain()
     calcRestReq()
     UpdateRestHtml()
+    EnableRestAutomation()
+    automateMemoryUpgs()
 }, 100)
