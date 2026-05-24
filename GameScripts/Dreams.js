@@ -13,6 +13,7 @@ function calcDreamMult() {
     mult = mult.times(OmegaNum.add(1, Data.Buyables[4].amount.times(0.5)))
     if (Data.Rest.gte(1)) mult = mult.times(1.5)
     if (Data.Rest.gte(2)) mult = mult.times(OmegaNum.add(1, OmegaNum.times(0.25, Data.Rest.div(2))))
+    if (Data.Rest.gte(3)) mult = mult.times(2)
 
     return mult
 }
