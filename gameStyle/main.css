@@ -34,3 +34,12 @@ button:hover {
     width: 300px;
     border-radius: 5px;
 }
+
+.ResetLayerBtn {
+    color: white;
+    background-color: black;
+    border: 2px solid purple;
+    height: 80px;
+    width: 500px;
+    border-radius: 5px;
+}

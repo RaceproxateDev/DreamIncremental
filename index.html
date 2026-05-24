@@ -42,9 +42,17 @@
                 <br><br>
 
                 <button class="BuyableBtn" id="MemoryUpgrade1Btn" onclick="buyOneTimeUpg(1, 'Memory', 1000)" style="background-image: linear-gradient(purple, pink, purple); border-color: purple;">
-                    Unlock Dreams [0/1]<br>
+                    Unlock Dreams [0/1] [Permanent]<br>
                     1000 Memories
                 </button>
+            </div>
+
+            <div class="content" id="DreamReset" style="display: none;">
+                <h3 style="color: purple;">Dreamify</h3>
+                <h3 style="color: purple">Dreamifying will reset your Memory and Memory Upgrades.</h3>
+                <s style="color: purple;">Wake up</s>
+                <h3 style="color: purple" id="CalcDreamsGainTxt">+0 Dreams on Reset</h3>
+                <button style="background-image: linear-gradient(purple, pink, purple);" class="ResetLayerBtn" id="DreamifyResetBtn">Dreamify</button>
             </div>
         </div>
 
@@ -56,5 +64,6 @@
         <script src="GameUtils/Manager.js"></script>
         <script src="GameScripts/Memories.js"></script>
         <script src="GameScripts/UnlockContent.js"></script>
+        <script src="GameScripts/Dreams.js"></script>
     </body>
 </html>

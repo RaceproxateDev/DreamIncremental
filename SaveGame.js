@@ -3,6 +3,7 @@ let preventSave = false
 var Data = {
     
     Memory: new OmegaNum(0),
+    Dreams: new OmegaNum(0),
 
     Buyables: {
         1: {
@@ -29,6 +30,7 @@ var Data = {
 var Template = {
     
     Memory: new OmegaNum(0),
+    Dreams: new OmegaNum(0),
 
     Buyables: {
         1: {
