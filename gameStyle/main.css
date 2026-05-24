@@ -25,3 +25,12 @@ button:hover {
     width: 150px;
     border-radius: 5px;
 }
+
+.BuyableBtn {
+    color: white;
+    background-color: black;
+    border: 2px solid darkgray;
+    height: auto;
+    width: 300px;
+    border-radius: 5px;
+}

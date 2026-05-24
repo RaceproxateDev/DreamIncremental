@@ -6,15 +6,24 @@ var Data = {
 
     Buyables: {
         1: {
+            // Memory Buyable 1
             amount: new OmegaNum(0),
             max: new OmegaNum(100),
             price: new OmegaNum(10),
             scale: new OmegaNum(2.5),
         },
+
+        2: {
+            // Memory Buyable 2
+            amount: new OmegaNum(0),
+            max: new OmegaNum(50),
+            price: new OmegaNum(50),
+            scale: new OmegaNum(3),
+        },
     },
 
     Upgrades: [],
-    
+    Unlocks: [],
 }
 
 var Template = {
@@ -23,15 +32,24 @@ var Template = {
 
     Buyables: {
         1: {
+            // Memory Buyable 1
             amount: new OmegaNum(0),
             max: new OmegaNum(100),
             price: new OmegaNum(10),
             scale: new OmegaNum(2.5),
         },
+
+        2: {
+            // Memory Buyable 2
+            amount: new OmegaNum(0),
+            max: new OmegaNum(50),
+            price: new OmegaNum(50),
+            scale: new OmegaNum(3),
+        },
     },
 
     Upgrades: [],
-    
+    Unlocks: [],
 }
 
 function saveData() {
