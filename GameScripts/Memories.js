@@ -12,6 +12,7 @@ function calcMemoryMult() {
     mult = mult.times(OmegaNum.pow(1.5, Data.Buyables[3].amount))
     if (Data.Rest.gte(1)) mult = mult.times(2)
     if (Data.Rest.gte(3)) mult = mult.times(5)
+    if (Data.Rest.gte(4)) mult = mult.times(10)
 
     return mult
 }
