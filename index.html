@@ -27,6 +27,10 @@
                 <button class="tab" style="border: 2px solid rgb(255, 0, 0); color: rgb(255, 0, 0);" onclick="resetData()">Hard Reset</button>
                 <button class="tab" style="border: 2px solid rgb(0, 255, 242); color: rgb(0, 255, 242);" onclick="ExportData()">Export Save</button>
                 <button class="tab" style="border: 2px solid rgb(0, 4, 255); color: rgb(0, 4, 255);" onclick="ImportData()">Import Save</button>
+
+                <h3>Automation</h3>
+                <button class="tab" id="MemoryUpgsAutobuyerEnabler" style="width: auto;" onclick="enableDisable('MemoryUpgsAutobuyer')">Memory Upgrades Autobuyer: ON</button>
+                <button class="tab" id="DreamUpgsAutobuyerEnabler" onclick="enableDisable('DreamUpgsAutobuyer')" style="border-color: purple; background-image: linear-gradient(purple, pink, purple); width: auto;">Dream Upgrades Autobuyer: ON</button>
             </div>
 
             <div id="MemoryUpgrades" class="content" style="display: none;">
@@ -104,6 +108,10 @@
                         8 Rests<br>
                         Automate Memory Upgrades.
                     </h4>
+                    <h4 class="milestone" id="RestMilestone6" style="border: 3px solid blue; background-image: linear-gradient(blue, lightblue, blue);">
+                        13 Rests<br>
+                        Automate Dream Upgrades but 3x Rest Scalings.
+                    </h4>
                 </div>
             </div>
         </div>
@@ -118,5 +126,6 @@
         <script src="GameScripts/UnlockContent.js"></script>
         <script src="GameScripts/Dreams.js"></script>
         <script src="GameScripts/Rest.js"></script>
+        <script src="GameScripts/Settings.js"></script>
     </body>
 </html>

@@ -8,6 +8,7 @@ let RestMilestone2 = document.getElementById("RestMilestone2")
 let RestMilestone3 = document.getElementById("RestMilestone3")
 let RestMilestone4 = document.getElementById("RestMilestone4")
 let RestMilestone5 = document.getElementById("RestMilestone5")
+let RestMilestone6 = document.getElementById("RestMilestone6")
 
 function calcRestReq() {
     let Breq = new OmegaNum(100)
@@ -41,6 +42,9 @@ function UpdateRestHtml() {
 
     RestMilestone5.style.display = (Data.Rest.gte(4)) ? "block" : "none"
     RestMilestone5.style.borderColor = (Data.Rest.gte(8)) ? "lightgreen" : "blue"
+
+    RestMilestone6.style.display = (Data.Rest.gte(8)) ? "block" : "none"
+    RestMilestone6.style.borderColor = (Data.Rest.gte(13)) ? "lightgreen" : "blue"
 }
 
 function RestReset(force) {
@@ -62,6 +66,10 @@ function EnableRestAutomation() {
     if (Data.Rest.gte(8) && !Data.Automation.includes("MemoryUpgs")) {
         Data.Automation.push("MemoryUpgs")
     }
+
+    if (Data.Rest.gte(13) && !Data.Automation.includes("DreamUpgs")) {
+        Data.Automation.push("DreamUpgs")
+    }
 }
 
 // automation functions
@@ -69,6 +77,11 @@ function automateMemoryUpgs() {
     if (Data.Automation.includes("MemoryUpgs") && Data.Settings.MemoryUpgsAutobuyer == true) {
         BuyUpg(1, 'Memory')
         BuyUpg(2, 'Memory')
+    }
+
+    if (Data.Automation.includes("DreamUpgs") && Data.Settings.DreamUpgsAutobuyer == true) {
+        BuyUpg(3, 'Dreams')
+        BuyUpg(4, 'Dreams')
     }
 }
 

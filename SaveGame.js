@@ -45,6 +45,7 @@ var Data = {
     Automation: [],
     Settings: {
         MemoryUpgsAutobuyer: true,
+        DreamUpgsAutobuyer: true,
     },
 }
 
@@ -93,6 +94,7 @@ var Template = {
     Automation: [],
     Settings: {
         MemoryUpgsAutobuyer: true,
+        DreamUpgsAutobuyer: true,
     },
 }
 
