@@ -11,6 +11,7 @@ let DreamUpgrade1Btn = document.getElementById("DreamUpgrade1Btn")
 function calcDreamMult() {
     let mult = new OmegaNum(1)
     mult = mult.times(OmegaNum.add(1, Data.Buyables[4].amount.times(0.5)))
+    if (Data.Rest.gte(1)) mult = mult.times(1.5)
 
     return mult
 }
@@ -31,7 +32,7 @@ function updateDreamHtml() {
 
     DreamBuyable1Btn.innerHTML = `1.5x Memories [${format(Data.Buyables[3].amount)}/${format(Data.Buyables[3].max)}] <br> ${format(Data.Buyables[3].price)} Dreams`
     DreamBuyable2Btn.innerHTML = `+50% Dreams [${format(Data.Buyables[4].amount)}/${format(Data.Buyables[4].max)}] <br> ${format(Data.Buyables[4].price)} Dreams`
-    DreamUpgrade1Btn.innerHTML = (Data.Upgrades.includes(2)) ? `Unlock Rest [1/1] <br> Bought` : `Unlock Rest [0/1] <br> 100 Dreams`
+    DreamUpgrade1Btn.innerHTML = (Data.Upgrades.includes(2)) ? `Unlock Rest [1/1] [Permanent] <br> Bought!` : `Unlock Rest [0/1] [Permanent] <br> 100 Dreams`
 }
 
 function DreamReset(force) {

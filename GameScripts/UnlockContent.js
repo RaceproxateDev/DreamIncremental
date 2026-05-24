@@ -1,10 +1,13 @@
 // Dream
 let DreamifyTab = document.getElementById("DreamifyTab")
 let DreamUpgsTab = document.getElementById("DreamUpgsTab")
+// Rest
+let RestResetTab = document.getElementById("RestResetTab")
 
 function UnlockContent() {
     DreamifyTab.style.display = (Data.Upgrades.includes(1) || Data.Unlocks.includes("Dreamify")) ? "inline-block" : "none"
     DreamUpgsTab.style.display = (Data.Unlocks.includes("Dreamify")) ? "inline-block" : "none"
+    RestResetTab.style.display = (Data.Upgrades.includes(2) || Data.Unlocks.includes("Rest")) ? "inline-block" : "none"
 }
 
 setInterval(() => {

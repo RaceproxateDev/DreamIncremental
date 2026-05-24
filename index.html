@@ -17,6 +17,7 @@
                 <button class="tab" onclick="displayContent('MemoryUpgrades')">Memory Upgrades</button>
                 <button class="tab" onclick="displayContent('DreamReset')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamifyTab">Dreamify</button>
                 <button class="tab" onclick="displayContent('DreamUpgrades')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamUpgsTab">Dream Upgrades</button>
+                <button class="tab" onclick="displayContent('RestReset')" style="background-image: linear-gradient(blue, lightblue, blue); border-color: blue; display: none;" id="RestResetTab">Rest</button>
             </section>
 
             <div id="Settings" class="content" style="display: none;">
@@ -69,9 +70,28 @@
                 </button>
                 <br><br>
                 <button class="BuyableBtn" id="DreamUpgrade1Btn" style="background-image: linear-gradient(blue, lightblue, blue); border-color: blue;" onclick="buyOneTimeUpg(2, 'Dreams', 100)">
-                    Unlock Rest [0/1] <br>
+                    Unlock Rest [0/1] [Permanent] <br>
                     100 Dreams
                 </button>
+            </div>
+
+            <div class="content" id="RestReset" style="color: blue; display: none;">
+                <h3>Rest</h3>
+                <h3>Resting will reset all Memory and Memory Upgrades (except permanent) and also all Dream and Dream Upgrades</h3>
+                <h3 id="RestReqTxt">You need 100 Dreams</h3>
+                <button class="ResetLayerBtn" id="RestResetBtn" style="background-image: linear-gradient(blue, lightblue, blue); border-color: blue; font-size: 20pt;" onclick="RestReset(false)">Rest</button>
+
+                <h3 id="RestsDisplayTxt">Rest Milestones [Rests: 0]</h3>
+                <section style="overflow-y: auto; text-align: center;">
+                    <h4 class="milestone" id="RestMilestone1" style="border: 3px solid blue; background-image: linear-gradient(blue, lightblue, blue);">
+                        1 Rest<br>
+                        2x Memory, 1.5x Dreams
+                    </h4>
+                    <h4 class="milestone" id="RestMilestone2" style="border: 3px solid blue; background-image: linear-gradient(blue, lightblue, blue);">
+                        2 Rests<br>
+                        +25% Dreams per Rest starting at 2 Rests
+                    </h4>
+                </section>
             </div>
         </div>
 
@@ -84,5 +104,6 @@
         <script src="GameScripts/Memories.js"></script>
         <script src="GameScripts/UnlockContent.js"></script>
         <script src="GameScripts/Dreams.js"></script>
+        <script src="GameScripts/Rest.js"></script>
     </body>
 </html>
