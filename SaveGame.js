@@ -12,7 +12,7 @@ var Data = {
             amount: new OmegaNum(0),
             max: new OmegaNum(100),
             price: new OmegaNum(10),
-            scale: new OmegaNum(2.5),
+            scale: new OmegaNum(2),
         },
 
         2: {
@@ -20,7 +20,7 @@ var Data = {
             amount: new OmegaNum(0),
             max: new OmegaNum(50),
             price: new OmegaNum(50),
-            scale: new OmegaNum(3),
+            scale: new OmegaNum(2.5),
         },
 
         3: {
@@ -61,7 +61,7 @@ var Template = {
             amount: new OmegaNum(0),
             max: new OmegaNum(100),
             price: new OmegaNum(10),
-            scale: new OmegaNum(2.5),
+            scale: new OmegaNum(2),
         },
 
         2: {
@@ -69,7 +69,7 @@ var Template = {
             amount: new OmegaNum(0),
             max: new OmegaNum(50),
             price: new OmegaNum(50),
-            scale: new OmegaNum(3),
+            scale: new OmegaNum(2.5),
         },
 
         3: {
