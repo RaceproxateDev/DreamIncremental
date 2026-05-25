@@ -11,8 +11,11 @@ let RestMilestone5 = document.getElementById("RestMilestone5")
 let RestMilestone6 = document.getElementById("RestMilestone6")
 
 function calcRestReq() {
+    let scale = new OmegaNum(3)
     let Breq = new OmegaNum(100)
-    let req = Breq.times(OmegaNum.pow(2.5, Data.Rest))
+    let req = Breq.times(OmegaNum.pow(scale, Data.Rest))
+
+    if (Data.Rest.gte(13)) scale = scale.times(1.5)
 
     return req
 }
