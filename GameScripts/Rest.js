@@ -14,10 +14,11 @@ let RestMilestone7 = document.getElementById("RestMilestone7")
 function calcRestReq() {
     let scale = new OmegaNum(3)
     let Breq = new OmegaNum(100)
-    let req = Breq.times(OmegaNum.pow(scale, Data.Rest))
 
     if (Data.Rest.gte(13)) scale = scale.times(1.5)
     if (Data.Rest.gte(20)) scale = scale.times(2)
+
+    let req = Breq.times(OmegaNum.pow(scale, Data.Rest))
 
     return req
 }
