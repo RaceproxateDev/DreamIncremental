@@ -13,6 +13,7 @@ function calcMemoryMult() {
     if (Data.Rest.gte(1)) mult = mult.times(2)
     if (Data.Rest.gte(3)) mult = mult.times(5)
     if (Data.Rest.gte(4)) mult = mult.times(10)
+    if (Data.Rest.gte(20)) mult = mult.times(3)
 
     return mult
 }

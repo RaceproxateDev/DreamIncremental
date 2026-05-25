@@ -9,6 +9,7 @@ let RestMilestone3 = document.getElementById("RestMilestone3")
 let RestMilestone4 = document.getElementById("RestMilestone4")
 let RestMilestone5 = document.getElementById("RestMilestone5")
 let RestMilestone6 = document.getElementById("RestMilestone6")
+let RestMilestone7 = document.getElementById("RestMilestone7")
 
 function calcRestReq() {
     let scale = new OmegaNum(3)
@@ -16,6 +17,7 @@ function calcRestReq() {
     let req = Breq.times(OmegaNum.pow(scale, Data.Rest))
 
     if (Data.Rest.gte(13)) scale = scale.times(1.5)
+    if (Data.Rest.gte(20)) scale = scale.times(2)
 
     return req
 }
@@ -48,6 +50,9 @@ function UpdateRestHtml() {
 
     RestMilestone6.style.display = (Data.Rest.gte(8)) ? "block" : "none"
     RestMilestone6.style.borderColor = (Data.Rest.gte(13)) ? "lightgreen" : "blue"
+
+    RestMilestone7.style.display = (Data.Rest.gte(13)) ? "block" : "none"
+    RestMilestone7.style.borderColor = (Data.Rest.gte(20)) ? "lightgreen" : "blue"
 }
 
 function RestReset(force) {
