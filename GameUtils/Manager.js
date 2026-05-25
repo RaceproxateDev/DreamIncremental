@@ -15,7 +15,7 @@ function displayContent(contentId) {
 }
 
 function BuyUpg(id, curr) {
-    if (Data[curr].gte(Data.Buyables[id].price) && !Data.Buyables[id].amount.gt(Data.Buyables[id].max)) {
+    if (Data[curr].gte(Data.Buyables[id].price) && !Data.Buyables[id].amount.gte(Data.Buyables[id].max)) {
         Data[curr] = Data[curr].sub(Data.Buyables[id].price)
         Data.Buyables[id].amount = Data.Buyables[id].amount.add(1)
         Data.Buyables[id].price = Data.Buyables[id].price.times(Data.Buyables[id].scale)
