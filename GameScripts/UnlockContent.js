@@ -5,12 +5,14 @@ let DreamUpgsTab = document.getElementById("DreamUpgsTab")
 let RestResetTab = document.getElementById("RestResetTab")
 // Lucid Dreams
 let LucidityResetTab = document.getElementById("LucidityResetTab")
+let LucidityUpgradesTab = document.getElementById("LucidityUpgradesTab")
 
 function UnlockContent() {
     DreamifyTab.style.display = (Data.Upgrades.includes(1) || Data.Unlocks.includes("Dreamify")) ? "inline-block" : "none"
     DreamUpgsTab.style.display = (Data.Unlocks.includes("Dreamify")) ? "inline-block" : "none"
     RestResetTab.style.display = (Data.Upgrades.includes(2) || Data.Unlocks.includes("Rest")) ? "inline-block" : "none"
     LucidityResetTab.style.display = (Data.Rest.gte(30) || Data.Unlocks.includes("Lucidity")) ? "inline-block" : "none"
+    LucidityUpgradesTab.style.display = (Data.Unlocks.includes("Lucidity")) ? "inline-block" : "none"
 }
 
 setInterval(() => {
