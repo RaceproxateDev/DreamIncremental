@@ -113,6 +113,14 @@ var Template = {
             price: new OmegaNum(1),
             scale: new OmegaNum(2),
         },
+
+        6: {
+            // Lucid Dream Buyable 2
+            amount: new OmegaNum(0),
+            max: new OmegaNum(200),
+            price: new OmegaNum(1.5),
+            scale: new OmegaNum(2.5),
+        },
     },
 
     Upgrades: [],
