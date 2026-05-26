@@ -16,4 +16,11 @@ function calcLucidDreamGain() {
 
 function updateLucidDreamsHtml() {
     LucidifyGainTxt.textContent = `+${format(calcLucidDreamGain())} Lucid Dreams`
+    LucidifyResetBtn.textContent = (Data.Dreams.gte(1e50)) ? "Lucidify" : "You need 1e50 Dreams"
 }
+
+setInterval(() => {
+    updateLucidDreamsHtml()
+    calcLucidDreamGain()
+    calcLucidDreamMult()
+}, 100)
