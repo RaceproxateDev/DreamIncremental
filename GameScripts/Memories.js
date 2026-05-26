@@ -14,6 +14,7 @@ function calcMemoryMult() {
     if (Data.Rest.gte(3)) mult = mult.times(5)
     if (Data.Rest.gte(4)) mult = mult.times(10)
     if (Data.Rest.gte(20)) mult = mult.times(3)
+    if (Data.Rest.gte(21)) mult = mult.times(10)
 
     return mult
 }
@@ -35,6 +36,14 @@ function UpdateMemoryHtml() {
     MemoryUpgrade1Btn.innerHTML = (Data.Upgrades.includes(1)) ? `Unlock Dreams [1/1] [Permanent] <br> Bought!` : `Unlock Dreams [0/1] [Permanent] <br> 1,000 Memories`
 }
 
+function calcMaxMemoryBuyable2() {
+    let max = new OmegaNum(50)
+    if (Data.Rest.gte(24)) max = max.add(100)
+
+    Data.Buyables[2].max = max
+    return max
+}
+
 setInterval(() => {
     GenMemory()
 }, 1000)
@@ -42,4 +51,5 @@ setInterval(() => {
 setInterval(() => {
     calcMemoryMult()
     UpdateMemoryHtml()
+    calcMaxMemoryBuyable2()
 }, 100)

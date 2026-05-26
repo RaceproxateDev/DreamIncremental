@@ -18,6 +18,7 @@
                 <button class="tab" onclick="displayContent('DreamReset')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamifyTab">Dreamify</button>
                 <button class="tab" onclick="displayContent('DreamUpgrades')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamUpgsTab">Dream Upgrades</button>
                 <button class="tab" onclick="displayContent('RestReset')" style="background-image: linear-gradient(blue, lightblue, blue); border-color: blue; display: none;" id="RestResetTab">Rest</button>
+                <button class="tab" onclick="displayContent('LucidityReset')" style="background-image: linear-gradient(rgb(94, 94, 3), rgb(220, 220, 21), rgb(94, 94, 3)); border-color: yellow; display: none;" id="LucidityResetTab">Lucid Dreams</button>
             </section>
 
             <div id="Settings" class="content" style="display: none;">
@@ -114,9 +115,28 @@
                     </h4>
                     <h4 class="milestone" id="RestMilestone7" style="border: 3px solid blue; background-image: linear-gradient(blue, lightblue, blue);">
                         20 Rests<br>
-                        3x Dreams and Memories but 2x Rest Scalings.
+                        3x Dreams and Memories but 1.6x Rest Scalings.
+                    </h4>
+                    <h4 class="milestone" id="RestMilestone8" style="border: 3px solid blue; background-image: linear-gradient(blue, lightblue, blue);">
+                        21 Rests<br>
+                        10x Memories and 5x Dreams
+                    </h4>
+                    <h4 class="milestone" id="RestMilestone9" style="border: 3px solid blue; background-image: linear-gradient(blue, lightblue, blue);">
+                        24 Rests<br>
+                        +100 Memory Buyable 2 Cap.
+                    </h4>
+                    <h4 class="milestone" id="RestMilestone10" style="border: 3px solid blue; background-image: linear-gradient(blue, lightblue, blue);">
+                        30 Rests<br>
+                        Unlock the next layer. 1e100x Rest scalings.
                     </h4>
                 </div>
+            </div>
+
+            <div id="LucidityReset" class="content" style="color: yellow; display: none;">
+                <h3>Lucidify</h3>
+                <h3>Lucidifying will reset Everything before this.</h3>
+                <h3 id="LucidifyGainTxt">+0 Lucid Dreams</h3>
+                <button id="LucidifyResetBtn" class="ResetLayerBtn" style="background-image: linear-gradient(rgb(94, 94, 3), rgb(220, 220, 21), rgb(94, 94, 3)); border-color: yellow; font-size: 18pt;">Lucidify</button>
             </div>
         </div>
 
@@ -131,5 +151,6 @@
         <script src="GameScripts/Dreams.js"></script>
         <script src="GameScripts/Rest.js"></script>
         <script src="GameScripts/Settings.js"></script>
+        <script src="GameScripts/LucidDreams.js"></script>
     </body>
 </html>

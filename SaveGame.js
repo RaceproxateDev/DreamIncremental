@@ -5,6 +5,7 @@ var Data = {
     Memory: new OmegaNum(0),
     Dreams: new OmegaNum(0),
     Rest: new OmegaNum(0),
+    LucidDreams: new OmegaNum(0),
 
     Buyables: {
         1: {
@@ -54,6 +55,7 @@ var Template = {
     Memory: new OmegaNum(0),
     Dreams: new OmegaNum(0),
     Rest: new OmegaNum(0),
+    LucidDreams: new OmegaNum(0),
 
     Buyables: {
         1: {
