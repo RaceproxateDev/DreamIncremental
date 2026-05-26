@@ -55,6 +55,14 @@ var Data = {
             price: new OmegaNum(1.5),
             scale: new OmegaNum(2.5),
         },
+
+        7: {
+            // Lucid Dream Buyable 3
+            amount: new OmegaNum(0),
+            max: new OmegaNum(5),
+            price: new OmegaNum(3),
+            scale: new OmegaNum(4),
+        },
     },
 
     Upgrades: [],
@@ -120,6 +128,14 @@ var Template = {
             max: new OmegaNum(200),
             price: new OmegaNum(1.5),
             scale: new OmegaNum(2.5),
+        },
+
+        7: {
+            // Lucid Dream Buyable 3
+            amount: new OmegaNum(0),
+            max: new OmegaNum(5),
+            price: new OmegaNum(3),
+            scale: new OmegaNum(4),
         },
     },
 

@@ -5,6 +5,7 @@ let LucidDreamsDisplayTxt = document.getElementById("LucidDreamsDisplayTxt")
 // Lucid Dream Upgrades
 let LucidDreamBuyable1 = document.getElementById("LucidDreamBuyable1")
 let LucidDreamBuyable2 = document.getElementById("LucidDreamBuyable2")
+let LucidDreamBuyable3 = document.getElementById("LucidDreamBuyable3")
 
 function calcLucidDreamMult() {
     let mult = new OmegaNum(1)
@@ -27,6 +28,7 @@ function updateLucidDreamsHtml() {
     LucidDreamsDisplayTxt.textContent = `Lucid Dream Upgrades [${format(Data.LucidDreams)} Lucid Dreams]`
     LucidDreamBuyable1.innerHTML = `5x Memories [${format(Data.Buyables[5].amount)}/${format(Data.Buyables[5].max)}] <br> ${format(Data.Buyables[5].price)} Lucid Dreams`
     LucidDreamBuyable2.innerHTML = `3x Dreams [${format(Data.Buyables[6].amount)}/${format(Data.Buyables[6].max)}] <br> ${format(Data.Buyables[6].price)} Lucid Dreams`
+    LucidDreamBuyable3.innerHTML = `+1 Rest bulk [${format(Data.Buyables[7].amount)}/${format(Data.Buyables[7].max)}] <br> ${format(Data.Buyables[7].price)} Lucid Dreams`
 }
 
 function LucidDreamReset(force) {
