@@ -2,6 +2,10 @@ let LucidifyGainTxt = document.getElementById("LucidifyGainTxt")
 let LucidifyResetBtn = document.getElementById("LucidifyResetBtn")
 let LucidDreamsDisplayTxt = document.getElementById("LucidDreamsDisplayTxt")
 
+// Lucid Dream Upgrades
+let LucidDreamBuyable1 = document.getElementById("LucidDreamBuyable1")
+let LucidDreamBuyable2 = document.getElementById("LucidDreamBuyable2")
+
 function calcLucidDreamMult() {
     let mult = new OmegaNum(1)
 
@@ -18,7 +22,11 @@ function calcLucidDreamGain() {
 function updateLucidDreamsHtml() {
     LucidifyGainTxt.textContent = `+${format(calcLucidDreamGain())} Lucid Dreams`
     LucidifyResetBtn.textContent = (Data.Dreams.gte(1e50)) ? "Lucidify" : "You need 1e50 Dreams"
+
+    // Lucid Dream Upgrades
     LucidDreamsDisplayTxt.textContent = `Lucid Dream Upgrades [${format(Data.LucidDreams)} Lucid Dreams]`
+    LucidDreamBuyable1.innerHTML = `5x Memories [${format(Data.Buyables[5].amount)}/${format(Data.Buyables[5].max)}] <br> ${format(Data.Buyables[5].price)} Lucid Dreams`
+    LucidDreamBuyable2.innerHTML = `3x Dreams [${format(Data.Buyables[6].amount)}/${format(Data.Buyables[6].max)}] <br> ${format(Data.Buyables[6].price)} Lucid Dreams`
 }
 
 function LucidDreamReset(force) {
