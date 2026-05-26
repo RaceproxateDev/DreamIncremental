@@ -19,6 +19,21 @@ function updateLucidDreamsHtml() {
     LucidifyResetBtn.textContent = (Data.Dreams.gte(1e50)) ? "Lucidify" : "You need 1e50 Dreams"
 }
 
+function LucidDreamReset(force) {
+    if (Data.Dreams.gte(1e50)) {
+        if (!force) {
+            Data.LucidDreams = Data.LucidDreams.add(calcLucidDreamGain())
+        }
+
+        resetStats(2,0)
+        resetBuyables(4,1)
+
+        if (!Data.Unlocks.includes("Lucidity")) {
+            Data.Unlocks.push("Lucidity")
+        }
+    }
+}
+
 setInterval(() => {
     updateLucidDreamsHtml()
     calcLucidDreamGain()
