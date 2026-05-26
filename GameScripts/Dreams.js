@@ -16,6 +16,7 @@ function calcDreamMult() {
     if (Data.Rest.gte(3)) mult = mult.times(2)
     if (Data.Rest.gte(20)) mult = mult.times(3)
     if (Data.Rest.gte(21)) mult = mult.times(5)
+    mult = mult.times(OmegaNum.pow(3, Data.Buyables[6].amount))
 
     return mult
 }
