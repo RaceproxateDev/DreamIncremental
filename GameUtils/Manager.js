@@ -22,6 +22,14 @@ function BuyUpg(id, curr) {
     }
 }
 
+function buyMaxUpg(id, curr) {
+    while (Data[curr].gte(Data.Buyables[id].price) && !Data.Buyables[id].amount.gte(Data.Buyables[id].max) && !Data[curr].lt(Data.Buyables[id].price)) {
+        Data[curr] = Data[curr].sub(Data.Buyables[id].price)
+        Data.Buyables[id].amount = Data.Buyables[id].amount.add(1)
+        Data.Buyables[id].price = Data.Buyables[id].price.times(Data.Buyables[id].scale)
+    }
+}
+
 function buyOneTimeUpg(id, curr, cost) {
     if (Data[curr].gte(cost) && !Data.Upgrades.includes(id)) {
         Data[curr] = Data[curr].sub(cost)
