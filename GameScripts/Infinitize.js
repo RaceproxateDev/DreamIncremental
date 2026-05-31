@@ -25,13 +25,13 @@ function InfinitizeReset(force) {
         resetStats(4, 0)
         resetBuyables(7, 1)
 
-        // resetting unlocks and automation
-        
-
-
         if (!Data.Unlocks.includes("Infinitize")) {
             Data.Unlocks.push("Infinitize")
         }
+
+        // resetting unlocks and automation
+
+        Data.Unlocks = Data.Unlocks.slice(Data.Unlocks.indexOf('Infinitize'))
     }
 }
 
