@@ -28,12 +28,16 @@ function calcMemoryMult() {
     return mult
 }
 
-function GenMemory() {
+function calcCanGenMemory() {
     if (Data.Memory.gte(Data.Caps.Memory.cap) && Data.Caps.Memory.broken === false) { 
         canGenMemory = false
         Data.Memory = new OmegaNum(Data.Caps.Memory.cap)
+    } else {
+        canGenMemory = true
     }
+}
 
+function GenMemory() {
     if (canGenMemory) {
         Data.Memory = Data.Memory.add(calcMemoryMult())
     }
@@ -64,4 +68,5 @@ setInterval(() => {
     calcMemoryMult()
     UpdateMemoryHtml()
     calcMaxMemoryBuyable2()
-}, 100)
+    calcCanGenMemory()
+}, 1)

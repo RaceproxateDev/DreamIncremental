@@ -6,6 +6,8 @@ let RestResetTab = document.getElementById("RestResetTab")
 // Lucid Dreams
 let LucidityResetTab = document.getElementById("LucidityResetTab")
 let LucidityUpgradesTab = document.getElementById("LucidityUpgradesTab")
+// Infinitize
+let InfinitizeResetTab = document.getElementById("InfinitizeResetTab")
 
 function UnlockContent() {
     DreamifyTab.style.display = (Data.Upgrades.includes(1) || Data.Unlocks.includes("Dreamify")) ? "inline-block" : "none"
@@ -13,6 +15,7 @@ function UnlockContent() {
     RestResetTab.style.display = (Data.Upgrades.includes(2) || Data.Unlocks.includes("Rest")) ? "inline-block" : "none"
     LucidityResetTab.style.display = (Data.Rest.gte(30) || Data.Unlocks.includes("Lucidity")) ? "inline-block" : "none"
     LucidityUpgradesTab.style.display = (Data.Unlocks.includes("Lucidity")) ? "inline-block" : "none"
+    InfinitizeResetTab.style.display = (Data.Memory.gte(Data.Caps.Memory.cap) || Data.Unlocks.includes("Infinitize")) ? "inline-block" : "none"
 }
 
 setInterval(() => {

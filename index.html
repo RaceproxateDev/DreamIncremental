@@ -12,7 +12,7 @@
         <div id="world1" class="world">
             <h3 id="MemoriesDisplayTxt">Memory: 0 [+1/s]</h3>
 
-            <section style="overflow-x: auto;">
+            <div>
                 <button class="tab" onclick="displayContent('Settings')">Settings</button>
                 <button class="tab" onclick="displayContent('MemoryUpgrades')">Memory Upgrades</button>
                 <button class="tab" onclick="displayContent('DreamReset')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamifyTab">Dreamify</button>
@@ -20,7 +20,8 @@
                 <button class="tab" onclick="displayContent('RestReset')" style="background-image: linear-gradient(blue, lightblue, blue); border-color: blue; display: none;" id="RestResetTab">Rest</button>
                 <button class="tab" onclick="displayContent('LucidityReset')" style="background-image: linear-gradient(rgb(94, 94, 3), rgb(220, 220, 21), rgb(94, 94, 3)); border-color: yellow; display: none;" id="LucidityResetTab">Lucidify</button>
                 <button class="tab" onclick="displayContent('LucidityUpgrades')" style="background-image: linear-gradient(rgb(94, 94, 3), rgb(220, 220, 21), rgb(94, 94, 3)); border-color: yellow; display: none; width: auto;" id="LucidityUpgradesTab">Lucid Dream Upgrades</button>
-            </section>
+                <button class="tab" onclick="displayContent('InfinitizeReset')" style="background-image: linear-gradient(darkred, red, darkred); border-color: red; display: none;" id="InfinitizeResetTab">Infinitize</button>
+            </div>
 
             <div id="Settings" class="content" style="display: none;">
                 <h3 style="text-align: center;">Settings</h3>
@@ -214,6 +215,13 @@
                     5 Lucid Dreams
                 </button>
             </div>
+
+            <div id="InfinitizeReset" class="content" style="color: red; display: none;">
+                <h1>Infinitize</h1>
+                <p>You reached your Memory limit, all your memories will be converted to Infinite Memories</p>
+                <p>Resets everything (yes, everything) at this point</p>
+                <h3 id="InfinityDreamsCalcGainTxt">In return, +0 Infinity Dreams</h3>
+            </div>
         </div>
 
 
@@ -228,5 +236,6 @@
         <script src="GameScripts/Rest.js"></script>
         <script src="GameScripts/Settings.js"></script>
         <script src="GameScripts/LucidDreams.js"></script>
+        <script src="GameScripts/Infinitize.js"></script>
     </body>
 </html>

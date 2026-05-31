@@ -6,6 +6,7 @@ var Data = {
     Dreams: new OmegaNum(0),
     Rest: new OmegaNum(0),
     LucidDreams: new OmegaNum(0), LucidEnergy: new OmegaNum(0),
+    InfinityDreams: new OmegaNum(0),
 
     Buyables: {
         1: {
@@ -72,7 +73,7 @@ var Data = {
         MemoryUpgsAutobuyer: true,
         DreamUpgsAutobuyer: true,
     },
-    
+
     Caps: {
         Memory: {
             cap: new OmegaNum(1.79e308),
@@ -87,6 +88,7 @@ var Template = {
     Dreams: new OmegaNum(0),
     Rest: new OmegaNum(0),
     LucidDreams: new OmegaNum(0), LucidEnergy: new OmegaNum(0),
+    InfinityDreams: new OmegaNum(0),
 
     Buyables: {
         1: {
