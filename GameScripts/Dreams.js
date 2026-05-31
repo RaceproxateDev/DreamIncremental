@@ -22,7 +22,7 @@ function calcDreamMult() {
 }
 
 function calcDreamGain() {
-    let exp = 0.6
+    let exp = new OmegaNum(0.6)
     let gain = Data.Memory.div(10000).pow(exp).times(calcDreamMult())
 
     return gain

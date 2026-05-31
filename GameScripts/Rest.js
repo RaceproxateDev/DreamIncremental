@@ -98,13 +98,13 @@ function EnableRestAutomation() {
 // automation functions
 function automateMemoryUpgs() {
     if (Data.Automation.includes("MemoryUpgs") && Data.Settings.MemoryUpgsAutobuyer == true) {
-        BuyUpg(1, 'Memory')
-        BuyUpg(2, 'Memory')
+        buyMaxUpg(1, 'Memory')
+        buyMaxUpg(2, 'Memory')
     }
 
     if (Data.Automation.includes("DreamUpgs") && Data.Settings.DreamUpgsAutobuyer == true) {
-        BuyUpg(3, 'Dreams')
-        BuyUpg(4, 'Dreams')
+        buyMaxUpg(3, 'Dreams')
+        buyMaxUpg(4, 'Dreams')
     }
 }
 

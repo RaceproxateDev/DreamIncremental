@@ -15,14 +15,14 @@ function calcLucidDreamMult() {
 }
 
 function calcLucidDreamGain() {
-    let exp = new OmegaNum(0.05)
+    let exp = new OmegaNum(0.2)
     let gain = Data.Dreams.div(1e50).pow(exp).times(calcLucidDreamMult())
 
     return gain
 }
 
 function updateLucidDreamsHtml() {
-    LucidifyGainTxt.textContent = `+${format(calcLucidDreamGain())} Lucid Dreams`
+    LucidifyGainTxt.textContent = `+${format(calcLucidDreamGain(), 2)} Lucid Dreams`
     LucidifyResetBtn.textContent = (Data.Dreams.gte(1e50)) ? "Lucidify" : "You need 1e50 Dreams"
 
     // Lucid Dream Upgrades
