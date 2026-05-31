@@ -1,3 +1,5 @@
+let canGenMemory = true;
+
 let MemoryDisplayTxt = document.getElementById("MemoriesDisplayTxt")
 
 // Buyables
@@ -16,20 +18,29 @@ function calcMemoryMult() {
     if (Data.Rest.gte(20)) mult = mult.times(3)
     if (Data.Rest.gte(21)) mult = mult.times(10)
     mult = mult.times(OmegaNum.pow(5, Data.Buyables[5].amount))
+    if (Data.LucidEnergy.gte(1000)) mult = mult.times(10)
+    if (Data.LucidEnergy.gte(50000)) mult = mult.times(50)
+    if (Data.LucidEnergy.gte(50000000)) mult = mult.times(333.3)
+    if (Data.LucidEnergy.gte(1e18)) mult = mult.times(10000)
+    if (Data.LucidEnergy.gte(1e27)) mult = mult.pow(1.25)
+    if (Data.LucidEnergy.gte(2e92)) mult = mult.pow(1.25)
 
     return mult
 }
 
 function GenMemory() {
-    let can = true;
+    if (Data.Memory.gte(Data.Caps.Memory.cap) && Data.Caps.Memory.broken === false) { 
+        canGenMemory = false
+        Data.Memory = new OmegaNum(Data.Caps.Memory.cap)
+    }
 
-    if (can) {
+    if (canGenMemory) {
         Data.Memory = Data.Memory.add(calcMemoryMult())
     }
 }
 
 function UpdateMemoryHtml() {
-    MemoryDisplayTxt.textContent = `Memory: ${format(Data.Memory)} [+${format(calcMemoryMult())}/s]`
+    MemoryDisplayTxt.textContent = `Memory: ${format(Data.Memory)} [+${(canGenMemory === true) ? format(calcMemoryMult()) : new OmegaNum(0)}/s]`
 
     // Memory Buyables
     MemoryBuyable1Btn.innerHTML = `+100% Memories [${format(Data.Buyables[1].amount)}/${format(Data.Buyables[1].max)}] <br> ${format(Data.Buyables[1].price)} Memories`
