@@ -19,6 +19,7 @@ function calcDreamMult() {
     mult = mult.times(OmegaNum.pow(3, Data.Buyables[6].amount))
     if (Data.LucidEnergy.gte(50000)) mult = mult.times(50)
     if (Data.LucidEnergy.gte(1e47)) mult = mult.times(100)
+    if (Data.Infinities.gte(1)) mult = mult.times(2.5)
 
     return mult
 }

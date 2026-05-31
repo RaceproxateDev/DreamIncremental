@@ -24,6 +24,7 @@ function calcMemoryMult() {
     if (Data.LucidEnergy.gte(1e18)) mult = mult.times(10000)
     if (Data.LucidEnergy.gte(1e27)) mult = mult.pow(1.25)
     if (Data.LucidEnergy.gte(2e92)) mult = mult.pow(1.25)
+    if (Data.Infinities.gte(1)) mult = mult.times(3)
 
     return mult
 }

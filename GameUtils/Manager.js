@@ -54,9 +54,21 @@ function resetBuyables(limit, start) {
     }
 }
 
-function resetArrays(Array, item) {
-    const index = Array.indexOf(item);
+function resetArrays(Array, TargetItem) {
+    let a = []
 
-    return index !== -1 ? Array.slice(index) : [];
+    for (let item of Array) {
+        let target = false;
+
+        if (item === TargetItem) {
+            target = true;
+        }
+
+        if (target) {
+            a.push(item)
+        }
+    }
+
+    return a;
 }
 

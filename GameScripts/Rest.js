@@ -30,6 +30,7 @@ function calcRestReq() {
 function calcRestGain() {
     let bulk = new OmegaNum(1)
     bulk = bulk.add(Data.Buyables[7].amount)
+    if (Data.Infinities.gte(1)) bulk = bulk.add(1)
 
     return bulk
 }
