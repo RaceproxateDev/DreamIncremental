@@ -53,3 +53,10 @@ function resetBuyables(limit, start) {
         };
     }
 }
+
+function resetArrays(Array, item) {
+    const index = Array.indexOf(item);
+
+    return index !== -1 ? Array.slice(index) : [];
+}
+

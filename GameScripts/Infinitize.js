@@ -30,8 +30,8 @@ function InfinitizeReset(force) {
         }
 
         // resetting unlocks and automation
-
-        Data.Unlocks = Data.Unlocks.slice(Data.Unlocks.indexOf('Infinitize'))
+        Data.Unlocks = resetArrays(Data.Unlocks, 'Infinitize')
+        Data.Automation = resetArrays(Data.Automation, 'AutobuyInfDreamUpgrades')
     }
 }
 
