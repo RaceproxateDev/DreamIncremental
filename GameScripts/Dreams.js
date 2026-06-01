@@ -20,6 +20,7 @@ function calcDreamMult() {
     if (Data.LucidEnergy.gte(50000)) mult = mult.times(50)
     if (Data.LucidEnergy.gte(1e47)) mult = mult.times(100)
     if (Data.Infinities.gte(1)) mult = mult.times(2.5)
+    mult = mult.times(OmegaNum.pow(8, Data.Buyables[8].amount))
 
     return mult
 }
@@ -44,13 +45,18 @@ function updateDreamHtml() {
 }
 
 function DreamReset(force) {
+    let reset = true
+    if (Data.Infinities.gte(2)) reset = false
+
     if (Data.Memory.gte(10000)) {
         if (!force) {
             Data.Dreams = Data.Dreams.add(calcDreamGain())
         }
 
-        resetStats(0, 0)
-        resetBuyables(2, 1)
+        if (reset) {
+            resetStats(0, 0)
+            resetBuyables(2, 1)
+        }
 
         if (!Data.Unlocks.includes("Dreamify")) {
             Data.Unlocks.push("Dreamify")

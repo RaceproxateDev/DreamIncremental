@@ -29,6 +29,8 @@ function calcLucidDreamMult() {
     let mult = new OmegaNum(1)
     if (Data.LucidEnergy.gte(500)) mult = mult.times(1.25)
     if (Data.LucidEnergy.gte(1e47)) mult = mult.times(10)
+    if (Data.Infinities.gte(1)) mult = mult.times(OmegaNum.add(1, Data.Infinities))
+    if (Data.Infinities.gte(2)) mult = mult.times(1.5)
 
     return mult
 }
@@ -116,7 +118,6 @@ function calcLucidEnergyMult() {
     if (Data.LucidEnergy.gte(1e27)) mult = mult.times(1e20)
     if (Data.LucidEnergy.gte(1e47)) mult = mult.times(1e45)
     if (Data.LucidEnergy.gte(2e92)) mult = mult.times(1e100)
-    if (Data.Infinities.gte(1)) mult = mult.times(OmegaNum.add(1, Data.Infinities))
 
     return mult
 }

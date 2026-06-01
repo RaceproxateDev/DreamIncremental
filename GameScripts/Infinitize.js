@@ -4,6 +4,11 @@ let InfinitizeRLBtn = document.getElementById("InfinitizeRLBtn")
 
 // Infinity Milestones
 let InfinityMilestone1 = document.getElementById("InfinityMilestone1")
+let InfinityMilestone2 = document.getElementById("InfinityMilestone2")
+
+// Infinity Upgrades
+let InfDreamsDisplayTxt = document.getElementById("InfDreamsDisplayTxt")
+let InfinityDreamsBuyable1 = document.getElementById("InfinityDreamsBuyable1")
 
 function calcInfDreamsMult() {
     let mult = new OmegaNum(1)
@@ -30,7 +35,11 @@ function updateInfDreamsHTML() {
 
     // Infinity Milestones
     InfinityMilestone1.style.borderColor = (Data.Infinities.gte(1)) ? "lightgreen" : "red"
+    InfinityMilestone2.style.borderColor = (Data.Infinities.gte(2)) ? "lightgreen" : "red"
 
+    // Infinity Upgrades
+    InfDreamsDisplayTxt.innerHTML = `Infinity Dream Upgrades [${format(Data.InfinityDreams)} Infinity Dreams]`
+    InfinityDreamsBuyable1.innerHTML = `10x Memories, 8x Dreams [${format(Data.Buyables[8].amount)}/${format(Data.Buyables[8].max)}] <br> ${format(Data.Buyables[8].price)} Infinity Dreams`
 }
 
 function InfinitizeReset(force) {

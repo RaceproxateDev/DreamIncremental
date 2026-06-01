@@ -64,6 +64,14 @@ var Data = {
             price: new OmegaNum(3),
             scale: new OmegaNum(4),
         },
+
+        8: {
+            // Infinity Memory Buyable 1
+            amount: new OmegaNum(0),
+            max: new OmegaNum(100),
+            price: new OmegaNum(1),
+            scale: new OmegaNum(3),
+        },
     },
 
     Upgrades: [],
@@ -145,6 +153,14 @@ var Template = {
             max: new OmegaNum(5),
             price: new OmegaNum(3),
             scale: new OmegaNum(4),
+        },
+
+        8: {
+            // Infinity Memory Buyable 1
+            amount: new OmegaNum(0),
+            max: new OmegaNum(100),
+            price: new OmegaNum(1),
+            scale: new OmegaNum(3),
         },
     },
 
