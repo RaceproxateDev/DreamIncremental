@@ -118,6 +118,7 @@ function calcLucidEnergyMult() {
     if (Data.LucidEnergy.gte(1e27)) mult = mult.times(1e20)
     if (Data.LucidEnergy.gte(1e47)) mult = mult.times(1e45)
     if (Data.LucidEnergy.gte(2e92)) mult = mult.times(1e100)
+    if (Data.Infinities.gte(3)) mult = mult.times(2)
 
     return mult
 }

@@ -5,6 +5,7 @@ let InfinitizeRLBtn = document.getElementById("InfinitizeRLBtn")
 // Infinity Milestones
 let InfinityMilestone1 = document.getElementById("InfinityMilestone1")
 let InfinityMilestone2 = document.getElementById("InfinityMilestone2")
+let InfinityMilestone3 = document.getElementById("InfinityMilestone3")
 
 // Infinity Upgrades
 let InfDreamsDisplayTxt = document.getElementById("InfDreamsDisplayTxt")
@@ -36,6 +37,7 @@ function updateInfDreamsHTML() {
     // Infinity Milestones
     InfinityMilestone1.style.borderColor = (Data.Infinities.gte(1)) ? "lightgreen" : "red"
     InfinityMilestone2.style.borderColor = (Data.Infinities.gte(2)) ? "lightgreen" : "red"
+    InfinityMilestone3.style.borderColor = (Data.Infinities.gte(3)) ? "lightgreen" : "red"
 
     // Infinity Upgrades
     InfDreamsDisplayTxt.innerHTML = `Infinity Dream Upgrades [${format(Data.InfinityDreams)} Infinity Dreams]`
