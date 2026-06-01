@@ -60,6 +60,15 @@ button:hover {
     border-radius: 5px;
 }
 
+.ChallengeBtn {
+    color: white;
+    background-color: black;
+    border: 2px solid darkgray;
+    height: 500px;
+    width: 500px;
+    border-radius: 5px;
+}
+
 @media only screen and (max-width: 1200px) {
     body {
         width: 80%;

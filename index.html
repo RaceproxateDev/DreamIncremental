@@ -22,6 +22,7 @@
                 <button class="tab" onclick="displayContent('LucidityUpgrades')" style="background-image: linear-gradient(rgb(94, 94, 3), rgb(220, 220, 21), rgb(94, 94, 3)); border-color: yellow; display: none; width: auto;" id="LucidityUpgradesTab">Lucid Dream Upgrades</button>
                 <button class="tab" onclick="displayContent('InfinitizeReset')" style="background-image: linear-gradient(darkred, red, darkred); border-color: red; display: none;" id="InfinitizeResetTab">Infinitize</button>
                 <button class="tab" onclick="displayContent('InfinitizeUpgrades')" style="background-image: linear-gradient(darkred, red, darkred); border-color: red; display: none;" id="InfinitizeUpgsTab">Infinitize Upgrades</button>
+                <button class="tab" onclick="displayContent('InfinitizeChallenges')" style="background-image: linear-gradient(darkred, red, darkred); border-color: red; display: none;" id="InfinitizeChallengesTab">Infinitize Challenges</button>
             </div>
 
             <div id="Settings" class="content" style="display: none;">
@@ -258,6 +259,10 @@
                     1 Infinity Dreams
                 </button>
             </div>
+
+            <div class="content" id="InfinitizeChallenges" style="display: none; color: red;">
+                <h3>Infinity Challenges</h3>
+            </div>
         </div>
 
 
@@ -273,5 +278,6 @@
         <script src="GameScripts/Settings.js"></script>
         <script src="GameScripts/LucidDreams.js"></script>
         <script src="GameScripts/Infinitize.js"></script>
+        <script src="GameUtils/bool.js"></script>
     </body>
 </html>

@@ -88,6 +88,10 @@ var Data = {
             broken: false,
         },
     },
+
+    Challenges: {
+        inChallenge = "",
+    },
 }
 
 var Template = {
@@ -177,6 +181,10 @@ var Template = {
             cap: new OmegaNum(1.79e308),
             broken: false,
         },
+    },
+
+    Challenges: {
+        inChallenge = "",
     },
 }
 
