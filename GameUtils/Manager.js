@@ -72,3 +72,40 @@ function resetArrays(Array, TargetItem) {
     return a;
 }
 
+function startChallenge(name, ChallengeName) {
+    if (name !== null && Data.Challenges.inChallenge === '') {
+        Data.Challenges.inChallenge = name
+    } else if (Data.Challenges.inChallenge === name) {
+        Data.Challenges.inChallenge = ''
+    }
+}
+
+function isInChallenge(name) {
+    return Data.Challenges.inChallenge === name
+}
+
+function hasChallenge(name) {
+    return Data.Challenges.completedChallenges.includes(name)
+}
+
+function canCompleteChallenge(name, req, curr) {
+    if (Data[curr].gte(req)) {
+        if (isInChallenge(name)) {
+            if (!hasChallenge(name)) {
+                return true
+            }
+        }
+    }
+
+    return false
+}
+
+function completeChallenge(name, req, curr) {
+    if (Data[curr].gte(new OmegaNum(req))) {
+        if (isInChallenge(name)) {
+            if (!hasChallenge(name)) {
+                Data.Challenges.completedChallenges.push(name)
+            }
+        }
+    }
+}

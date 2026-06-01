@@ -11,6 +11,9 @@ let InfinityMilestone3 = document.getElementById("InfinityMilestone3")
 let InfDreamsDisplayTxt = document.getElementById("InfDreamsDisplayTxt")
 let InfinityDreamsBuyable1 = document.getElementById("InfinityDreamsBuyable1")
 
+// Infinity Challenges
+let InfinityChallenge1 = document.getElementById("InfinityChallenge1")
+
 function calcInfDreamsMult() {
     let mult = new OmegaNum(1)
 
@@ -42,10 +45,15 @@ function updateInfDreamsHTML() {
     // Infinity Upgrades
     InfDreamsDisplayTxt.innerHTML = `Infinity Dream Upgrades [${format(Data.InfinityDreams)} Infinity Dreams]`
     InfinityDreamsBuyable1.innerHTML = `10x Memories, 8x Dreams [${format(Data.Buyables[8].amount)}/${format(Data.Buyables[8].max)}] <br> ${format(Data.Buyables[8].price)} Infinity Dreams`
+
+    // Infinity Challenges
+    InfinityChallenge1.innerHTML = (isInChallenge('Memory Deficiency I')) ? `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Exit Challenge <br><br>` : `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Start Challenge <br><br>`
+    InfinityChallenge1.innerHTML = (canCompleteChallenge('Memory Deficiency I', 1.79e308, 'Memory') && isInChallenge('Memory Deficiency I')) ? `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Complete Challenge <br><br>` : `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Exit Challenge <br><br>`
+    InfinityChallenge1.innerHTML = (hasChallenge('Memory Deficiency I')) ? `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Challenge Completed <br><br>` : `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Start Challenge <br><br>`
 }
 
-function InfinitizeReset(force) {
-    if (Data.Memory.gte(1.79e308)) {
+function InfinitizeReset(force, noReq) {
+    if (Data.Memory.gte(1.79e308) || noReq) {
         if (!force) {
             Data.InfinityDreams = Data.InfinityDreams.add(calcInfinityDreamGain())
             Data.Infinities = Data.Infinities.add(calcInfinitiesDone())

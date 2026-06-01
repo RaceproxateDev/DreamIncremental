@@ -90,7 +90,8 @@ var Data = {
     },
 
     Challenges: {
-        inChallenge = "",
+        inChallenge: "",
+        completedChallenges: [],
     },
 }
 
@@ -184,7 +185,8 @@ var Template = {
     },
 
     Challenges: {
-        inChallenge = "",
+        inChallenge: "",
+        completedChallenges: [],
     },
 }
 
