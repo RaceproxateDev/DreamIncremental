@@ -27,7 +27,7 @@ function calcMemoryMult() {
     if (Data.Infinities.gte(1)) mult = mult.times(3)
     mult = mult.times(OmegaNum.pow(10, Data.Buyables[8].amount))
     if (Data.Infinities.gte(2)) mult = mult.times(10)
-    if (isInChallenge('Memory Deficiency I')) mult = mult.pow(0.5)
+    if (isInChallenge('Memory Deficiency I')) mult = mult.pow(0.6)
     if (hasChallenge('Memory Deficiency I')) mult = mult.times(3)
     if (Data.Infinities.gte(5)) mult = mult.times(10)
 
