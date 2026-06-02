@@ -2,8 +2,21 @@
     white-space: nowrap;
     height: auto;
     overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
-    
 }
 
+::-webkit-scrollbar {
+    background: transparent;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border: 2px solid rgb(52, 52, 52);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+    border: 2px solid white;
+    border-radius: 10px;
+}
