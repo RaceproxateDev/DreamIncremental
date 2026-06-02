@@ -6,6 +6,7 @@ let InfinitizeRLBtn = document.getElementById("InfinitizeRLBtn")
 let InfinityMilestone1 = document.getElementById("InfinityMilestone1")
 let InfinityMilestone2 = document.getElementById("InfinityMilestone2")
 let InfinityMilestone3 = document.getElementById("InfinityMilestone3")
+let InfinityMilestone4 = document.getElementById("InfinityMilestone4")
 
 // Infinity Upgrades
 let InfDreamsDisplayTxt = document.getElementById("InfDreamsDisplayTxt")
@@ -42,6 +43,7 @@ function updateInfDreamsHTML() {
     InfinityMilestone1.style.borderColor = (Data.Infinities.gte(1)) ? "lightgreen" : "red"
     InfinityMilestone2.style.borderColor = (Data.Infinities.gte(2)) ? "lightgreen" : "red"
     InfinityMilestone3.style.borderColor = (Data.Infinities.gte(3)) ? "lightgreen" : "red"
+    InfinityMilestone4.style.borderColor = (Data.Infinities.gte(5)) ? "lightgreen" : "red"
 
     // Infinity Upgrades
     InfDreamsDisplayTxt.innerHTML = `Infinity Dream Upgrades [${format(Data.InfinityDreams)} Infinity Dreams]`
@@ -75,9 +77,16 @@ function InfinitizeReset(force, noReq) {
     }
 }
 
+function autoRest() {
+    if (Data.Infinities.gte(5) && Data.Settings.AutoRest) {
+        RestReset(false)
+    }
+}
+
 setInterval(() => {
     calcInfDreamsMult()
     calcInfinityDreamGain()
     updateInfDreamsHTML()
     calcInfinitiesDone()
+    autoRest()
 }, 100)

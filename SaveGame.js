@@ -80,6 +80,7 @@ var Data = {
     Settings: {
         MemoryUpgsAutobuyer: true,
         DreamUpgsAutobuyer: true,
+        AutoRest: true,
     },
 
     Caps: {
@@ -175,6 +176,7 @@ var Template = {
     Settings: {
         MemoryUpgsAutobuyer: true,
         DreamUpgsAutobuyer: true,
+        AutoRest: true,
     },
 
     Caps: {

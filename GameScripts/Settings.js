@@ -1,5 +1,6 @@
 let shardUpgsAutobuyerEnabler = document.getElementById("MemoryUpgsAutobuyerEnabler")
 let dreamUpgsAutobuyerEnabler = document.getElementById("DreamUpgsAutobuyerEnabler")
+let autoRestEnabler = document.getElementById("AutoRestEnabler")
 
 function enableDisable(automation) {
     Data.Settings[automation] = !Data.Settings[automation]
@@ -11,6 +12,9 @@ function updateHtmlSettings() {
 
     dreamUpgsAutobuyerEnabler.style.display = (Data.Automation.includes("DreamUpgs")) ? "inline-block" : "none"
     dreamUpgsAutobuyerEnabler.textContent = (Data.Settings.DreamUpgsAutobuyer == true) ? "Dream Upgrades Autobuyer: ON" : "Dream Upgrades Autobuyer: OFF"
+
+    autoRestEnabler.style.display = (Data.Automation.includes("AutoRest")) ? "inline-block" : "none"
+    autoRestEnabler.textContent = (Data.Settings.AutoRest == true) ? "Auto Rest: ON" : "Auto Rest: OFF"
 }
 
 setInterval(() => {
