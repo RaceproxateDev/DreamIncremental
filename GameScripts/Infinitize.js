@@ -13,6 +13,7 @@ let InfinityDreamsBuyable1 = document.getElementById("InfinityDreamsBuyable1")
 
 // Infinity Challenges
 let InfinityChallenge1 = document.getElementById("InfinityChallenge1")
+let InfChallenge1txt = document.getElementById("InfChallenge1txt")
 
 function calcInfDreamsMult() {
     let mult = new OmegaNum(1)
@@ -47,9 +48,10 @@ function updateInfDreamsHTML() {
     InfinityDreamsBuyable1.innerHTML = `10x Memories, 8x Dreams [${format(Data.Buyables[8].amount)}/${format(Data.Buyables[8].max)}] <br> ${format(Data.Buyables[8].price)} Infinity Dreams`
 
     // Infinity Challenges
-    InfinityChallenge1.innerHTML = (isInChallenge('Memory Deficiency I')) ? `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Exit Challenge <br><br>` : `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Start Challenge <br><br>`
-    InfinityChallenge1.innerHTML = (canCompleteChallenge('Memory Deficiency I', 1.79e308, 'Memory') && isInChallenge('Memory Deficiency I')) ? `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Complete Challenge <br><br>` : `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Exit Challenge <br><br>`
-    InfinityChallenge1.innerHTML = (hasChallenge('Memory Deficiency I')) ? `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Challenge Completed <br><br>` : `Memory Deficiency I <br> ^0.8 Memories <br><br> Goal: 1.79e308 Memories <br> Reward: 3x Memories <br><br> Start Challenge <br><br>`
+    InfChallenge1txt.innerHTML = (hasChallenge('Memory Deficiency I')) ? 'Challenge Completed' : 'Start Challenge'
+    if (!hasChallenge('Memory Deficiency I') && !isInChallenge('Memory Deficiency I')) InfChallenge1txt.innerHTML = 'Start Challenge'
+    if (!hasChallenge('Memory Deficiency I') && canCompleteChallenge('Memory Deficiency I', 1.79e308, 'Memory')) InfChallenge1txt.innerHTML = 'Complete Challenge'
+    if (isInChallenge('Memory Deficiency I') && !hasChallenge('Memory Deficiency I')) InfChallenge1txt.innerHTML = 'Exit Challenge'
 }
 
 function InfinitizeReset(force, noReq) {

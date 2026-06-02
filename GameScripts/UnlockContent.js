@@ -23,7 +23,7 @@ function UnlockContent() {
     // Infinitize
     InfinitizeResetTab.style.display = (Data.Memory.gte(Data.Caps.Memory.cap) || Data.Unlocks.includes("Infinitize")) ? "inline-block" : "none"
     InfinitizeUpgsTab.style.display = (Data.Unlocks.includes("Infinitize")) ? "inline-block" : "none"
-    InfinitizeChallengesTab.style.display = (Data.Unlocks.includes("Infinitize")) ? "inline-block" : "none"
+    InfinitizeChallengesTab.style.display = (Data.Infinities.gte(3)) ? "inline-block" : "none"
 }
 
 setInterval(() => {
