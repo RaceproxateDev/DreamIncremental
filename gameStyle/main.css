@@ -22,7 +22,7 @@ button:hover {
     background-color: black;
     border: 2px solid darkgray;
     height: auto;
-    width: auto;
+    width: fit-content;
     border-radius: 5px;
 }
 

@@ -17,7 +17,7 @@
                 <button class="tab" onclick="displayContent('MemoryUpgrades')">Memory Upgrades</button>
                 <button class="tab" onclick="displayContent('DreamReset')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamifyTab">Dreamify</button>
                 <button class="tab" onclick="displayContent('DreamUpgrades')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamUpgsTab">Dream Upgrades</button>
-                <button class="tab" onclick="displayContent('RestReset')" style="background-image: linear-gradient(blue, lightblue, blue); border-color: blue; display: none;" id="RestResetTab">Rest</button>
+                <button class="tab" onclick="displayContent('RestReset')" style="background-image: linear-gradient(blue, lightblue, blue); border-color: blue; display: none; width: 100px;" id="RestResetTab">Rest</button>
                 <button class="tab" onclick="displayContent('LucidityReset')" style="background-image: linear-gradient(rgb(94, 94, 3), rgb(220, 220, 21), rgb(94, 94, 3)); border-color: yellow; display: none;" id="LucidityResetTab">Lucidify</button>
                 <button class="tab" onclick="displayContent('LucidityUpgrades')" style="background-image: linear-gradient(rgb(94, 94, 3), rgb(220, 220, 21), rgb(94, 94, 3)); border-color: yellow; display: none; width: auto;" id="LucidityUpgradesTab">Lucid Dream Upgrades</button>
                 <button class="tab" onclick="displayContent('InfinitizeReset')" style="background-image: linear-gradient(darkred, red, darkred); border-color: red; display: none;" id="InfinitizeResetTab">Infinitize</button>
@@ -256,6 +256,15 @@
                         10x Memories <br>
                         5x Dreams <br><br>
                     </h4>
+                    <h4 class="milestone" id="InfinityMilestone5" style="height: auto; border-color: red; background-image: linear-gradient(darkred, red, darkred);">
+                        6 Infinities <br><br>
+                        ^1.1 Memories <br>
+                        10x Lucid Energy <br><br>
+                    </h4>
+                    <h4 class="milestone" id="InfinityMilestone6" style="height: auto; border-color: red; background-image: linear-gradient(darkred, red, darkred);">
+                        8 Infinities <br><br>
+                        ^2.5 Dreams<br><br>
+                    </h4>
                 </div>
             </div>
             
@@ -272,7 +281,7 @@
                 <h3>Infinity Challenges</h3>
                 <p>Warning: Entering/Exitting a Challenge performs a Infinitize Reset</p>
 
-                <button class="ChallengeBtn" id="InfinityChallenge1" style="background-image: linear-gradient(darkred, red, darkred); border-color: red;" onclick="startChallenge('Memory Deficiency I', 'Memory Deficiency I'); completeChallenge('Memory Deficiency I', 1.79e308, 'Memory'); InfinitizeReset(true, true)">
+                <button class="ChallengeBtn" id="InfinityChallenge1" style="background-image: linear-gradient(darkred, red, darkred); border-color: red;" onclick="startChallenge('Memory Deficiency I', 'Memory Deficiency I'); InfinitizeReset(true, true)">
                     Memory Deficiency I <br>
                     ^0.6 Memories <br><br>
                     Goal: 1.79e308 Memories <br>

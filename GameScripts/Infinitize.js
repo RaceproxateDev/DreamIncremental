@@ -7,6 +7,8 @@ let InfinityMilestone1 = document.getElementById("InfinityMilestone1")
 let InfinityMilestone2 = document.getElementById("InfinityMilestone2")
 let InfinityMilestone3 = document.getElementById("InfinityMilestone3")
 let InfinityMilestone4 = document.getElementById("InfinityMilestone4")
+let InfinityMilestone5 = document.getElementById("InfinityMilestone5")
+let InfinityMilestone6 = document.getElementById("InfinityMilestone6")
 
 // Infinity Upgrades
 let InfDreamsDisplayTxt = document.getElementById("InfDreamsDisplayTxt")
@@ -44,16 +46,14 @@ function updateInfDreamsHTML() {
     InfinityMilestone2.style.borderColor = (Data.Infinities.gte(2)) ? "lightgreen" : "red"
     InfinityMilestone3.style.borderColor = (Data.Infinities.gte(3)) ? "lightgreen" : "red"
     InfinityMilestone4.style.borderColor = (Data.Infinities.gte(5)) ? "lightgreen" : "red"
-
+    InfinityMilestone5.style.borderColor = (Data.Infinities.gte(6)) ? "lightgreen" : "red"
+    InfinityMilestone6.style.borderColor = (Data.Infinities.gte(8)) ? "lightgreen" : "red"
     // Infinity Upgrades
     InfDreamsDisplayTxt.innerHTML = `Infinity Dream Upgrades [${format(Data.InfinityDreams)} Infinity Dreams]`
     InfinityDreamsBuyable1.innerHTML = `10x Memories, 8x Dreams [${format(Data.Buyables[8].amount)}/${format(Data.Buyables[8].max)}] <br> ${format(Data.Buyables[8].price)} Infinity Dreams`
 
     // Infinity Challenges
-    InfChallenge1txt.innerHTML = (hasChallenge('Memory Deficiency I')) ? 'Challenge Completed' : 'Start Challenge'
-    if (!hasChallenge('Memory Deficiency I') && !isInChallenge('Memory Deficiency I')) InfChallenge1txt.innerHTML = 'Start Challenge'
-    if (!hasChallenge('Memory Deficiency I') && canCompleteChallenge('Memory Deficiency I', 1.79e308, 'Memory')) InfChallenge1txt.innerHTML = 'Complete Challenge'
-    if (isInChallenge('Memory Deficiency I') && !hasChallenge('Memory Deficiency I')) InfChallenge1txt.innerHTML = 'Exit Challenge'
+    updateChallengeHTML('Memory Deficiency I', InfChallenge1txt, 'Memory', 1.79e308)
 }
 
 function InfinitizeReset(force, noReq) {
@@ -83,10 +83,15 @@ function autoRest() {
     }
 }
 
+function CompleteInfinityChallenges() {
+    completeChallenge('Memory Deficiency I', new OmegaNum(1.79e308), 'Memory')
+}
+
 setInterval(() => {
     calcInfDreamsMult()
     calcInfinityDreamGain()
     updateInfDreamsHTML()
     calcInfinitiesDone()
     autoRest()
+    CompleteInfinityChallenges()
 }, 100)

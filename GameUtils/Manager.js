@@ -109,3 +109,19 @@ function completeChallenge(name, req, curr) {
         }
     }
 }
+
+function updateChallengeHTML(challengeName, htmlTxt, curr, req) {
+    let beaten = hasChallenge(challengeName)
+    let inChallenge = isInChallenge(challengeName)
+    let canComplete = canCompleteChallenge(challengeName, new OmegaNum(req), curr)
+
+    if (beaten) {
+        htmlTxt.textContent = 'Challenge Completed'
+    } else if (inChallenge) {
+        htmlTxt.textContent = 'Exit Challenge'
+    } else if (canComplete) {
+        htmlTxt.textContent = 'Complete Challenge'
+    } else {
+        htmlTxt.textContent = 'Start Challenge'
+    }
+}

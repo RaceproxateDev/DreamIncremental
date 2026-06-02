@@ -30,6 +30,7 @@ function calcMemoryMult() {
     if (isInChallenge('Memory Deficiency I')) mult = mult.pow(0.6)
     if (hasChallenge('Memory Deficiency I')) mult = mult.times(3)
     if (Data.Infinities.gte(5)) mult = mult.times(10)
+    if (Data.Infinities.gte(6)) mult = mult.pow(1.1)
 
     return mult
 }
