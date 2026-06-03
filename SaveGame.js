@@ -252,6 +252,10 @@ function fixSave(data, template) {
             data[key] = new OmegaNum(data[key] ?? template[key])
         }
 
+        else if (template[key] instanceof bool) {
+            data[key] = new bool(data[key] ?? template[key])
+        }
+
         else if (typeof template[key] === 'object' && template[key] !== null) {
             if (typeof data[key] !== 'object' || data[key] === null) {
                 data[key] = JSON.parse(JSON.stringify(template[key]));

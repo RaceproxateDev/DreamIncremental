@@ -84,24 +84,26 @@
   }
 
   P.toNumber = P.toNum = function () {
-    if (this.val === 1) return 1;
+    if (this.val === true) return 1;
     if (this.val === false) return 0;
     if (Number.isNaN(this.val)) return NaN;
 
     if (typeof this.val === 'number') return this.val;
   }
 
+  Q.toNumber = Q.toNum = function(x) {
+    return new bool(x).toNumber()
+  }
+
   P.subtract = P.sub = function (otherBool) {
     if (!(otherBool instanceof bool)) otherBool=new bool(otherBool)
-    if (this.val === 0) return otherBool;
-    if (otherBool === 0) return this.val;
-    if (this.val-otherBool===0) return false;
-    if (this.val-otherBool===1) return true;
+    if (this.val === false) return otherBool;
+    if (otherBool === false) return this.val;
+    if (this.val-otherBool===false) return false;
+    if (this.val-otherBool===true) return true;
     if (Number.isNaN(this.val)||Number.isNaN(otherBool)) return NaN;
 
-    var r = this.val.toNum() - otherBool.toNum()
-
-    return r
+    return this.val.toNum()-otherBool.toNum()
   }
 
   Q.subtract = Q.sub = function(x,y) {
