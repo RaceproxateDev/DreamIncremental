@@ -22,7 +22,8 @@ function calcDreamMult() {
     if (Data.Infinities.gte(1)) mult = mult.times(2.5)
     mult = mult.times(OmegaNum.pow(8, Data.Buyables[8].amount))
     if (Data.Infinities.gte(5)) mult = mult.times(5)
-    if (Data.Infinities.gte(8)) mult = mult.pow(2.5)
+    if (Data.Infinities.gte(8)) mult = mult.pow(3.5)
+    if (isInChallenge('Forgotten')) mult = mult.pow(0.4)
 
     return mult
 }

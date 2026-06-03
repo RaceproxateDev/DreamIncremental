@@ -68,6 +68,7 @@ button:hover {
     height: 200px;
     width: 200px;
     border-radius: 5px;
+    vertical-align: top;
 }
 
 @media only screen and (max-width: 1200px) {

@@ -110,18 +110,36 @@ function completeChallenge(name, req, curr) {
     }
 }
 
-function updateChallengeHTML(challengeName, htmlTxt, curr, req) {
+function updateChallengeHTML(challengeName, htmlTxt, curr, req, htmlBtn=null) {
     let beaten = hasChallenge(challengeName)
     let inChallenge = isInChallenge(challengeName)
     let canComplete = canCompleteChallenge(challengeName, new OmegaNum(req), curr)
 
     if (beaten) {
         htmlTxt.textContent = 'Challenge Completed'
+        htmlBtn.style.borderColor = 'lightgreen'
     } else if (inChallenge) {
         htmlTxt.textContent = 'Exit Challenge'
+        htmlBtn.style.borderColor = 'yellow'
     } else if (canComplete) {
         htmlTxt.textContent = 'Complete Challenge'
+        htmlBtn.style.borderColor = 'lightgreen'
     } else {
         htmlTxt.textContent = 'Start Challenge'
+        htmlBtn.style.borderColor = 'red'
+    }
+}
+
+function unlockNewChallenges(htmlChallenge, ReqChallengeName) {
+    if (hasChallenge(ReqChallengeName)) {
+        htmlChallenge.style.display = 'inline-block'
+    } else {
+        htmlChallenge.style.display = 'none'
+    }
+}
+
+function breakCaps(cap) {
+    if (Data.Caps[cap].broken === false) {
+        Data.Caps[cap].broken = true
     }
 }
