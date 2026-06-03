@@ -77,7 +77,7 @@ var Data = {
         },
 
         // World 2 Buyables
-        
+
         9: {
             // Void Buyable 1
             amount: new OmegaNum(0),
@@ -85,7 +85,7 @@ var Data = {
             price: new OmegaNum(1),
             scale: new OmegaNum(1.5),
             probability: new bool(1),
-            probDeScale: new OmegaNum(0.1),
+            probDeScale: new bool(0.1),
         }
     },
 
@@ -202,7 +202,7 @@ var Template = {
             price: new OmegaNum(1),
             scale: new OmegaNum(1.5),
             probability: new bool(1),
-            probDeScale: new OmegaNum(0.1),
+            probDeScale: new bool(0.1),
         }
     },
 

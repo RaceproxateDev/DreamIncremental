@@ -83,7 +83,7 @@ function resetBuyablesWithProb(limit, start) {
             price: new OmegaNum(Template.Buyables[i].price),
             scale: new OmegaNum(Template.Buyables[i].scale),
             probability: new bool(Template.Buyables[i].probability),
-            probDeScale: new OmegaNum(Template.Buyables[i].probDeScale),
+            probDeScale: new bool(Template.Buyables[i].probDeScale),
         };
     }
 }
