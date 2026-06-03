@@ -94,6 +94,12 @@ var Data = {
         inChallenge: "",
         completedChallenges: [],
     },
+
+    isInWorld: 'world1',
+
+    Milestones: {
+        World2: [],
+    },
 }
 
 var Template = {
@@ -190,6 +196,12 @@ var Template = {
         inChallenge: "",
         completedChallenges: [],
     },
+
+    isInWorld: 'world1',
+
+    Milestones: {
+        World2: [],
+    },
 }
 
 function saveData() {
@@ -230,6 +242,8 @@ function loadData() {
 
         fixSave(d, Template)
         Data = d
+
+        displayWorlds(Data.isInWorld)
     }
 }
 

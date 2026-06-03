@@ -271,6 +271,10 @@
                         1.5x Infinity Dreams <br>
                         <p style="color: transparent; background-image: linear-gradient(white, orange, white); -webkit-background-clip: text; background-clip: text;">Break Infinity</p>
                     </h4>
+                    <h4 class="milestone" id="InfinityMilestone8" style="height: auto; border-color: red; background-image: linear-gradient(darkred, red, darkred);">
+                        13 Infinities <br><br>
+                        Unlock ??? <br><br>
+                    </h4>
                 </div>
             </div>
             
@@ -299,13 +303,26 @@
                         Forgotten <br>
                         ^0.4 Dreams <br><br>
                         Goal: 1.79e308 Memories <br>
-                        Reward: Unlock More Infinity milestones <br><br>
+                        Reward: 10x Dreams <br><br>
                         <p id="InfChallenge2txt">Start Challenge</p>
-                    </button>
+                    </button> <br><br>
+                    <section id="worldsSection" style="display: none;">
+                        <s style="color: black;">????</s><br>
+                        <button class="ChallengeBtn" id="InfinityChallenge3" style="background-image: linear-gradient(darkgray, black, darkgray); border-color: rgb(0, 0, 0);" onclick="displayWorlds('world2')">
+                            <s>World 2</s> <br>
+                            ERROR <s>You cant turn back</s> <br><br>
+                            Goal: ??? <br>
+                            Reward: ??? <br><br>
+                            <p id="InfChallenge3txt">Start?</p>
+                        </button> 
+                    </section>
                 </div>
             </div>
         </div>
 
+        <div id="world2" class="world" style="display: none; color: black;">
+            <h3 id="voidDisplayTxt">Void: 0 [+1/s] [/1 Void]</h3>
+        </div>
 
         <link rel="stylesheet" href="gameStyle/main.css">
         <link rel="stylesheet" href="gameStyle/scrollableContent.css">
@@ -321,5 +338,6 @@
         <script src="GameScripts/LucidDreams.js"></script>
         <script src="GameScripts/Infinitize.js"></script>
         <script src="GameUtils/bool.js"></script>
+        <script src="GameScripts/World_2/Void.js"></script>
     </body>
 </html>

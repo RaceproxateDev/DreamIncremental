@@ -3,6 +3,7 @@ function displayWorlds(worldId) {
 
     for (let i = 0; i < w.length; i++) {
         w[i].style.display = (w[i].id === worldId) ? "inline-block" : "none"
+        Data.isInWorld = worldId
     }
 }
 
@@ -115,7 +116,7 @@ function updateChallengeHTML(challengeName, htmlTxt, curr, req, htmlBtn=null) {
     let inChallenge = isInChallenge(challengeName)
     let canComplete = canCompleteChallenge(challengeName, new OmegaNum(req), curr)
 
-    if (beaten) {
+    if (beaten && !inChallenge) {
         htmlTxt.textContent = 'Challenge Completed'
         htmlBtn.style.borderColor = 'lightgreen'
     } else if (inChallenge) {

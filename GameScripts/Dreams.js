@@ -24,6 +24,7 @@ function calcDreamMult() {
     if (Data.Infinities.gte(5)) mult = mult.times(5)
     if (Data.Infinities.gte(8)) mult = mult.pow(3.5)
     if (isInChallenge('Forgotten')) mult = mult.pow(0.4)
+    if (hasChallenge('Forgotten')) mult = mult.times(10)
 
     return mult
 }
