@@ -86,53 +86,25 @@
   P.toNumber = P.toNum = function () {
     if (this.val === true) return 1;
     if (this.val === false) return 0;
-    if (Number.isNaN(this.val)) return NaN;
 
-    if (typeof this.val === 'number') return this.val;
+    if (typeof this.val === 'number') return this.inp;
   }
 
   Q.toNumber = Q.toNum = function(x) {
     return new bool(x).toNumber()
   }
 
-  P.subtract = P.sub = function (otherBool) {
-    if (!(otherBool instanceof bool)) otherBool=new bool(otherBool)
-    if (this.val === false) return otherBool;
-    if (otherBool === false) return this.val;
-    if (this.val-otherBool===false) return false;
-    if (this.val-otherBool===true) return true;
-    if (Number.isNaN(this.val)||Number.isNaN(otherBool)) return NaN;
-
-    return this.val.toNum()-otherBool.toNum()
-  }
-
-  Q.subtract = Q.sub = function(x,y) {
-    return new bool(x).sub(y)
-  }
-
   P.negate = P.neg = function() {
-    return this.val.toNum() * -1
+    if (this.val === true) return new bool(false);
+    if (this.val === false) return new bool(true);
+
+    if (this.val >= 0) return new bool(this.val*-1)
+    if (this.val < 0) return new bool(Math.abs(this.val))
   }
 
   Q.negate = Q.neg = function() {
     var x = this.clone()
     return new bool(x).neg()
-  }
-
-  P.addition = P.add = function(otherBool) {
-    return this.val.sub(otherBool.neg())
-  }
-
-  Q.addition = Q.add = function(x,y) {
-    return new bool(x).add(y)
-  }
-
-  P.formatPercent = P.toPercent = function (decimals=2) {
-    return (this.val * 100).toFixed(decimals) + "%";
-  }
-
-  Q.formatPercent = Q.toPercent = function (x, decimals=2) {
-    return new bool(x).toPercent(decimals)
   }
 
   function clone(x) {
@@ -144,6 +116,7 @@
         
       if (inp === null || inp === undefined) {
         this.val = NaN;
+
         if (bool.showErrors) {
           console.error("You need to type a number")
         }
@@ -160,9 +133,9 @@
         this.val = Math.random() <= inp;
 
         if (this.val === true) {
-          return true
+          return true;
         } else {
-          return false
+          return false;
         }
       }
     }
