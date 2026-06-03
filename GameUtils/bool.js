@@ -83,6 +83,14 @@
     return new bool(x).neq(y)
   }
 
+  P.formatPercent = P.toPercent = function (decimals=2) {
+    return (this.val * 100).toFixed(decimals) + "%";
+  }
+
+  Q.formatPercent = Q.toPercent = function (x, decimals=2) {
+    return new bool(x).toPercent(decimals)
+  }
+
   function clone(x) {
     var i, k
     function bool(inp) {

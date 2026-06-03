@@ -8,6 +8,9 @@ var Data = {
     LucidDreams: new OmegaNum(0), LucidEnergy: new OmegaNum(0),
     InfinityDreams: new OmegaNum(0), Infinities: new OmegaNum(0),
 
+    // World 2 Currency
+    Void: new OmegaNum(0),
+
     Buyables: {
         1: {
             // Memory Buyable 1
@@ -72,6 +75,18 @@ var Data = {
             price: new OmegaNum(1),
             scale: new OmegaNum(3),
         },
+
+        // World 2 Buyables
+        
+        9: {
+            // Void Buyable 1
+            amount: new OmegaNum(0),
+            max: new OmegaNum(100),
+            price: new OmegaNum(1),
+            scale: new OmegaNum(1.5),
+            probability: new bool(1),
+            probDeScale: new OmegaNum(0.1),
+        }
     },
 
     Upgrades: [],
@@ -110,6 +125,9 @@ var Template = {
     LucidDreams: new OmegaNum(0), LucidEnergy: new OmegaNum(0),
     InfinityDreams: new OmegaNum(0), Infinities: new OmegaNum(0),
 
+    // World 2 Currency
+    Void: new OmegaNum(0),
+
     Buyables: {
         1: {
             // Memory Buyable 1
@@ -174,6 +192,18 @@ var Template = {
             price: new OmegaNum(1),
             scale: new OmegaNum(3),
         },
+
+        // World 2 Buyables
+
+        9: {
+            // Void Buyable 1
+            amount: new OmegaNum(0),
+            max: new OmegaNum(100),
+            price: new OmegaNum(1),
+            scale: new OmegaNum(1.5),
+            probability: new bool(1),
+            probDeScale: new OmegaNum(0.1),
+        }
     },
 
     Upgrades: [],
