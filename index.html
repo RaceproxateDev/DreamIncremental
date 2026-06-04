@@ -326,6 +326,7 @@
             <div class="tabContainer">
                 <button class="tab" onclick="displayContent('Settings')">Settings</button>
                 <button class="tab" onclick="displayContent('VoidUpgrades')" style="border-color: rgb(43, 43, 43);">Void Upgrades</button>
+                <button class="tab" id="ThinkResetTab" onclick="displayContent('ThinkReset')" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">Think</button>
             </div>
 
             <div id="Settings" class="content" style="display: none;">
@@ -346,9 +347,18 @@
                     10 Void
                 </button>
                 <button id="VoidBuyable2" class="BuyableBtn" style="border-color: rgb(43, 43, 43);" onclick="BuyUpg(10, 'Void')">
-                    -^0.01 Void divider [0/5] <br>
+                    -^0.03 Void divider [0/5] <br>
                     30 Void
+                </button><br><br>
+                <button id="VoidUpgrade1" class="BuyableBtn" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110));" onclick="buyOneTimeUpg('V1', 'Void', 300)">
+                    Unlock Thoughts [0/1] [Permanent] <br>
+                    300 Void
                 </button>
+            </div>
+
+            <div id="ThinkReset" class="content" style="display: none; color: rgb(0, 255, 183);">
+                <h3>Think</h3>
+                
             </div>
         </div>
 
@@ -366,5 +376,6 @@
         <script src="GameScripts/LucidDreams.js"></script>
         <script src="GameScripts/Infinitize.js"></script>
         <script src="GameScripts/World_2/Void.js"></script>
+        <script src="GameScripts/World_2/UnlockContentW2.js"></script>
     </body>
 </html>

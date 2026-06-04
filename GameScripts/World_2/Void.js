@@ -3,10 +3,11 @@ let voidDisplayTxt = document.getElementById("voidDisplayTxt")
 // Void Upgrades
 let VoidBuyable1 = document.getElementById("VoidBuyable1")
 let VoidBuyable2 = document.getElementById("VoidBuyable2")
+let VoidUpgrade1 = document.getElementById("VoidUpgrade1")
 
 function calcVoidDivision() {
     let exp = new OmegaNum(0.8)
-    exp = exp.sub(OmegaNum.times(0.01, Data.Buyables[10].amount))
+    exp = exp.sub(OmegaNum.times(0.03, Data.Buyables[10].amount))
     let effect = Data.Void.add(1).pow(exp)
 
     return effect
@@ -34,7 +35,8 @@ function updateVoidHTML() {
 
     // Void Buyables
     VoidBuyable1.innerHTML = `2x Void [${format(Data.Buyables[9].amount)}/${format(Data.Buyables[9].max)}] <br> ${format(Data.Buyables[9].price)} Void`
-    VoidBuyable2.innerHTML = `-^0.01 Void divider [${format(Data.Buyables[10].amount)}/${format(Data.Buyables[10].max)}] <br> ${format(Data.Buyables[10].price)} Void`
+    VoidBuyable2.innerHTML = `-^0.03 Void divider [${format(Data.Buyables[10].amount)}/${format(Data.Buyables[10].max)}] <br> ${format(Data.Buyables[10].price)} Void`
+    VoidUpgrade1.innerHTML = (Data.Upgrades.includes('V1')) ? `Unlock Toughts [1/1] [Permanent] <br> Bought!` : `Unlock Toughts [0/1] [Permanent] <br> 300 Void`
 }
 
 setInterval(() => {

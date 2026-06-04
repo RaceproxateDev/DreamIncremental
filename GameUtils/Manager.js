@@ -144,3 +144,19 @@ function breakCaps(cap) {
         Data.Caps[cap].broken = true
     }
 }
+
+function hasMilestone(id, world) {
+    return Data.Milestones[world].includes(id)
+}
+
+function achieveMilestone(curr, req, otherReqs={challengeReq:null}, world, htmlMilestone) {
+    if (Data[curr].gte(req)) {
+        if (otherReqs===null) return;
+
+        for (let r in otherReqs) {
+            if (hasChallenge(otherReqs[r]) || otherReqs[r] === null) {
+                htmlMilestone.style.borderColor = 'lightgreen'
+            }
+        }
+    }
+}
