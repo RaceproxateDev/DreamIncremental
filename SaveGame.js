@@ -82,11 +82,17 @@ var Data = {
             // Void Buyable 1
             amount: new OmegaNum(0),
             max: new OmegaNum(100),
-            price: new OmegaNum(1),
-            scale: new OmegaNum(1.5),
-            probability: new bool(1),
-            probDeScale: new bool(0.1),
-        }
+            price: new OmegaNum(5),
+            scale: new OmegaNum(2),
+        },
+
+        10: {
+            // Void Buyable 2
+            amount: new OmegaNum(0),
+            max: new OmegaNum(5),
+            price: new OmegaNum(30),
+            scale: new OmegaNum(4),
+        },
     },
 
     Upgrades: [],
@@ -199,11 +205,17 @@ var Template = {
             // Void Buyable 1
             amount: new OmegaNum(0),
             max: new OmegaNum(100),
-            price: new OmegaNum(1),
-            scale: new OmegaNum(1.5),
-            probability: new bool(1),
-            probDeScale: new bool(0.1),
-        }
+            price: new OmegaNum(5),
+            scale: new OmegaNum(2),
+        },
+
+        10: {
+            // Void Buyable 2
+            amount: new OmegaNum(0),
+            max: new OmegaNum(5),
+            price: new OmegaNum(30),
+            scale: new OmegaNum(4),
+        },
     },
 
     Upgrades: [],
@@ -250,10 +262,6 @@ function fixSave(data, template) {
 
         else if (template[key] instanceof OmegaNum) {
             data[key] = new OmegaNum(data[key] ?? template[key])
-        }
-
-        else if (template[key] instanceof bool) {
-            data[key] = new bool(data[key] ?? template[key])
         }
 
         else if (typeof template[key] === 'object' && template[key] !== null) {

@@ -322,12 +322,39 @@
 
         <div id="world2" class="world" style="display: none; color: black;">
             <h3 id="voidDisplayTxt">Void: 0 [+1/s] [/1 Void]</h3>
+
+            <div class="tabContainer">
+                <button class="tab" onclick="displayContent('Settings')">Settings</button>
+                <button class="tab" onclick="displayContent('VoidUpgrades')" style="border-color: rgb(43, 43, 43);">Void Upgrades</button>
+            </div>
+
+            <div id="Settings" class="content" style="display: none;">
+                <h3 style="text-align: center;">Settings</h3>
+                <h3>Data</h3>
+                <button class="tab" style="border: 2px solid green; color: green;" onclick="saveData()">Save</button>
+                <button class="tab" style="border: 2px solid rgb(255, 0, 0); color: rgb(255, 0, 0);" onclick="resetData()">Hard Reset</button>
+                <button class="tab" style="border: 2px solid rgb(0, 255, 242); color: rgb(0, 255, 242);" onclick="ExportData()">Export Save</button>
+                <button class="tab" style="border: 2px solid rgb(0, 4, 255); color: rgb(0, 4, 255);" onclick="ImportData()">Import Save</button>
+
+                <h3>Automation</h3>
+            </div>
+
+            <div id="VoidUpgrades" class="content" style="display: none;">
+                <h3>Void Upgrades</h3>
+                <button id="VoidBuyable1" class="BuyableBtn" style="border-color: rgb(43, 43, 43);" onclick="BuyUpg(9, 'Void')">
+                    2x Void [0/100] <br>
+                    10 Void
+                </button>
+                <button id="VoidBuyable2" class="BuyableBtn" style="border-color: rgb(43, 43, 43);" onclick="BuyUpg(10, 'Void')">
+                    -^0.01 Void divider [0/5] <br>
+                    30 Void
+                </button>
+            </div>
         </div>
 
         <link rel="stylesheet" href="gameStyle/main.css">
         <link rel="stylesheet" href="gameStyle/scrollableContent.css">
         <script src="GameUtils/OmegaNum.js"></script>
-        <script src="GameUtils/bool.js"></script>
         <script src="GameUtils/FormatterNum.js"></script>
         <script src="SaveGame.js"></script>
         <script src="GameUtils/Manager.js"></script>
