@@ -16,7 +16,7 @@ function calcVoidDivision() {
 function calcVoidMult() {
     let mult = new OmegaNum(1)
     mult = mult.div(calcVoidDivision())
-    mult = mult.times(OmegaNum.pow(2, Data.Buyables[9].amount))
+    mult = mult.times(OmegaNum.pow(3, Data.Buyables[9].amount))
 
     return mult
 }
@@ -34,7 +34,7 @@ function updateVoidHTML() {
     voidDisplayTxt.textContent = `Void: ${format(Data.Void)} [+${format(calcVoidMult())}/s] [/${format(calcVoidDivision())}]`
 
     // Void Buyables
-    VoidBuyable1.innerHTML = `2x Void [${format(Data.Buyables[9].amount)}/${format(Data.Buyables[9].max)}] <br> ${format(Data.Buyables[9].price)} Void`
+    VoidBuyable1.innerHTML = `3x Void [${format(Data.Buyables[9].amount)}/${format(Data.Buyables[9].max)}] <br> ${format(Data.Buyables[9].price)} Void`
     VoidBuyable2.innerHTML = `-^0.03 Void divider [${format(Data.Buyables[10].amount)}/${format(Data.Buyables[10].max)}] <br> ${format(Data.Buyables[10].price)} Void`
     VoidUpgrade1.innerHTML = (Data.Upgrades.includes('V1')) ? `Unlock Toughts [1/1] [Permanent] <br> Bought!` : `Unlock Toughts [0/1] [Permanent] <br> 300 Void`
 }

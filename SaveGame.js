@@ -10,6 +10,7 @@ var Data = {
 
     // World 2 Currency
     Void: new OmegaNum(0),
+    Thoughts: new OmegaNum(0),
 
     Buyables: {
         1: {
@@ -133,6 +134,7 @@ var Template = {
 
     // World 2 Currency
     Void: new OmegaNum(0),
+    Thoughts: new OmegaNum(0),
 
     Buyables: {
         1: {
