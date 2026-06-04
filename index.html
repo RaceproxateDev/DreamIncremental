@@ -360,14 +360,18 @@
                 <h2>Think</h2>
                 <h3>Thinking will reset your void and void Upgrades.</h3>
                 <h3 id="ThinkReqTxt" style="color: black;">You need 300 Void</h3>
-                <button class="ResetLayerBtn" id="ThinkResetBtn" style="font-size: 15pt; background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); border-color: rgb(0, 255, 183);">Think</button>
+                <button class="ResetLayerBtn" id="ThinkResetBtn" style="font-size: 15pt; background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); border-color: rgb(0, 255, 183);" onclick="ThinkReset(false)">Think</button>
 
                 <h3 id="ThoughtsDisplayTxt">Thinking Milestones [0 Thoughts]</h3>
 
                 <div style="overflow-y: auto;">
-                    <h4 class="milestone" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110));">
+                    <h4 class="milestone" id="ThinkMilestone1" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110));">
                         1 Thought <br>
-                        a
+                        3x Void
+                    </h4>
+                    <h4 class="milestone" id="ThinkMilestone2" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                        2 Thoughts <br>
+                        -^0.01 Void divider
                     </h4>
                 </div>
             </div>

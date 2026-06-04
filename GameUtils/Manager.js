@@ -149,14 +149,30 @@ function hasMilestone(id, world) {
     return Data.Milestones[world].includes(id)
 }
 
-function achieveMilestone(curr, req, otherReqs={challengeReq:null}, world, htmlMilestone) {
+function achieveMilestone(id, curr, req, otherReqs={challengeReq:null}, worldId, htmlMilestone, style={borderColor:null}) {
     if (Data[curr].gte(req)) {
         if (otherReqs===null) return;
 
         for (let r in otherReqs) {
             if (hasChallenge(otherReqs[r]) || otherReqs[r] === null) {
-                htmlMilestone.style.borderColor = 'lightgreen'
+                if (!hasMilestone(id, worldId)) {
+                    Data.Milestones[worldId].push(id)
+                }
+
+                if (hasMilestone(id, worldId)) {
+                    htmlMilestone.style.borderColor = 'lightgreen'
+                } else {
+                    htmlMilestone.style.borderColor = (style.borderColor !== null)? style.borderColor : "white"
+                }
             }
         }
+    }
+}
+
+function unlockNextMilestone(ReqId, htmlMilestone, worldId) {
+    if (hasMilestone(ReqId, worldId)) {
+        htmlMilestone.style.display = 'block'
+    } else {
+        htmlMilestone.style.display = 'none'
     }
 }

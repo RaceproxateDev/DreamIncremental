@@ -1,5 +1,11 @@
 let ThinkReqTxt = document.getElementById('ThinkReqTxt')
 let ThinkResetBtn = document.getElementById('ThinkResetBtn')
+let ThoughtsDisplayTxt = document.getElementById('ThoughtsDisplayTxt')
+
+// style
+let MilestonesStyle = {
+    borderColor: 'rgb(0, 255, 183)'
+}
 
 function calcThoughtsReq() {
     let scale = new OmegaNum(2.5)
@@ -32,8 +38,15 @@ function ThinkReset(force) {
 }
 
 function updateThinkHTML() {
-    ThinkReqTxt.innerHTML = `You need ${calcThoughtsReq()} Void`
+    ThinkReqTxt.innerHTML = `You need ${format(calcThoughtsReq())} Void`
     ThinkResetBtn.innerHTML = (Data.Void.gte(calcThoughtsReq())) ? 'Think' : 'Meet the requirements'
+    ThoughtsDisplayTxt.innerHTML = `Thinking Milestones [${format(Data.Thoughts)} Thoughts]`
+
+    // Thinking Milestones
+    achieveMilestone('ThinkMilestone1', 'Thoughts', new OmegaNum(1), undefined, 'World2', ThinkMilestone1, MilestonesStyle)
+
+    unlockNextMilestone('ThinkMilestone1', ThinkMilestone2, 'World2')
+    achieveMilestone('ThinkMilestone2', 'Thoughts', new OmegaNum(2), undefined, 'World2', ThinkMilestone2, MilestonesStyle)
 }
 
 setInterval(() => {

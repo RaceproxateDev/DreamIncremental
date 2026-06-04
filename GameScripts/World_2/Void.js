@@ -8,6 +8,7 @@ let VoidUpgrade1 = document.getElementById("VoidUpgrade1")
 function calcVoidDivision() {
     let exp = new OmegaNum(0.8)
     exp = exp.sub(OmegaNum.times(0.03, Data.Buyables[10].amount))
+    if (hasMilestone('ThinkMilestone2', 'World2')) exp = exp.sub(0.01)
     let effect = Data.Void.add(1).pow(exp)
 
     return effect
@@ -17,6 +18,7 @@ function calcVoidMult() {
     let mult = new OmegaNum(1)
     mult = mult.div(calcVoidDivision())
     mult = mult.times(OmegaNum.pow(3, Data.Buyables[9].amount))
+    if (hasMilestone('ThinkMilestone1', 'World2')) mult = mult.times(3)
 
     return mult
 }

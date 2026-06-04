@@ -84,7 +84,7 @@ var Data = {
             amount: new OmegaNum(0),
             max: new OmegaNum(100),
             price: new OmegaNum(5),
-            scale: new OmegaNum(2),
+            scale: new OmegaNum(2.5),
         },
 
         10: {
@@ -208,7 +208,7 @@ var Template = {
             amount: new OmegaNum(0),
             max: new OmegaNum(100),
             price: new OmegaNum(5),
-            scale: new OmegaNum(2),
+            scale: new OmegaNum(2.5),
         },
 
         10: {
