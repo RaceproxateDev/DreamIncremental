@@ -96,7 +96,7 @@ function format(num, precision=2, small=false) {
     if (num.abs().lt(1e-308)) return (0).toFixed(precision)
     if (num.sign < 0) return "-" + format(num.neg(), precision)
     if (num.isInfinite()) return "Infinity"
-    if (num.lt("0.0001")) { return format(num.rec(), precision) + "⁻¹" }
+    if (num.lt("0.0001")) { return "0.00" }
     else if (num.lt(1)) return regularFormat(num, precision + (small ? 2 : 0))
     else if (num.lt(1000)) return regularFormat(num, precision)
     else if (num.lt(1e9)) return commaFormat(num)
