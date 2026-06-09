@@ -1,7 +1,7 @@
 .tabContainer {
     white-space: nowrap;
     height: auto;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
