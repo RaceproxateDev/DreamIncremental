@@ -81,4 +81,9 @@ setInterval(() => {
     calcThoughtsReq()
     calcThoughtsBulk()
     updateThinkHTML()
+    calcThinkingEnergyMult()
 }, 100)
+
+setInterval(() => {
+    calcThinkingEnergyGen()
+}, 1000)

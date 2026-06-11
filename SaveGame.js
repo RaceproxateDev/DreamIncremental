@@ -134,7 +134,7 @@ var Template = {
 
     // World 2 Currency
     Void: new OmegaNum(0),
-    Thoughts: new OmegaNum(0),
+    Thoughts: new OmegaNum(0), ThinkingEnergy: new OmegaNum(0),
 
     Buyables: {
         1: {
