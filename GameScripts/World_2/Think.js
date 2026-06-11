@@ -38,15 +38,18 @@ function ThinkReset(force) {
 }
 
 function updateThinkHTML() {
-    ThinkReqTxt.innerHTML = `You need ${format(calcThoughtsReq())} Void`
-    ThinkResetBtn.innerHTML = (Data.Void.gte(calcThoughtsReq())) ? 'Think' : 'Meet the requirements'
-    ThoughtsDisplayTxt.innerHTML = `Thinking Milestones [${format(Data.Thoughts)} Thoughts]`
+  ThinkReqTxt.innerHTML = `You need ${format(calcThoughtsReq())} Void`
+  ThinkResetBtn.innerHTML = (Data.Void.gte(calcThoughtsReq())) ? 'Think' : 'Meet the requirements'
+  ThoughtsDisplayTxt.innerHTML = `Thinking Milestones [${format(Data.Thoughts)} Thoughts]`
 
-    // Thinking Milestones
-    achieveMilestone('ThinkMilestone1', 'Thoughts', new OmegaNum(1), undefined, 'World2', ThinkMilestone1, MilestonesStyle)
+  // Thinking Milestones
+  achieveMilestone('ThinkMilestone1', 'Thoughts', new OmegaNum(1), undefined, 'World2', ThinkMilestone1, MilestonesStyle)
 
-    unlockNextMilestone('ThinkMilestone1', ThinkMilestone2, 'World2')
-    achieveMilestone('ThinkMilestone2', 'Thoughts', new OmegaNum(2), undefined, 'World2', ThinkMilestone2, MilestonesStyle)
+  unlockNextMilestone('ThinkMilestone1', ThinkMilestone2, 'World2')
+  achieveMilestone('ThinkMilestone2', 'Thoughts', new OmegaNum(2), undefined, 'World2', ThinkMilestone2, MilestonesStyle)
+
+  unlockNextMilestone('ThinkMilestone2', ThinkMilestone3, 'World2')
+  achieveMilestone('ThinkMilestone3', 'Thoughts', new OmegaNum(3), undefined, 'World2', ThinkMilestone3, MilestonesStyle)
 }
 
 setInterval(() => {
