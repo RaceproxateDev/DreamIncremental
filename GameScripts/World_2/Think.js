@@ -65,6 +65,9 @@ function updateThinkHTML() {
 
     unlockNextMilestone('ThinkMilestone2', ThinkMilestone3, 'World2')
     achieveMilestone('ThinkMilestone3', 'Thoughts', new OmegaNum(3), undefined, 'World2', ThinkMilestone3, MilestonesStyle)
+
+    unlockNextMilestone('ThinkMilestone3', ThinkMilestone4, 'World2')
+    achieveMilestone('ThinkMilestone4', 'Thoughts', new OmegaNum(4), undefined, 'World2', ThinkMilestone4, MilestonesStyle)
     
 }
 
