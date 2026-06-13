@@ -3,6 +3,10 @@ let ThinkResetBtn = document.getElementById('ThinkResetBtn')
 let ThoughtsDisplayTxt = document.getElementById('ThoughtsDisplayTxt')
 let ThinkEnergyDisplayTxt = document.getElementById('ThinkEnergyDisplayTxt')
 
+// Think Energy boosts
+let ThinkEnergyFirstBoostTxt = document.getElementById('ThinkEnergyFirstBoostTxt')
+
+
 // Tabs
 let ThinkEnergyTab = document.getElementById('ThinkEnergyTab')
 
@@ -49,6 +53,9 @@ function updateThinkHTML() {
 
     // Tabs
     ThinkEnergyTab.style.display = (hasMilestone('ThinkMilestone3', 'World2')) ? 'inline-block' : 'none'
+
+    // Think Energy boosts
+    ThinkEnergyFirstBoostTxt.innerHTML = `x${format(calcThinkingEnergyVoidBoost())} Void`
     
     // Thinking Milestones
     achieveMilestone('ThinkMilestone1', 'Thoughts', new OmegaNum(1), undefined, 'World2', ThinkMilestone1, MilestonesStyle)
@@ -77,11 +84,20 @@ function calcThinkingEnergyGen() {
     }
 }
 
+function calcThinkingEnergyVoidBoost() {
+    let exp = new OmegaNum(0.01)
+    let base = new OmegaNum(1)
+    let boost = Data.ThinkingEnergy.add(base).pow(exp)
+    
+    return boost
+}
+
 setInterval(() => {
     calcThoughtsReq()
     calcThoughtsBulk()
     updateThinkHTML()
     calcThinkingEnergyMult()
+    calcThinkingEnergyVoidBoost()
 }, 100)
 
 setInterval(() => {
