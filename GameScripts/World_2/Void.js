@@ -9,6 +9,7 @@ function calcVoidDivision() {
     let exp = new OmegaNum(0.8)
     exp = exp.sub(OmegaNum.times(0.03, Data.Buyables[10].amount))
     if (hasMilestone('ThinkMilestone2', 'World2')) exp = exp.sub(0.01)
+    if (hasMilestone('ThinkMilestone5', 'World2')) exp = exp.sub(0.14)
     let effect = Data.Void.add(1).pow(exp)
 
     return effect

@@ -68,12 +68,19 @@ function updateThinkHTML() {
 
     unlockNextMilestone('ThinkMilestone3', ThinkMilestone4, 'World2')
     achieveMilestone('ThinkMilestone4', 'Thoughts', new OmegaNum(4), undefined, 'World2', ThinkMilestone4, MilestonesStyle)
+
+    unlockNextMilestone('ThinkMilestone4', ThinkMilestone5, 'World2')
+    achieveMilestone('ThinkMilestone5', 'Thoughts', new OmegaNum(8), undefined, 'World2', ThinkMilestone5, MilestonesStyle)
+
+    unlockNextMilestone('ThinkMilestone5', ThinkMilestone6, 'World2')
+    achieveMilestone('ThinkMilestone6', 'Thoughts', new OmegaNum(9), undefined, 'World2', ThinkMilestone6, MilestonesStyle)
     
 }
 
 function calcThinkingEnergyMult() {
     let mult = new OmegaNum(1)
     if (hasMilestone('ThinkMilestone4', 'World2')) mult = mult.times(2)
+    if (hasMilestone('ThinkMilestone5', 'World2')) mult = mult.times(3.5)
     
     return mult
 }
