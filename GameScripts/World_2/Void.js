@@ -20,6 +20,7 @@ function calcVoidMult() {
     mult = mult.times(OmegaNum.pow(3, Data.Buyables[9].amount))
     if (hasMilestone('ThinkMilestone1', 'World2')) mult = mult.times(3)
     mult = mult.times(calcThinkingEnergyVoidBoost())
+    if (hasMilestone('ThinkMilestone4', 'World2')) mult = mult.times(5)
 
     return mult
 }

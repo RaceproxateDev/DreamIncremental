@@ -73,6 +73,7 @@ function updateThinkHTML() {
 
 function calcThinkingEnergyMult() {
     let mult = new OmegaNum(1)
+    if (hasMilestone('ThinkMilestone4', 'World2')) mult = mult.times(2)
     
     return mult
 }
