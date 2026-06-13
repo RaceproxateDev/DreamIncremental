@@ -85,7 +85,7 @@ function calcThinkingEnergyGen() {
 }
 
 function calcThinkingEnergyVoidBoost() {
-    let exp = new OmegaNum(0.01)
+    let exp = new OmegaNum(0.05)
     let base = new OmegaNum(1)
     let boost = Data.ThinkingEnergy.add(base).pow(exp)
     
