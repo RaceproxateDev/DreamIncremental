@@ -18,7 +18,8 @@ let MilestonesStyle = {
 function calcThoughtsReq() {
     let scale = new OmegaNum(2.5)
     let base = new OmegaNum(300)
-
+    if (hasMilestone('ThinkMilestone6', 'World2')) scale = scale.times(100)
+    
     let req = base.times(OmegaNum.pow(scale, Data.Thoughts))
 
     return req
