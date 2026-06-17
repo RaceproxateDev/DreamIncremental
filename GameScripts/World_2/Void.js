@@ -23,6 +23,7 @@ function calcVoidMult() {
     if (hasMilestone('ThinkMilestone1', 'World2')) mult = mult.times(3)
     mult = mult.times(calcThinkingEnergyVoidBoost())
     if (hasMilestone('ThinkMilestone4', 'World2')) mult = mult.times(5)
+    if (hasMilestone('ThinkMilestone7', 'World2')) mult = mult.times(10)
 
     return mult
 }
