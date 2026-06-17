@@ -103,6 +103,9 @@ var Data = {
         MemoryUpgsAutobuyer: true,
         DreamUpgsAutobuyer: true,
         AutoRest: true,
+
+        // World 2
+        VoidUpgsAutobuyer: true,
     },
 
     Caps: {
@@ -227,6 +230,9 @@ var Template = {
         MemoryUpgsAutobuyer: true,
         DreamUpgsAutobuyer: true,
         AutoRest: true,
+
+        // World 2
+        VoidUpgsAutobuyer: true,
     },
 
     Caps: {

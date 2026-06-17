@@ -48,6 +48,20 @@ function updateVoidHTML() {
     VoidBuyable2.style.display = (hasMilestone('ThinkMilestone6', 'World2')) ? 'none' : 'inline-block'
 }
 
+function autoBuyVoidUpgrades() {
+    if (!Data.isInWorld === 'world2') return;
+
+    if (hasMilestone('ThinkMilestone8', 'World2') && !Data.Automation.includes('VoidUpgsAutobuyer')) {
+        Data.Automation.push('VoidUpgsAutobuyer')
+    }
+    
+    if (!Data.Automation.includes('VoidUpgsAutobuyer')) return;
+    
+    if (Data.Settings.VoidUpgsAutobuyer == true) {
+        buyMaxUpg(9, 'Void')
+    }
+}
+
 setInterval(() => {
     genVoid()
 }, 1000)
@@ -56,4 +70,5 @@ setInterval(() => {
     updateVoidHTML()
     calcVoidMult()
     calcVoidDivision()
+    autoBuyVoidUpgrades()
 }, 100)
