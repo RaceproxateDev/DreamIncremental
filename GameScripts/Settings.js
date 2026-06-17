@@ -21,7 +21,7 @@ function updateHtmlSettings() {
 }
 
 function updateHtmlSettingsW2() {
-    voidUpgsAutobuyEnabler.style.display = (Data.Automation.includes("VoidUpgs")) ? "inline-block" : "none"
+    voidUpgsAutobuyEnabler.style.display = (Data.Automation.includes("VoidUpgsAutobuyer")) ? "inline-block" : "none"
     voidUpgsAutobuyEnabler.textContent = (Data.Settings.VoidUpgsAutobuyer == true) ? "Auto Buy Void Upgrades: ON" : "Auto Buy Void Upgrades: OFF"
 }
 
