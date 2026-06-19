@@ -25,6 +25,7 @@ button:hover {
     width: fit-content;
     border-radius: 5px;
     min-width: 100px;
+    min-height: 30px;
 }
 
 .BuyableBtn {
