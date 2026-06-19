@@ -81,6 +81,9 @@ function updateThinkHTML() {
 
     unlockNextMilestone('ThinkMilestone7', ThinkMilestone8, 'World2')
     achieveMilestone('ThinkMilestone8', 'Thoughts', new OmegaNum(15), undefined, 'World2', ThinkMilestone8, MilestonesStyle)
+
+    unlockNextMilestone('ThinkMilestone8', ThinkMilestone9, 'World2')
+    achieveMilestone('ThinkMilestone9', 'Thoughts', new OmegaNum(20), undefined, 'World2', ThinkMilestone9, MilestonesStyle)
 }
 
 function calcThinkingEnergyMult() {

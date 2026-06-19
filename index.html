@@ -328,6 +328,7 @@
                 <button class="tab" onclick="displayContent('VoidUpgrades')" style="border-color: rgb(43, 43, 43);">Void Upgrades</button>
                 <button class="tab" id="ThinkResetTab" onclick="displayContent('ThinkReset')" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">Think</button>
                 <button class="tab" id="ThinkEnergyTab" onclick="displayContent('ThinkEnergy')" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">Thinking Energy</button>
+                <button class="tab" id="NightmareResetTab" onclick="displayContent('NightmareReset')" style="border-color: darkmagenta; background-image: linear-gradient(magenta, darkmagenta, magenta); display: none;">Nightmare</button>
             </div>
 
             <div id="Settings" class="content" style="display: none;">
@@ -399,12 +400,23 @@
                         15 Thoughts <br>
                         Autobuy Void Upgrades (Just the first Upgrade).
                     </h4>
+                    <h4 class="milestone" id="ThinkMilestone9" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                        20 Thoughts <br>
+                        ^1.1 Void, Unlock ???
+                    </h4>
                 </div>
             </div>
 
             <div id="ThinkEnergy" class="content" style="display: none;">
                 <h3 id="ThinkEnergyDisplayTxt" style="color: rgb(0, 255, 183);">Thinking Energy [0.00 Thinking Energy [+0.00/s]]</h3>
                 <h3 id="ThinkEnergyFirstBoostTxt">1.00x Void</h3>
+            </div>
+
+            <div id="NightmareReset" class="content" style="display: none; background-image: linear-gradient(magenta, darkmagenta, magenta); color: transparent; -webkit-background-clip: text;">
+                <h2>Nightmare</h2>
+                <h3>Resets Everything before this point.</h3>
+                <h3 id="NightmareReqTxt">You need 1e56 Void</h3>
+                
             </div>
         </div>
         
