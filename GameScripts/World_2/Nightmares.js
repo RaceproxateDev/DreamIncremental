@@ -1,5 +1,5 @@
 let NightmareReqTxt = document.getElementById("NightmareReqTxt");
-let NightmareResetBtn = document.getElementById("NightmareResetBtn");
+let NightmareResetBtn = document.getElementById("NightmaresResetBtn");
 
 function calcNightmareReq() {
     let req = new OmegaNum(1e56);
