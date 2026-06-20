@@ -31,7 +31,8 @@ function calcMemoryMult() {
     if (hasChallenge('Memory Deficiency I')) mult = mult.times(3)
     if (Data.Infinities.gte(5)) mult = mult.times(10)
     if (Data.Infinities.gte(6)) mult = mult.pow(1.1)
-
+    if (hasMilestone('NightmareMilestone1', 'World2')) mult = mult.div(2)
+    
     return mult
 }
 
