@@ -15,4 +15,4 @@ function updateNightmareHtml() {
 setInterval(() => {
     calcNightmareReq();
     updateNightmareHtml();
-}, 100);
+}, 100)
