@@ -32,7 +32,10 @@ function calcDreamMult() {
 
 function calcDreamGain() {
     let exp = new OmegaNum(0.6)
-    let gain = Data.Memory.div(10000).pow(exp).times(calcDreamMult())
+    let base = new OmegaNum(10000)
+    if (hasMilestone('NightmareMilestone1', 'World2')) base = base.sub(2000)
+    if (hasMilestone('NightmareMilestone1', 'World2')) exp = exp.add(0.05)
+    let gain = Data.Memory.div(base).pow(exp).times(calcDreamMult())
 
     return gain
 }
