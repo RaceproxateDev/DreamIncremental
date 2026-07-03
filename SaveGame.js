@@ -263,8 +263,6 @@ function saveData() {
 }
 
 function fixSave(data, template) {
-    if (data === null || data === undefined) return template;
-
     for (let key in template) {
         if (template[key] instanceof OmegaNum && data[key] === undefined) {
             data[key] = new OmegaNum(template[key])
