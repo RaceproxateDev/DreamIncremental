@@ -72,9 +72,19 @@ function DreamReset(force) {
     }
 }
 
+function passiveDreamGain() {
+    let p = new OmegaNum(0)
+    if (Data.Rest.gte(3)) p = p.add(0.01)
+
+    Data.Dreams = Data.Dreams.add(calcDreamGain().times(p))
+}
 
 setInterval(() => {
     calcDreamGain()
     calcDreamMult()
     updateDreamHtml()
-})
+}, 100)
+
+setInterval(() => {
+    passiveDreamGain()
+}, 1000)
