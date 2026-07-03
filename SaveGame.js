@@ -266,13 +266,12 @@ function fixSave(data, template) {
     if (data === null || data === undefined) return template;
 
     for (let key in template) {
-        if (template[key] instanceof OmegaNum) {
-            data[key] = new OmegaNum(data[key] ?? template[key])
+        if (template[key] instanceof OmegaNum && data[key] === undefined) {
+            data[key] = new OmegaNum(template[key])
         }
 
         else if (typeof template[key] === 'object' && template[key] !== null) {
             let isArr = Array.isArray(template[key])
-
             if (typeof data[key] !== 'object' || data[key] === null) {
                 data[key] = isArr ? [] : {}
             }
