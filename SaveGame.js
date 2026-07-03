@@ -263,23 +263,24 @@ function saveData() {
 }
 
 function fixSave(data, template) {
-    if (data === null || data === undefined) return JSON.parse(JSON.stringify(template));
+    if (data === null || data === undefined) return template;
 
     for (let key in template) {
-        if (data[key] === undefined) {
-            data[key] = template[key]
-        }
-
-        else if (template[key] instanceof OmegaNum) {
+        if (template[key] instanceof OmegaNum) {
             data[key] = new OmegaNum(data[key] ?? template[key])
         }
 
         else if (typeof template[key] === 'object' && template[key] !== null) {
+            let isArr = Array.isArray(template[key])
+
             if (typeof data[key] !== 'object' || data[key] === null) {
-                data[key] = JSON.parse(JSON.stringify(template[key]));
-            } else {
-                fixSave(data[key], template[key]);
+                data[key] = isArr ? [] : {}
             }
+            data[key] = fixSave(data[key], template[key])
+        }
+
+        else if (data[key] === undefined || data[key] === null) {
+            data[key] = template[key]
         }
     }
 
@@ -291,10 +292,7 @@ function loadData() {
 
     if (save) {
         let d = JSON.parse(decodeURIComponent(escape(atob(save))))
-
-        fixSave(d, Template)
-        Data = d
-
+        Data = fixSave(d, Template)
         displayWorlds(Data.isInWorld)
     }
 }
