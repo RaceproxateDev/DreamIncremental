@@ -243,3 +243,4 @@ function ImportData() {
 setInterval(saveData, 1000)
 
 window.addEventListener('load', loadData)
+window.addEventListener('beforeunload', saveData)
