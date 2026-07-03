@@ -147,6 +147,8 @@ function saveData() {
     if (!preventSave) {
         try {
             localStorage.setItem("DreamIncremental", btoa(unescape(encodeURIComponent(JSON.stringify(Data)))))
+
+            console.log("Your data was saved!");
         } catch (e) {
             console.error("Failed to save data:", e);
         }
@@ -184,6 +186,8 @@ function loadData() {
             let d = JSON.parse(decodeURIComponent(escape(atob(save))))
             Data = fixSave(d, Template)
             displayWorlds(Data.isInWorld)
+
+            console.log("Your data was loaded!")
         } catch (e) {
             alert("An error ocurred while loading data:\n" + e)
         }
