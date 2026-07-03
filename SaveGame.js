@@ -1,7 +1,6 @@
 let preventSave = false
 
 var Data = {
-    
     Memory: new OmegaNum(0),
     Dreams: new OmegaNum(0),
     Rest: new OmegaNum(0),

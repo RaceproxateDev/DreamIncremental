@@ -76,7 +76,7 @@ function passiveDreamGain() {
     let p = new OmegaNum(0)
     if (Data.Rest.gte(3)) p = p.add(0.01)
 
-    Data.Dreams = Data.Dreams.add(calcDreamGain().times(p))
+    Data.Dreams = Data.Dreams.add(calcDreamGain().times(p).div(5))
 }
 
 setInterval(() => {
@@ -87,4 +87,4 @@ setInterval(() => {
 
 setInterval(() => {
     passiveDreamGain()
-}, 1000)
+}, 1000/5)

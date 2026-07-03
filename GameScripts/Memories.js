@@ -8,7 +8,7 @@ let MemoryBuyable2Btn = document.getElementById("MemoryBuyable2Btn")
 let MemoryUpgrade1Btn = document.getElementById("MemoryUpgrade1Btn")
 
 function calcMemoryMult() {
-    let mult = new OmegaNum(1)
+    let mult = new OmegaNum(1).div(5)
     mult = mult.times(Data.Buyables[1].amount.add(1))
     mult = mult.times(OmegaNum.pow(2, Data.Buyables[2].amount))
     mult = mult.times(OmegaNum.pow(1.5, Data.Buyables[3].amount))
@@ -52,7 +52,7 @@ function GenMemory() {
 }
 
 function UpdateMemoryHtml() {
-    MemoryDisplayTxt.textContent = `Memory: ${format(Data.Memory)} [+${(canGenMemory === true) ? format(calcMemoryMult()) : new OmegaNum(0)}/s]`
+    MemoryDisplayTxt.textContent = `Memory: ${format(Data.Memory)} [+${(canGenMemory === true) ? format(calcMemoryMult().times(5)) : new OmegaNum(0)}/s]`
 
     // Memory Buyables
     MemoryBuyable1Btn.innerHTML = `+100% Memories [${format(Data.Buyables[1].amount)}/${format(Data.Buyables[1].max)}] <br> ${format(Data.Buyables[1].price)} Memories`
@@ -70,7 +70,7 @@ function calcMaxMemoryBuyable2() {
 
 setInterval(() => {
     GenMemory()
-}, 1000)
+}, 1000/5)
 
 setInterval(() => {
     calcMemoryMult()
