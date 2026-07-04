@@ -137,6 +137,11 @@ function GenLucidEnergy() {
     }
 }
 
+function passiveLucidDreamsGain() {
+    let p = new OmegaNum(0)
+    
+}
+
 setInterval(() => {
     updateLucidDreamsHtml()
     calcLucidDreamGain()
