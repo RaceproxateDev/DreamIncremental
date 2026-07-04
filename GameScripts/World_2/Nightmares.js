@@ -37,12 +37,16 @@ function NightmareReset(force) {
         resetBuyables(10, 1);
 
         Data.Automation = resetArrays(Data.Automation, 'AutoThink')
-        Data.Unlocks = resetArrays(Data.Unlocks, 'NightmareTrials')
+        Data.Unlocks = resetArrays(Data.Unlocks, 'Nightmares')
         Data.Milestones.World2 = resetArrays(Data.Milestones.World2, 'NightmareMilestone1')
         Data.Upgrades = resetArrays(Data.Upgrades, '#1')
 
         Data.isInWorld = 'world1'
         displayWorlds('world1')
+
+        if (!Data.Unlocks.includes('Nightmares')) {
+            Data.Unlocks.push('Nightmares')
+        }
     }
 }
 
