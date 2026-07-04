@@ -25,6 +25,8 @@ function updateNightmareHtml() {
     NightmareResetBtn.innerHTML = (Data.Void.gte(calcNightmareReq())) ? "Nightmare" : "Not enough Void";
 
     achieveMilestone('NightmareMilestone1', 'Nightmares', new OmegaNum(1), undefined, 'World2', NightmareMilestone1, NightmareMilestonesStyle)
+    achieveMilestone('NightmareMilestone2', 'Nightmares', new OmegaNum(2), undefined, 'World2', NightmareMilestone2, NightmareMilestonesStyle)
+
 }
 
 function NightmareReset(force) {

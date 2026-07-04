@@ -26,6 +26,7 @@ function calcVoidMult() {
     if (hasMilestone('ThinkMilestone7', 'World2')) mult = mult.times(10)
     if (hasMilestone('ThinkMilestone9', 'World2')) mult = mult.pow(1.1)
     if (hasMilestone('NightmareMilestone1', 'World2')) mult = mult.div(2)
+    if (hasMilestone('NightmareMilestone2', 'World2') && Data.Void.lt(1e10)) mult = mult.times(1.5)
     return mult
 }
 

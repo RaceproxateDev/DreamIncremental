@@ -33,6 +33,7 @@ function calcRestGain() {
     if (Data.Infinities.gte(1)) bulk = bulk.add(1)
     if (Data.Infinities.gte(8)) bulk = bulk.add(2)
     if (hasMilestone('NightmareMilestone1', 'World2')) bulk = bulk.div(2)
+    if (hasMilestone('NightmareMilestone2', 'World2') && Data.Rest.lt(6)) bulk = bulk.times(3)
 
     return bulk
 }

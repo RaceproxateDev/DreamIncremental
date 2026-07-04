@@ -26,6 +26,7 @@ function calcDreamMult() {
     if (isInChallenge('Forgotten')) mult = mult.pow(0.4)
     if (hasChallenge('Forgotten')) mult = mult.times(10)
     if (hasMilestone('NightmareMilestone1', 'World2')) mult = mult.div(3)
+    if (hasMilestone('NightmareMilestone2', 'World2') && Data.Dreams.gt(1e30)) mult = mult.div(1.5)
 
     return mult
 }
