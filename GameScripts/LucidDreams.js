@@ -139,7 +139,9 @@ function GenLucidEnergy() {
 
 function passiveLucidDreamsGain() {
     let p = new OmegaNum(0)
-    
+    if (hasMilestone('NightmareMilestone3', 'World2')) p = p.add(0.01)
+
+    Data.LucidDreams = Data.LucidDreams.add(calcLucidDreamGain().times(p).div(5))
 }
 
 setInterval(() => {
@@ -152,3 +154,7 @@ setInterval(() => {
 setInterval(() => {
     GenLucidEnergy()
 }, 1000)
+
+setInterval(() => {
+    passiveLucidDreamsGain()
+}, 1000/5)
