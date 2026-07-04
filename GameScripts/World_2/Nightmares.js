@@ -23,6 +23,7 @@ function calcNightmareBulk() {
 function updateNightmareHtml() {
     NightmareReqTxt.innerHTML = `You need ${format(calcNightmareReq())} Void`;
     NightmareResetBtn.innerHTML = (Data.Void.gte(calcNightmareReq())) ? "Nightmare" : "Not enough Void";
+    NightmareDisplayTxt.innerHTML = `Nightmare Milestones [${format(Data.Nightmares)} Nightmares]`;
 
     achieveMilestone('NightmareMilestone1', 'Nightmares', new OmegaNum(1), undefined, 'World2', NightmareMilestone1, NightmareMilestonesStyle)
     
