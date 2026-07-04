@@ -29,6 +29,8 @@ function updateNightmareHtml() {
     
     achieveMilestone('NightmareMilestone2', 'Nightmares', new OmegaNum(2), undefined, 'World2', NightmareMilestone2, NightmareMilestonesStyle)
     unlockNextMilestone('NightmareMilestone2', NightmareMilestone3, 'World2')
+
+    achieveMilestone('NightmareMilestone3', 'Nightmares', new OmegaNum(3), undefined, 'World2', NightmareMilestone3, NightmareMilestonesStyle)
 }
 
 function NightmareReset(force) {
