@@ -31,7 +31,8 @@ function calcLucidDreamMult() {
     if (Data.LucidEnergy.gte(1e47)) mult = mult.times(10)
     if (Data.Infinities.gte(1)) mult = mult.times(OmegaNum.add(1, Data.Infinities))
     if (Data.Infinities.gte(2)) mult = mult.times(1.5)
-    if (hasMilestone('NightmareMilestone2')) mult = mult.div(1.5)
+    if (hasMilestone('NightmareMilestone2', 'World2')) mult = mult.div(1.5)
+    if (hasMilestone('NightmareMilestone3', 'World2')) mult = mult.div(3)
     
     return mult
 }
@@ -123,7 +124,7 @@ function calcLucidEnergyMult() {
     if (Data.Infinities.gte(3)) mult = mult.times(2)
     if (Data.Infinities.gte(4)) mult = mult.times(5)
     if (Data.Infinities.gte(6)) mult = mult.times(10)
-
+    if (hasMilestone('NightmareMilestone3', 'World2')) mult = mult.div(2)
     return mult
 }
 
