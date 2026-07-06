@@ -7,7 +7,9 @@ let voidUpgsAutobuyEnabler = document.getElementById("VoidUpgsAutobuyEnabler")
 
 // Teleports
 let TeleportSTitle = document.getElementById("TeleportSTitle")
+let TeleportSTitle2 = document.getElementById("TeleportSTitle2")
 let W2Teleporter = document.getElementById("TeleportWorld2")
+let W1Teleporter = document.getElementById("TeleportWorld1")
 
 function enableDisable(automation) {
     Data.Settings[automation] = !Data.Settings[automation]
@@ -25,6 +27,9 @@ function updateHtmlSettings() {
 
     TeleportSTitle.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
     W2Teleporter.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
+
+    TeleportSTitle2.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
+    W1Teleporter.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
 }
 
 function updateHtmlSettingsW2() {
