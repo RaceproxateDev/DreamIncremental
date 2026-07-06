@@ -5,6 +5,10 @@ let autoRestEnabler = document.getElementById("AutoRestEnabler")
 // World 2
 let voidUpgsAutobuyEnabler = document.getElementById("VoidUpgsAutobuyEnabler")
 
+// Teleports
+let TeleportSTitle = document.getElementById("TeleportSTitle")
+let W2Teleporter = document.getElementById("TeleportWorld2")
+
 function enableDisable(automation) {
     Data.Settings[automation] = !Data.Settings[automation]
 }
@@ -18,6 +22,9 @@ function updateHtmlSettings() {
     
     autoRestEnabler.style.display = (Data.Automation.includes("AutoRest")) ? "inline-block" : "none"
     autoRestEnabler.textContent = (Data.Settings.AutoRest == true) ? "Auto Rest: ON" : "Auto Rest: OFF"
+
+    TeleportSTitle.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
+    W2Teleporter.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
 }
 
 function updateHtmlSettingsW2() {
