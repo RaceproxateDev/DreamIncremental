@@ -33,6 +33,8 @@ function calcMemoryMult() {
     if (Data.Infinities.gte(6)) mult = mult.pow(1.1)
     if (hasMilestone('NightmareMilestone1', 'World2')) mult = mult.div(2)
     if (Data.Memory.lt(1000) && hasMilestone('NightmareMilestone1', 'World2')) mult = mult.times(5)
+    if (hasMilestone('NightmareMilestone4', 'World2')) mult = mult.div(10)
+    if (Data.Memory.lt(1e20) && hasMilestone('NightmareMilestone4', 'World2')) mult = mult.times(100)
     return mult
 }
 
