@@ -31,9 +31,9 @@ function buyMaxUpg(id, curr) {
     }
 }
 
-function buyOneTimeUpg(id, curr, cost) {
-    if (Data[curr].gte(cost) && !Data.Upgrades.includes(id)) {
-        Data[curr] = Data[curr].sub(cost)
+function buyOneTimeUpg(id, curr, cost, location=Data) {
+    if (location[curr].gte(cost) && !Data.Upgrades.includes(id)) {
+        location[curr] = location[curr].sub(cost)
         Data.Upgrades.push(id)
     }
 }
@@ -173,5 +173,24 @@ function unlockNextMilestone(ReqId, htmlMilestone, worldId) {
         htmlMilestone.style.display = 'block'
     } else {
         htmlMilestone.style.display = 'none'
+    }
+}
+
+function updateUpgTreeBuyables(upg, BuyableCostTxt, unlockNextHtml, costTxt) {
+    let txt = document.getElementById(BuyableCostTxt);
+    let next = (Array.isArray(unlockNextHtml)) ? [unlockNextHtml] : document.getElementById(unlockNextHtml);
+
+    let isBought = Data.Upgrades.includes(upg);
+
+    if (txt) {
+        txt.textContent = isBought ? "Bought" : costTxt;
+    }
+
+    if (next) {
+        next.forEach(n => {
+            let nxt = document.getElementById(n);
+            if (!nxt) return;
+            nxt.style.display = isBought ? "inline-block" : "none";
+        });
     }
 }

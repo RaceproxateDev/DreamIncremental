@@ -72,6 +72,23 @@ button:hover {
     vertical-align: top;
 }
 
+.UpgradeBtn {
+    color: white;
+    background-color: black;
+    border: 2px solid darkgray;
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.UpgRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 1200px) {
     body {
         width: 80%;

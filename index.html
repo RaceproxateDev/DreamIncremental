@@ -471,8 +471,47 @@
             </div>
         </div>
 
-        <div id="TrialWorld" class="world">
+        <div id="TrialWorld" class="world" style="display: none;">
             <h3 id="ShardDisplayTxt">Shards: 0 [+1/s] [0.00%]</h3>
+            <section>
+                <button class="tab" onclick="displayContent('Settings')">Settings</button>
+                <button class="tab" onclick="displayContent('UpgradeTree')">Upgrade Tree</button>
+            </section>
+
+            <div id="Settings" class="content" style="display: none;">
+                <h3 style="text-align: center;">Settings</h3>
+                <h3>Data</h3>
+                <button class="tab" style="border: 2px solid green; color: green;" onclick="saveData()">Save</button>
+                <button class="tab" style="border: 2px solid rgb(255, 0, 0); color: rgb(255, 0, 0);" onclick="resetData()">Hard Reset</button>
+                <button class="tab" style="border: 2px solid rgb(0, 255, 242); color: rgb(0, 255, 242);" onclick="ExportData()">Export Save</button>
+                <button class="tab" style="border: 2px solid rgb(0, 4, 255); color: rgb(0, 4, 255);" onclick="ImportData()">Import Save</button>
+
+                <h3>Automation</h3>
+            </div>
+
+            <div id="UpgradeTree" class="content" style="display: none; overflow-y: auto;">
+                <h3>Upgrade Tree</h3>
+                
+                <div class="UpgRow">
+                    <button class="UpgradeBtn" onclick="buyOneTimeUpg('#1', 'Shards', 10, Data.TrialsData)" id="TrialUpgrade#1">
+                        <h4>Doubled #1</h4>
+                        <p>2x Shards, simple.</p>
+                        <p id="#1CostTxt">10 Shards</p>
+                    </button>
+                </div>
+                <div class="UpgRow">
+                    <button class="UpgradeBtn" onclick="buyOneTimeUpg('#2', 'Shards', 50, Data.TrialsData)" id="TrialUpgrade#2">
+                        <h4>Tripled #2</h4>
+                        <p>3x Shards</p>
+                        <p id="#2CostTxt">50 Shards</p>
+                    </button>
+                    <button class="UpgradeBtn" onclick="buyOneTimeUpg('#3', 'Shards', 200, Data.TrialsData)" id="TrialUpgrade#3">
+                        <h4>Synergied #3</h4>
+                        <p>Shards boosts themselves</p>
+                        <p id="#3CostTxt">200 Shards</p>
+                    </button>
+                </div>
+            </div>
         </div>
         
         <link rel="stylesheet" href="gameStyle/main.css">
