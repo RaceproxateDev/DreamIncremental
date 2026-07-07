@@ -89,32 +89,31 @@ function hasChallenge(name) {
     return Data.Challenges.completedChallenges.includes(name)
 }
 
-function canCompleteChallenge(name, req, curr) {
-    if (Data[curr].gte(req)) {
+function canCompleteChallenge(name, req, curr, location=Data) {
+    if (location[curr].gte(req)) {
         if (isInChallenge(name)) {
             if (!hasChallenge(name)) {
                 return true
             }
         }
     }
-
     return false
 }
 
-function completeChallenge(name, req, curr) {
-    if (Data[curr].gte(new OmegaNum(req))) {
+function completeChallenge(name, req, curr, location=Data) {
+    if (location[curr].gte(req)) {
         if (isInChallenge(name)) {
             if (!hasChallenge(name)) {
-                Data.Challenges.completedChallenges.push(name)
+                location.Challenges.completedChallenges.push(name)
             }
         }
     }
 }
 
-function updateChallengeHTML(challengeName, htmlTxt, curr, req, htmlBtn=null) {
+function updateChallengeHTML(challengeName, htmlTxt, curr, req, htmlBtn=null, location=Data) {
     let beaten = hasChallenge(challengeName)
     let inChallenge = isInChallenge(challengeName)
-    let canComplete = canCompleteChallenge(challengeName, new OmegaNum(req), curr)
+    let canComplete = canCompleteChallenge(challengeName, new OmegaNum(req), curr, location)
 
     if (beaten && !inChallenge) {
         htmlTxt.textContent = 'Challenge Completed'

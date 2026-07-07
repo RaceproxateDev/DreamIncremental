@@ -6,7 +6,6 @@ let NightmareMilestonesStyle = {
     borderColor: 'darkmagenta'
 }
 // ------ //
-
 function calcNightmareReq() {
     let req = new OmegaNum(1e56);
     req = req.times(OmegaNum.pow(1.5, Data.Nightmares))
@@ -34,6 +33,13 @@ function updateNightmareHtml() {
     unlockNextMilestone('NightmareMilestone3', NightmareMilestone4, 'World2')
 
     achieveMilestone('NightmareMilestone4', 'Nightmares', new OmegaNum(4), undefined, 'World2', NightmareMilestone4, NightmareMilestonesStyle)
+
+    // Challenges
+    updateChallengeHTML('NightmareTrial1', NightmareTrial1txt, 'Shards', new OmegaNum('1e10000'), NightmareTrial1Btn, Data.TrialsData)
+}
+
+function completeNightmareTrials() {
+    completeChallenge('NightmareTrial1', new OmegaNum('1e10000'), 'Shards', Data.TrialsData);
 }
 
 function NightmareReset(force) {
@@ -62,4 +68,5 @@ function NightmareReset(force) {
 setInterval(() => {
     calcNightmareReq();
     updateNightmareHtml();
+    completeNightmareTrials();
 }, 100)

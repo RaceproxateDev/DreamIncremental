@@ -125,6 +125,11 @@ var Data = {
     Milestones: {
         World2: [],
     },
+
+    TrialsData: {
+        Shards: new OmegaNum(0),
+        Upgrades: [],
+    }
 }
 
 function deepCopy(obj) {

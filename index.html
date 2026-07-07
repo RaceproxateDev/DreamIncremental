@@ -332,6 +332,7 @@
                 <button class="tab" id="ThinkResetTab" onclick="displayContent('ThinkReset')" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">Think</button>
                 <button class="tab" id="ThinkEnergyTab" onclick="displayContent('ThinkEnergy')" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">Thinking Energy</button>
                 <button class="tab" id="NightmareResetTab" onclick="displayContent('NightmareReset')" style="border-color: darkmagenta; background-image: linear-gradient(magenta, darkmagenta, magenta); display: none;">Nightmare</button>
+                <button class="tab" id="NightmareTrialsTab" onclick="displayContent('NightmareTrials')" style="border-color: darkmagenta; background-image: linear-gradient(magenta, darkmagenta, magenta); display: none;">Nightmare Trials</button>
             </div>
 
             <div id="Settings" class="content" style="display: none;">
@@ -458,6 +459,20 @@
                     </h4>
                 </section>
             </div>
+
+            <div class="content" id="NightmareTrials" style="display: none; color: darkmagenta;">
+                <h3>Nightmare Trials</h3>
+                <button id="NightmareTrial1Btn" onclick="startChallenge('NightmareTrial1', 'NightmareTrial1'); displayWorlds('TrialWorld');" class="ChallengeBtn" style="background-image: linear-gradient(magenta, darkmagenta, magenta); border-color: darkmagenta;">
+                    <h3>Nightmare Trial 1</h3>
+                    <h3>Goal: Complete it.</h3>
+                    <h3>Reward: 100x Void</h3>
+                    <p id="NightmareTrial1txt">Start Challenge</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="TrialWorld" class="world">
+            <h3 id="ShardDisplayTxt">Shards: 0 [+1/s] [0.00%]</h3>
         </div>
         
         <link rel="stylesheet" href="gameStyle/main.css">
@@ -477,5 +492,8 @@
         <script src="GameScripts/World_2/UnlockContentW2.js"></script>
         <script src="GameScripts/World_2/Think.js"></script>
         <script src="GameScripts/World_2/Nightmares.js"></script>
+        
+        <!-- Trials Script -->
+        <script src="GameScripts/World_2/Trials/Shards.js"></script>
     </body>
 </html>
