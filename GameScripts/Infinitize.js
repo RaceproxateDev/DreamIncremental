@@ -66,7 +66,7 @@ function updateInfDreamsHTML() {
     updateChallengeHTML('Forgotten', InfChallenge2txt, 'Memory', new OmegaNum('1.79e308'), InfinityChallenge2)
 
     // worlds
-    worldSection.style.display = (Data.Infinities.gte(10)) ? "block" : "none"
+    worldSection.style.display = (Data.Infinities.gte(13)) ? "block" : "none"
 }
 
 function InfinitizeReset(force, noReq) {
