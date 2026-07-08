@@ -77,7 +77,14 @@ function unlockAutomation() {
 
 function autobuyPointUpgrades() {
     if (Data.TrialsData.Automation.includes('PointsUpgAutobuy') && Data.Settings.TrialPointUpgradesAutobuyer === true) {
-        
+        for (let i = 1; i <= 10; i++) {
+            let upgCostTxt = document.getElementById(`#${i}CostTxt`).innerHTML;
+            if (upgCostTxt === 'Bought') continue;
+            
+            let upgCost = new OmegaNum(upgCostTxt.replace(/[^0-9eE.]/g, ''));
+            
+            buyOneTimeUpg(`#${i}`, 'Shards', upgCost, Data.TrialsData)
+        }
     }
 }
 
