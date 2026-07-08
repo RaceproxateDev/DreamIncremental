@@ -81,9 +81,11 @@ function autobuyPointUpgrades() {
             let upgCostTxt = document.getElementById(`#${i}CostTxt`).innerHTML;
             if (upgCostTxt === 'Bought') continue;
             
-            let upgCost = new OmegaNum(upgCostTxt.replace(/[^0-9eE.]/g, ''));
+            let upgCost = upgCostTxt.replace(/[^0-9eE.]/g, '');
+            if (upgCost === '') continue;
+            let c = new OmegaNum(upgCost);
             
-            buyOneTimeUpg(`#${i}`, 'Shards', upgCost, Data.TrialsData)
+            buyOneTimeUpg(`#${i}`, 'Shards', c, Data.TrialsData)
         }
     }
 }
