@@ -2,7 +2,6 @@ let calcPrestigeGainTxt = document.getElementById("CalcPrestigeGainTxt");
 let prestigeRL = document.getElementById("PrestigeRLBtn");
 let prestigeDisplayTxt = document.getElementById("PrestigeDisplayTxt");
 
-
 function calcPrestigeMult() {
     let mult = new OmegaNum(1);
     if (Data.Upgrades.includes('#18')) mult = mult.times(1.25);
@@ -57,7 +56,8 @@ function updateUpgTreeHtmlPrestige() {
     updateUpgTreeBuyables("#16", "#16CostTxt", undefined, "10 Energy");
     updateUpgTreeBuyables("#17", "#17CostTxt", "TrialUpgrade#18", "30 Energy");
     updateUpgTreeBuyables("#18", "#18CostTxt", "TrialUpgrade#19", "100 Energy");
-    updateUpgTreeBuyables("#19", "#19CostTxt", undefined, "500 Prestige Points");
+    updateUpgTreeBuyables("#19", "#19CostTxt", "TrialUpgrade#20", "500 Prestige Points");
+    updateUpgTreeBuyables("#20", "#20CostTxt", undefined, "1,000 Energy");
 }
 
 function updatePrestigeHtml() {
@@ -69,7 +69,20 @@ function updatePrestigeHtml() {
     updateUpgTreeHtmlPrestige();
 }
 
+function unlockAutomation() {
+    if (Data.Upgrades.includes('#20') && !Data.TrialsData.Automation.includes('PointsUpgAutobuy')) {
+        Data.TrialsData.Automation.push('PointsUpgAutobuy')
+    }
+}
+
+function autobuyPointUpgrades() {
+    if (Data.TrialsData.Automation.includes('PointsUpgAutobuy') && Data.Settings.TrialPointUpgradesAutobuyer === true) {
+        
+    }
+}
+
 setInterval(() => {
     updatePrestigeHtml()
     calcPrestigeGain()
+    unlockAutomation()
 }, 100);

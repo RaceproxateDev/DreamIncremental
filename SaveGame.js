@@ -106,6 +106,9 @@ var Data = {
 
         // World 2
         VoidUpgsAutobuyer: true,
+
+        // Trials
+        TrialPointUpgradesAutobuyer: true,
     },
 
     Caps: {
@@ -124,12 +127,15 @@ var Data = {
 
     Milestones: {
         World2: [],
+        Trials: [],
     },
 
     TrialsData: {
         Shards: new OmegaNum(0),
         PrestigePoints: new OmegaNum(0),
         Energy: new OmegaNum(0),
+
+        Automation: [],
     }
 }
 
