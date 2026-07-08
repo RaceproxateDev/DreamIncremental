@@ -22,10 +22,22 @@ function prestigeReset(force, noReq) {
         }
 
         Data.TrialsData.Shards = new OmegaNum(0);
-        Data.Upgrades = Data.Upgrades.filter(upgrade => {
-            let n = parseInt(upgrade.slice(1))
-            return n >= 11
-        })
+
+        // Reset Upgrades
+        Data.Upgrades = Data.Upgrades.filter(upg => {
+            if (typeof upg === 'number') return true;
+
+            if (typeof upg === 'string') {
+                if (!upg.startsWith('#')) return true;
+
+                let n = parseInt(upg.replace('#', ''), 10)
+                if (isNaN(n)) return true;
+
+                return n >= 11;
+            };
+
+            return false;
+        });
 
         if (!Data.Unlocks.includes('Prestige')) {
             Data.Unlocks.push('Prestige');

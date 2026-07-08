@@ -42,8 +42,7 @@ function updateTreeUpgsHtml() {
     updateUpgTreeBuyables("#7", "#7CostTxt", undefined, "20,000 Shards");
     updateUpgTreeBuyables("#8", "#8CostTxt", ["TrialUpgrade#9", "TrialUpgrade#10"], "80,000 Shards");
     updateUpgTreeBuyables("#9", "#9CostTxt", undefined, "150,000 Shards");
-    updateUpgTreeBuyables("#10", "#10CostTxt", "PrestigeRLBtn", "1,000,000 Shards");
-    
+    updateUpgTreeBuyables("#10", "#10CostTxt", undefined, "1,000,000 Shards");
 }
 
 function updateShardHtml() {
