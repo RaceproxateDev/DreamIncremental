@@ -128,7 +128,7 @@ var Data = {
 
     TrialsData: {
         Shards: new OmegaNum(0),
-        Upgrades: [],
+        PrestigePoints: new OmegaNum(0),
     }
 }
 

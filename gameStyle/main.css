@@ -81,6 +81,15 @@ button:hover {
     border-radius: 5px;
 }
 
+.UpgTreeResetBtn {
+    color: white;
+    background-color: black;
+    border: 2px solid darkgray;
+    height: 150px;
+    width: 600px;
+    border-radius: 5px;
+}
+
 .UpgRow {
     display: flex;
     justify-content: center;

@@ -534,6 +534,49 @@
                         <p>4x Shards</p>
                         <p id="#7CostTxt">20,000 Shards</p>
                     </button>
+                    <button class="UpgradeBtn" onclick="buyOneTimeUpg('#8', 'Shards', 80000, Data.TrialsData)" id="TrialUpgrade#8">
+                        <h4>Exponential #8</h4>
+                        <p>^1.1 Shards</p>
+                        <p id="#8CostTxt">80,000 Shards</p>
+                    </button>
+                </div>
+                <div class="UpgRow">
+                    <button class="UpgradeBtn" onclick="buyOneTimeUpg('#9', 'Shards', 150000, Data.TrialsData)" id="TrialUpgrade#9">
+                        <h4>Synergied III #9</h4>
+                        <p>+^0.2 to #3 Effect</p>
+                        <p id="#9CostTxt">150,000 Shards</p>
+                    </button>
+                    <button class="UpgradeBtn" onclick="buyOneTimeUpg('#10', 'Shards', 1e6, Data.TrialsData)" id="TrialUpgrade#10">
+                        <h4>Prepare #10</h4>
+                        <p>25x Shards</p>
+                        <p id="#10CostTxt">1,000,000 Shards</p>
+                    </button>
+                </div>
+                <div class="UpgRow">
+                    <button class="UpgTreeResetBtn" id="PrestigeRLBtn" onclick="prestigeReset(false, false)" style="border-color: darkgreen; background-color: seagreen;">
+                        <h4 id="PrestigeDisplayTxt">Prestige [0.00 Prestige Points]</h4>
+                        <p>This will reset Shards and Shard Upgrades [You need atleast 1e9 Shards]</p>
+                        <p id="CalcPrestigeGainTxt">+0 Prestige Points</p>
+                    </button>
+                </div>
+                <div class="UpgRow">
+                    <button class="UpgradeBtn" id="TrialUpgrade#11" onclick="buyOneTimeUpg('#11', 'PrestigePoints', 1, Data.TrialsData)" style="border-color: darkgreen; background-color: seagreen;">
+                        <h4>Basic #11</h4>
+                        <p>2x Shards</p>
+                        <p id="#11CostTxt">1 Prestige Point</p>
+                    </button>
+                </div>
+                <div class="UpgRow">
+                    <button class="UpgradeBtn" id="TrialUpgrade#12" onclick="buyOneTimeUpg('#12', 'PrestigePoints', 2, Data.TrialsData)" style="border-color: darkgreen; background-color: seagreen;">
+                        <h4>Warmup #12</h4>
+                        <p>3x Shards</p>
+                        <p id="#12CostTxt">2 Prestige Points</p>
+                    </button>
+                    <button class="UpgradeBtn" id="TrialUpgrade#13" onclick="buyOneTimeUpg('#13', 'PrestigePoints', 5, Data.TrialsData)" style="border-color: darkgreen; background-color: seagreen;">
+                        <h4>Synergied IV #13</h4>
+                        <p>+^0.05 #3 Effect</p>
+                        <p id="#13CostTxt">5 Prestige Points</p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -558,5 +601,6 @@
         
         <!-- Trials Script -->
         <script src="GameScripts/World_2/Trials/Shards.js"></script>
+        <script src="GameScripts/World_2/Trials/Prestige.js"></script>
     </body>
 </html>
