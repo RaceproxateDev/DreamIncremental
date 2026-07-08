@@ -5,6 +5,7 @@ let prestigeDisplayTxt = document.getElementById("PrestigeDisplayTxt");
 
 function calcPrestigeMult() {
     let mult = new OmegaNum(1);
+    if (Data.Upgrades.includes('#18')) mult = mult.times(1.25);
     
     return mult;
 }
@@ -52,7 +53,10 @@ function updateUpgTreeHtmlPrestige() {
     updateUpgTreeBuyables("#12", "#12CostTxt", undefined, "2 Prestige Points");
     updateUpgTreeBuyables("#13", "#13CostTxt", "TrialUpgrade#14", "5 Prestige Points");
     updateUpgTreeBuyables("#14", "#14CostTxt", "TrialUpgrade#15", "20 Prestige Points");
-    updateUpgTreeBuyables("#15", "#15CostTxt", undefined, "50 Prestige Points");
+    updateUpgTreeBuyables("#15", "#15CostTxt", ["TrialUpgrade#16", "TrialUpgrade#17"], "50 Prestige Points");
+    updateUpgTreeBuyables("#16", "#16CostTxt", undefined, "10 Energy");
+    updateUpgTreeBuyables("#17", "#17CostTxt", "TrialUpgrade#18", "30 Energy");
+    updateUpgTreeBuyables("#18", "#18CostTxt", undefined, "100 Energy");
 }
 
 function updatePrestigeHtml() {

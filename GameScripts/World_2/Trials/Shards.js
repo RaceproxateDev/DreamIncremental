@@ -23,7 +23,7 @@ function ShardPrestigeSynergyCalc() {
 }
 
 function calcShardMult() {
-    let mult = new OmegaNum(1);
+    let mult = new OmegaNum(1).div(5);
     if (Data.Upgrades.includes('#1')) mult = mult.times(2);
     if (Data.Upgrades.includes('#2')) mult = mult.times(3);
     if (Data.Upgrades.includes('#3')) mult = mult.times(ShardSynergyBoostCalc());
@@ -35,6 +35,7 @@ function calcShardMult() {
     if (Data.Upgrades.includes('#11')) mult = mult.times(2);
     if (Data.Upgrades.includes('#12')) mult = mult.times(3);
     if (Data.Upgrades.includes('#14')) mult = mult.times(ShardPrestigeSynergyCalc());
+    if (Data.Upgrades.includes('#16')) mult = mult.times(1.5);
     
     return mult;
 }
@@ -53,7 +54,7 @@ function updateTreeUpgsHtml() {
 }
 
 function updateShardHtml() {
-    ShardDisplayTxt.textContent = `Shards: ${format(Data.TrialsData.Shards)} [+${format(calcShardMult())}/s] [${calcPercent()}%]`;
+    ShardDisplayTxt.textContent = `Shards: ${format(Data.TrialsData.Shards)} [+${format(calcShardMult().times(5))}/s] [${calcPercent()}%]`;
 
     // Upgrade Tree
     updateTreeUpgsHtml();
@@ -76,4 +77,4 @@ setInterval(() => {
 
 setInterval(() => {
     genShards();
-}, 1000);
+}, 1000/5);

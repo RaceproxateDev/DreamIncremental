@@ -1,7 +1,9 @@
 let EnergyTab = document.getElementById('EnergyTab');
+let EnergyDisplayTxt = document.getElementById('EnergyDisplayTxt');
 
 function calcEnergyMult() {
-    let mult = new OmegaNum(1);
+    let mult = new OmegaNum(1).div(5);
+    if (Data.Upgrades.includes('#17')) mult = mult.times(2);
     
     return mult;
 }
@@ -17,11 +19,12 @@ function GenerateEnergy() {
 
 function updateEnergyHtml() {
     EnergyTab.style.display = (Data.Upgrades.includes('#15')) ? 'inline-block' : 'none';
+    EnergyDisplayTxt.textContent = `Energy: ${format(Data.TrialsData.Energy)} [+${format(calcEnergyMult().times(5))}/s]`;
 }
 
 setInterval(() => {
     GenerateEnergy();
-}, 1000);
+}, 1000/5);
 
 setInterval(() => {
     updateEnergyHtml();
