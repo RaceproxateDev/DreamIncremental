@@ -476,6 +476,7 @@
             <section>
                 <button class="tab" onclick="displayContent('Settings')">Settings</button>
                 <button class="tab" onclick="displayContent('UpgradeTree')">Upgrade Tree</button>
+                <button class="tab" onclick="displayContent('Prestige')" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); display: none;">Energy</button>                
             </section>
 
             <div id="Settings" class="content" style="display: none;">
@@ -584,7 +585,7 @@
                     </button>
                 </div>
                 <div class="UpgRow">
-                    <button class="UpgradeBtn" id="TrialUpgrade#15" onclick="buyOneTimeUpg('#15', 'PrestigePoints', 50, Data.TrialsData)" style="border-color: darkkhaki; background-color: seagreen;">
+                    <button class="UpgradeBtn" id="TrialUpgrade#15" onclick="buyOneTimeUpg('#15', 'PrestigePoints', 50, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1);">
                         <h4>Energetic #15</h4>
                         <p>Unlock Energy</p>
                         <p id="#15CostTxt">50 Prestige Points</p>
