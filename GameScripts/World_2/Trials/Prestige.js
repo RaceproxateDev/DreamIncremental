@@ -56,7 +56,8 @@ function updateUpgTreeHtmlPrestige() {
     updateUpgTreeBuyables("#15", "#15CostTxt", ["TrialUpgrade#16", "TrialUpgrade#17"], "50 Prestige Points");
     updateUpgTreeBuyables("#16", "#16CostTxt", undefined, "10 Energy");
     updateUpgTreeBuyables("#17", "#17CostTxt", "TrialUpgrade#18", "30 Energy");
-    updateUpgTreeBuyables("#18", "#18CostTxt", undefined, "100 Energy");
+    updateUpgTreeBuyables("#18", "#18CostTxt", "TrialUpgrade#19", "100 Energy");
+    updateUpgTreeBuyables("#19", "#19CostTxt", undefined, "500 Prestige Points");
 }
 
 function updatePrestigeHtml() {
