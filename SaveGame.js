@@ -129,6 +129,7 @@ var Data = {
     TrialsData: {
         Shards: new OmegaNum(0),
         PrestigePoints: new OmegaNum(0),
+        Energy: new OmegaNum(0),
     }
 }
 
