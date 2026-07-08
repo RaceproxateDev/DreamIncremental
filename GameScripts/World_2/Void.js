@@ -45,7 +45,7 @@ function updateVoidHTML() {
     // Void Buyables
     VoidBuyable1.innerHTML = `3x Void [${format(Data.Buyables[9].amount)}/${format(Data.Buyables[9].max)}] <br> ${format(Data.Buyables[9].price)} Void`
     VoidBuyable2.innerHTML = `-^0.03 Void divider [${format(Data.Buyables[10].amount)}/${format(Data.Buyables[10].max)}] <br> ${format(Data.Buyables[10].price)} Void`
-    VoidUpgrade1.innerHTML = (Data.Upgrades.includes('V1')) ? `Unlock Toughts [1/1] [Permanent] <br> Bought!` : `Unlock Toughts [0/1] [Permanent] <br> 300 Void`
+    VoidUpgrade1.innerHTML = (Data.Upgrades.includes('V1')) ? `Unlock Thoughts [1/1] [Permanent] <br> Bought!` : `Unlock Thoughts [0/1] [Permanent] <br> 300 Void`
 
     VoidBuyable2.style.display = (hasMilestone('ThinkMilestone6', 'World2')) ? 'none' : 'inline-block'
 }
