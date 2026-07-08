@@ -178,19 +178,18 @@ function unlockNextMilestone(ReqId, htmlMilestone, worldId) {
 
 function updateUpgTreeBuyables(upg, BuyableCostTxt, unlockNextHtml, costTxt) {
     let txt = document.getElementById(BuyableCostTxt);
-    let next = (Array.isArray(unlockNextHtml)) ? [unlockNextHtml] : document.getElementById(unlockNextHtml);
+    let next = (Array.isArray(unlockNextHtml)) ? unlockNextHtml : [unlockNextHtml];
 
     let isBought = Data.Upgrades.includes(upg);
 
     if (txt) {
         txt.textContent = isBought ? "Bought" : costTxt;
     }
-
-    if (next) {
-        next.forEach(n => {
-            let nxt = document.getElementById(n);
-            if (!nxt) return;
-            nxt.style.display = isBought ? "inline-block" : "none";
-        });
-    }
+    
+    next.forEach(n => {
+        if (!n) return;
+        let nxt = document.getElementById(n);
+        if (!nxt) return;
+        nxt.style.display = isBought ? "inline-block" : "none";
+    });
 }

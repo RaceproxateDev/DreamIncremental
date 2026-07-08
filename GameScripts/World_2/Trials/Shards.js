@@ -9,23 +9,31 @@ function calcPercent() {
 
 function ShardSynergyBoostCalc() {
     let exp = new OmegaNum(0.1);
+    if (Data.Upgrades.includes('#5')) exp = exp.add(0.1);
     
     return OmegaNum.add(1, Data.TrialsData.Shards.pow(exp));
 }
 
 function calcShardMult() {
     let mult = new OmegaNum(1);
-    if (Data.Upgrades.includes('#1')) mult = mult.mul(2);
-    if (Data.Upgrades.includes('#2')) mult = mult.mul(3);
-    if (Data.Upgrades.includes('#3')) mult = mult.mul(ShardSynergyBoostCalc());
+    if (Data.Upgrades.includes('#1')) mult = mult.times(2);
+    if (Data.Upgrades.includes('#2')) mult = mult.times(3);
+    if (Data.Upgrades.includes('#3')) mult = mult.times(ShardSynergyBoostCalc());
+    if (Data.Upgrades.includes('#4')) mult = mult.times(10);
+    if (Data.Upgrades.includes('#6')) mult = mult.pow(1.01);
+    if (Data.Upgrades.includes('#7')) mult = mult.times(4);
     
     return mult;
 }
 
 function updateTreeUpgsHtml() {
     updateUpgTreeBuyables("#1", "#1CostTxt", ["TrialUpgrade#2", "TrialUpgrade#3"], "10 Shards");
-    updateUpgTreeBuyables("#2", "#2CostTxt", undefined, "50 Shards");
-    updateUpgTreeBuyables("#3", "#3CostTxt", undefined, "200 Shards");
+    updateUpgTreeBuyables("#2", "#2CostTxt", "TrialUpgrade#5", "50 Shards");
+    updateUpgTreeBuyables("#3", "#3CostTxt", "TrialUpgrade#4", "200 Shards");
+    updateUpgTreeBuyables("#4", "#4CostTxt", undefined, "800 Shards");
+    updateUpgTreeBuyables("#5", "#5CostTxt", ["TrialUpgrade#6", "TrialUpgrade#7", "TrialUpgrade#8"], "10,000 Shards")
+    updateUpgTreeBuyables("#6", "#6CostTxt", undefined, "15,000 Shards");
+    updateUpgTreeBuyables("#7", "#7CostTxt", undefined, "20,000 Shards");    
 }
 
 function updateShardHtml() {
