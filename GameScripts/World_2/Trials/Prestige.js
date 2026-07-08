@@ -78,14 +78,20 @@ function unlockAutomation() {
 function autobuyPointUpgrades() {
     if (Data.TrialsData.Automation.includes('PointsUpgAutobuy') && Data.Settings.TrialPointUpgradesAutobuyer === true) {
         for (let i = 1; i <= 10; i++) {
+            let upg = document.getElementById(`#${i}`);
+            if (upg === null) continue;
+            
             let upgCostTxt = document.getElementById(`#${i}CostTxt`).innerHTML;
             if (upgCostTxt === 'Bought') continue;
+
+            let currencyType = upg.getAttribute('currencyUsing')
+            if (!currencyType) continue;
             
             let upgCost = upgCostTxt.replace(/[^0-9eE.]/g, '');
             if (upgCost === '') continue;
             let c = new OmegaNum(upgCost);
             
-            buyOneTimeUpg(`#${i}`, 'Shards', c, Data.TrialsData)
+            buyOneTimeUpg(`#${i}`, currencyType, c, Data.TrialsData)
         }
     }
 }
@@ -94,4 +100,5 @@ setInterval(() => {
     updatePrestigeHtml()
     calcPrestigeGain()
     unlockAutomation()
+    autobuyPointUpgrades()
 }, 100);
