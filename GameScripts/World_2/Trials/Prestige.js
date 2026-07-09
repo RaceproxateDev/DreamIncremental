@@ -5,6 +5,8 @@ let prestigeDisplayTxt = document.getElementById("PrestigeDisplayTxt");
 function calcPrestigeMult() {
     let mult = new OmegaNum(1);
     if (Data.Upgrades.includes('#18')) mult = mult.times(1.25);
+    if (Data.Upgrades.includes('#21')) mult = mult.times(3);
+    if (Data.Upgrades.includes('#23')) mult = mult.times(2);
     
     return mult;
 }
@@ -57,26 +59,27 @@ function updateUpgTreeHtmlPrestige() {
     updateUpgTreeBuyables("#17", "#17CostTxt", "TrialUpgrade#18", "30 Energy");
     updateUpgTreeBuyables("#18", "#18CostTxt", "TrialUpgrade#19", "100 Energy");
     updateUpgTreeBuyables("#19", "#19CostTxt", "TrialUpgrade#20", "500 Prestige Points");
-    updateUpgTreeBuyables("#20", "#20CostTxt", undefined, "1,000 Energy");
+    updateUpgTreeBuyables("#20", "#20CostTxt", "TrialUpgrade#21", "1,000 Energy");
+    updateUpgTreeBuyables("#21", "#21CostTxt", undefined, "600 Prestige Points");
 }
 
 function updatePrestigeHtml() {
     prestigeDisplayTxt.innerHTML = `Prestige  [${format(Data.TrialsData.PrestigePoints)} Prestige Points]`;
     calcPrestigeGainTxt.innerHTML = `+${format(calcPrestigeGain())} Prestige Points`;
-    prestigeRL.style.display = (Data.Unlocks.includes('Prestige') || Data.TrialsData.Shards.gte(1e9)) ? 'block' : 'none';
+    prestigeRL.style.display = (Data.Unlocks.includes('Prestige') || Data.TrialsData.Shards.gte(1e9) || Data.Upgrades.includes('#10')) ? 'block' : 'none';
 
     // Upgrade Tree
     updateUpgTreeHtmlPrestige();
 }
 
 function unlockAutomation() {
-    if (Data.Upgrades.includes('#20') && !Data.TrialsData.Automation.includes('PointsUpgAutobuy')) {
-        Data.TrialsData.Automation.push('PointsUpgAutobuy')
+    if (Data.Upgrades.includes('#20') && !Data.TrialsData.Automation.includes('ShardsUpgAutobuy')) {
+        Data.TrialsData.Automation.push('ShardsUpgAutobuy')
     }
 }
 
-function autobuyPointUpgrades() {
-    if (Data.TrialsData.Automation.includes('PointsUpgAutobuy') && Data.Settings.TrialPointUpgradesAutobuyer === true) {
+function autobuyShardUpgrades() {
+    if (Data.TrialsData.Automation.includes('ShardsUpgAutobuy') && Data.Settings.TrialShardUpgradesAutobuyer === true) {
         for (let i = 1; i <= 10; i++) {
             let upg = document.getElementById(`TrialUpgrade#${i}`);
             if (upg === null) continue;
@@ -100,5 +103,5 @@ setInterval(() => {
     updatePrestigeHtml()
     calcPrestigeGain()
     unlockAutomation()
-    autobuyPointUpgrades()
+    autobuyShardUpgrades()
 }, 100);

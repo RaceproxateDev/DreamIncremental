@@ -108,7 +108,7 @@ var Data = {
         VoidUpgsAutobuyer: true,
 
         // Trials
-        TrialPointUpgradesAutobuyer: true,
+        TrialShardUpgradesAutobuyer: true,
     },
 
     Caps: {
@@ -134,6 +134,7 @@ var Data = {
         Shards: new OmegaNum(0),
         PrestigePoints: new OmegaNum(0),
         Energy: new OmegaNum(0),
+        RebirthPoints: new OmegaNum(0),
 
         Automation: [],
     }

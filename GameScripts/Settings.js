@@ -1,9 +1,12 @@
-let shardUpgsAutobuyerEnabler = document.getElementById("MemoryUpgsAutobuyerEnabler")
+let MemoryUpgsAutobuyerEnabler = document.getElementById("MemoryUpgsAutobuyerEnabler")
 let dreamUpgsAutobuyerEnabler = document.getElementById("DreamUpgsAutobuyerEnabler")
 let autoRestEnabler = document.getElementById("AutoRestEnabler")
 
 // World 2
 let voidUpgsAutobuyEnabler = document.getElementById("VoidUpgsAutobuyEnabler")
+
+// Trial World
+let shardUpgsAutobuyerEnabler = document.getElementById("ShardsUpgsAutobuyEnabler")
 
 // Teleports
 let TeleportSTitle = document.getElementById("TeleportSTitle")
@@ -16,8 +19,8 @@ function enableDisable(automation) {
 }
 
 function updateHtmlSettings() {
-    shardUpgsAutobuyerEnabler.style.display = (Data.Automation.includes("MemoryUpgs")) ? "inline-block" : "none"
-    shardUpgsAutobuyerEnabler.textContent = (Data.Settings.MemoryUpgsAutobuyer == true) ? "Memory Upgrades Autobuyer: ON" : "Memory Upgrades Autobuyer: OFF"
+    MemoryUpgsAutobuyerEnabler.style.display = (Data.Automation.includes("MemoryUpgs")) ? "inline-block" : "none"
+    MemoryUpgsAutobuyerEnabler.textContent = (Data.Settings.MemoryUpgsAutobuyer == true) ? "Memory Upgrades Autobuyer: ON" : "Memory Upgrades Autobuyer: OFF"
 
     dreamUpgsAutobuyerEnabler.style.display = (Data.Automation.includes("DreamUpgs")) ? "inline-block" : "none"
     dreamUpgsAutobuyerEnabler.textContent = (Data.Settings.DreamUpgsAutobuyer == true) ? "Dream Upgrades Autobuyer: ON" : "Dream Upgrades Autobuyer: OFF"
@@ -30,6 +33,9 @@ function updateHtmlSettings() {
 
     TeleportSTitle2.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
     W1Teleporter.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
+
+    shardUpgsAutobuyerEnabler.style.display = (Data.Automation.includes("ShardsUpgAutobuy")) ? "inline-block" : "none"
+    shardUpgsAutobuyerEnabler.textContent = (Data.Settings.TrialShardUpgradesAutobuyer == true) ? "Shards Upgrades Autobuyer: ON" : "Shards Upgrades Autobuyer: OFF"
 }
 
 function updateHtmlSettingsW2() {

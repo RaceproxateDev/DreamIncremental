@@ -18,6 +18,7 @@ function ShardSynergyBoostCalc() {
 
 function ShardPrestigeSynergyCalc() {
     let exp = new OmegaNum(0.3);
+    if (Data.Upgrades.includes('#24')) exp = exp.add(0.05);
 
     return OmegaNum.add(1, Data.TrialsData.PrestigePoints.pow(exp));
 }
@@ -36,6 +37,7 @@ function calcShardMult() {
     if (Data.Upgrades.includes('#12')) mult = mult.times(3);
     if (Data.Upgrades.includes('#14')) mult = mult.times(ShardPrestigeSynergyCalc());
     if (Data.Upgrades.includes('#16')) mult = mult.times(1.5);
+    if (Data.Upgrades.includes('#22')) mult = mult.times(5);
     
     return mult;
 }

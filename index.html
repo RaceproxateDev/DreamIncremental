@@ -488,6 +488,7 @@
                 <button class="tab" style="border: 2px solid rgb(0, 4, 255); color: rgb(0, 4, 255);" onclick="ImportData()">Import Save</button>
 
                 <h3>Automation</h3>
+                <button class="tab" id="ShardsUpgsAutobuyEnabler" onclick="enableDisable('TrialShardUpgradesAutobuyer')">Shards Upgrades Autobuyer: ON</button>
             </div>
 
             <div id="UpgradeTree" class="content" style="display: none; overflow-y: auto; height: 500px; width: 1200px;">
@@ -616,8 +617,41 @@
                     </button>
                     <button class="UpgradeBtn" currencyUsing="Energy" id="TrialUpgrade#20" onclick="buyOneTimeUpg('#20', 'Energy', 1000, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1);">
                         <h4>Automated #20</h4>
-                        <p>Automatically buy Point Upgrades</p>
+                        <p>Automatically buy Shard Upgrades</p>
                         <p id="#20CostTxt">1,000 Energy</p>
+                    </button>
+                </div>
+                <div class="UpgRow">
+                    <button class="UpgradeBtn" currencyUsing="PrestigePoints" id="TrialUpgrade#21" onclick="buyOneTimeUpg('#21', 'PrestigePoints', 600, Data.TrialsData)" style="border-color: darkgreen; background-color: seagreen;">
+                        <h4>Efficient #21</h4>
+                        <p>3x Prestige Points</p>
+                        <p id="#21CostTxt">600 Prestige Points</p>
+                    </button>
+                </div>
+                <div class="UpgRow">
+                    <button class="UpgTreeResetBtn" id="RebirthRLBtn" onclick="RebirthReset(false, false)" style="border-color: darkorchid; background-color: magenta;">
+                        <h4 id="RebirthDisplayTxt">Rebirth [0.00 Rebirth Points]</h4>
+                        <p>Resets Everything at this point. [You need atleast 800 Prestige Points]</p>
+                        <p id="CalcRebirthGainTxt">+0 Rebirth Points</p>
+                    </button>
+                </div>
+                <div class="UpgRow">
+                    <button class="UpgradeBtn" currencyUsing="RebirthPoints" id="TrialUpgrade#22" onclick="buyOneTimeUpg('#22', 'RebirthPoints', 1, Data.TrialsData)" style="border-color: darkorchid; background-color: magenta;">
+                        <h4>U-Shards #22</h4>
+                        <p>5x Shards</p>
+                        <p id="#22CostTxt">1 Rebirth Point</p>
+                    </button>
+                </div>
+                <div class="UpgRow">
+                    <button class="UpgradeBtn" currencyUsing="RebirthPoints" id="TrialUpgrade#23" onclick="buyOneTimeUpg('#23', 'RebirthPoints', 2, Data.TrialsData)" style="border-color: darkorchid; background-color: magenta;">
+                        <h4>U-Prestige #23</h4>
+                        <p>2x Prestige Points</p>
+                        <p id="#23CostTxt">2 Rebirth Points</p>
+                    </button>
+                    <button class="UpgradeBtn" currencyUsing="RebirthPoints" id="TrialUpgrade#24" onclick="buyOneTimeUpg('#24', 'RebirthPoints', 5, Data.TrialsData)" style="border-color: darkorchid; background-color: magenta;">
+                        <h4>Synergial Boost #24</h4>
+                        <p>+^0.05 to #14 Effect</p>
+                        <p id="#24CostTxt">5 Rebirth Points</p>
                     </button>
                 </div>
             </div>
@@ -649,5 +683,6 @@
         <script src="GameScripts/World_2/Trials/Shards.js"></script>
         <script src="GameScripts/World_2/Trials/Prestige.js"></script>
         <script src="GameScripts/World_2/Trials/Energy.js"></script>
+        <script src="GameScripts/World_2/Trials/Rebirth.js"></script>
     </body>
 </html>
