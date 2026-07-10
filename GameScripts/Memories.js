@@ -54,8 +54,8 @@ function GenMemory() {
 }
 
 function UpdateMemoryHtml() {
-    MemoryDisplayTxt.textContent = `Memory: ${format(Data.Memory)} [+${(canGenMemory === true) ? format(calcMemoryMult().times(5)) : new OmegaNum(0)}/s]`
-
+    MemoryDisplayTxt.textContent = `Memory: ${format(Data.Memory)} [+${(canGenMemory === true) ? format(calcMemoryMult().times(5)) : new OmegaNum(0)}/s] ${(Data.Nightmares.gt(0)) ? `[Nightmare: ${format(Data.Nightmares)}]` : ''}`
+    
     // Memory Buyables
     MemoryBuyable1Btn.innerHTML = `+100% Memories [${format(Data.Buyables[1].amount)}/${format(Data.Buyables[1].max)}] <br> ${format(Data.Buyables[1].price)} Memories`
     MemoryBuyable2Btn.innerHTML = `2x Memories [${format(Data.Buyables[2].amount)}/${format(Data.Buyables[2].max)}] <br> ${format(Data.Buyables[2].price)} Memories`
