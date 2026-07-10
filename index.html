@@ -59,6 +59,10 @@
                 <button class="BuyableBtn" id="MemoryUpgrade1Btn" onclick="buyOneTimeUpg(1, 'Memory', 1000)" style="background-image: linear-gradient(purple, pink, purple); border-color: purple;">
                     Unlock Dreams [0/1] [Permanent]<br>
                     1000 Memories
+                </button><br><br>
+
+                <button class="tab" onclick="buyMaxUpg(1, 'Memory'); buyMaxUpg(2, 'Memory')">
+                    Max All
                 </button>
             </div>
 
@@ -85,6 +89,10 @@
                 <button class="BuyableBtn" id="DreamUpgrade1Btn" style="background-image: linear-gradient(blue, lightblue, blue); border-color: blue;" onclick="buyOneTimeUpg(2, 'Dreams', 100)">
                     Unlock Rest [0/1] [Permanent] <br>
                     100 Dreams
+                </button>
+                <br><br>
+                <button class="tab" onclick="buyMaxUpg(3, 'Dreams'); buyMaxUpg(4, 'Dreams')" style="border-color: purple; background-image: linear-gradient(purple, pink, purple);">
+                    Max All
                 </button>
             </div>
 
@@ -220,6 +228,10 @@
                     Unlock Lucid Energy [0/1] <br>
                     5 Lucid Dreams
                 </button>
+                <br><br>
+                <button class="tab" onclick="buyMaxUpg(5, 'LucidDreams'); buyMaxUpg(6, 'LucidDreams'); buyMaxUpg(7, 'LucidDreams')" style="border-color: yellow; background-image: linear-gradient(rgb(94, 94, 3), rgb(220, 220, 21), rgb(94, 94, 3));">
+                    Max All
+                </button>   
             </div>
 
             <div id="InfinitizeReset" class="content" style="color: red; display: none;">
@@ -287,6 +299,10 @@
                 <button class="BuyableBtn" id="InfinityDreamsBuyable1" style="background-image: linear-gradient(darkred, red, darkred); border-color: red; width: auto;" onclick="BuyUpg(8, 'InfinityDreams')">
                     10x Memories, 8x Dreams [0/200] <br>
                     1 Infinity Dreams
+                </button>
+                <br><br>
+                <button class="tab" style="background-image: linear-gradient(darkred, red, darkred); border-color: red;" onclick="buyMaxUpg(8, 'InfinityDreams')">
+                    Max All 
                 </button>
             </div>
 
@@ -363,6 +379,10 @@
                 <button id="VoidUpgrade1" class="BuyableBtn" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110));" onclick="buyOneTimeUpg('V1', 'Void', 300)">
                     Unlock Thoughts [0/1] [Permanent] <br>
                     300 Void
+                </button>
+                <br><br>
+                <button class="tab" style="border-color: rgb(43, 43, 43);" onclick="buyMaxUpg(9, 'Void'); buyMaxUpg(10, 'Void');">
+                    Max All
                 </button>
             </div>
 
