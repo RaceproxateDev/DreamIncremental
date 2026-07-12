@@ -5,6 +5,7 @@ function calcEnergyMult() {
     let mult = new OmegaNum(1).div(5);
     if (Data.Upgrades.includes('#17')) mult = mult.times(2);
     if (Data.Upgrades.includes('#19')) mult = mult.times(4);
+    if (Data.Upgrades.includes('#26')) mult = mult.times(3);
     
     return mult;
 }

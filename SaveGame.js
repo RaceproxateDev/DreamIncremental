@@ -168,16 +168,17 @@ function saveData() {
 }
 
 function fixSave(data, template) {
-    if (data === undefined || data === null) return deepCopy(template);
-
     for (let key in template) {
-        if (template[key] instanceof OmegaNum && data[key] === undefined) {
+        if (template[key] instanceof OmegaNum && (data[key] === undefined || data[key] === null)) {
             data[key] = new OmegaNum(template[key])
         }
+        else if (template[key] instanceof OmegaNum && typeof data[key] === 'string') {
+            data[key] = new OmegaNum(data[key])
+        }
 
-        else if (typeof template[key] === 'object' && template[key] !== null) {
+        else if (typeof template[key] === 'object' && (template[key] !== undefined && template[key] !== null)) {
             let isArr = Array.isArray(template[key])
-            if (typeof data[key] !== 'object' || data[key] === null) {
+            if (typeof data[key] !== 'object' || (data[key] === null || data[key] === undefined)) {
                 data[key] = isArr ? [] : {}
             }
             data[key] = fixSave(data[key], template[key])
@@ -197,6 +198,7 @@ function loadData() {
         try {
             let d = JSON.parse(decodeURIComponent(escape(atob(save))))
             Data = fixSave(d, Template)
+            
             displayWorlds(Data.isInWorld)
 
             console.log("Your data was loaded!")
