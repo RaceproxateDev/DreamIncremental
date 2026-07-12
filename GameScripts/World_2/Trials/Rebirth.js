@@ -4,7 +4,8 @@ let CalcRebirthGainTxt = document.getElementById("CalcRebirthGainTxt");
 
 function CalcRebirthMult() {
     let mult = new OmegaNum(1);
-
+    if (Data.Upgrades.includes('#28')) mult = mult.times(1.5)
+    
     return mult
 }
 
@@ -53,7 +54,11 @@ function updateTreeHtml() {
     updateUpgTreeBuyables('#23', '#23CostTxt', undefined, '2 Rebirth Points')
     updateUpgTreeBuyables('#24', '#24CostTxt', ["TrialUpgrade#25", "TrialUpgrade#26"], '3 Rebirth Points')
     updateUpgTreeBuyables('#25', '#25CostTxt', undefined, '5 Rebirth Points')
-    updateUpgTreeBuyables('#26', '#26CostTxt', undefined, '5 Rebirth Points')
+    updateUpgTreeBuyables('#26', '#26CostTxt', ["TrialUpgrade#27", "TrialUpgrade#28", "TrialUpgrade#29"], '5 Rebirth Points')
+    updateUpgTreeBuyables('#27', '#27CostTxt', undefined, '5 Rebirth Points')
+    updateUpgTreeBuyables('#28', '#28CostTxt', undefined, '5 Rebirth Points')
+    updateUpgTreeBuyables('#29', '#29CostTxt', undefined, '8 Rebirth Points')
+    
 }
 
 function updateRebirthHtml() {

@@ -6,6 +6,7 @@ function calcEnergyMult() {
     if (Data.Upgrades.includes('#17')) mult = mult.times(2);
     if (Data.Upgrades.includes('#19')) mult = mult.times(4);
     if (Data.Upgrades.includes('#26')) mult = mult.times(3);
+    if (Data.Upgrades.includes('#27')) mult = mult.times(10);
     
     return mult;
 }
