@@ -135,6 +135,7 @@ var Data = {
         PrestigePoints: new OmegaNum(0),
         Energy: new OmegaNum(0),
         RebirthPoints: new OmegaNum(0),
+        AscensionPoints: new OmegaNum(0),
 
         Automation: [],
     }

@@ -5,6 +5,7 @@ let CalcRebirthGainTxt = document.getElementById("CalcRebirthGainTxt");
 function CalcRebirthMult() {
     let mult = new OmegaNum(1);
     if (Data.Upgrades.includes('#28')) mult = mult.times(1.5)
+    if (hasMilestone('AscensionMilestone1', 'Trials')) mult = mult.times(2);
     
     return mult
 }

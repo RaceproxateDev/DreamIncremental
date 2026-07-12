@@ -496,7 +496,8 @@
             <section>
                 <button class="tab" onclick="displayContent('Settings')">Settings</button>
                 <button class="tab" onclick="displayContent('UpgradeTree')">Upgrade Tree</button>
-                <button class="tab" id="EnergyTab" onclick="displayContent('EnergyContent')" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); display: none;">Energy</button>                
+                <button class="tab" id="EnergyTab" onclick="displayContent('EnergyContent')" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); display: none;">Energy</button>
+                <button class="tab" id="AscensionTab" onclick="displayContent('AscensionReset')" style="border-color: rgb(240, 210, 0); background-color: rgb(210, 210, 1); display: none;">Ascension</button>
             </section>
 
             <div id="Settings" class="content" style="display: none;">
@@ -706,7 +707,7 @@
                 <div class="UpgRow">
                     <button class="UpgradeBtn" currencyUsing="RebirthPoints" id="TrialUpgrade#30" onclick="buyOneTimeUpg('#30', 'RebirthPoints', 10, Data.TrialsData)" style="border-color: darkorchid; background-color: magenta;">
                         <h4>??? #30</h4>
-                        <p>Unlock something (soon)</p>
+                        <p>Unlock something new</p>
                         <p id="#30CostTxt">10 Rebirth Points</p>
                     </button>
                 </div>
@@ -714,6 +715,25 @@
 
             <div id="EnergyContent" class="content" style="display: none;">
                 <h3 id="EnergyDisplayTxt" style="color: yellow;">Energy: 0.00 [+1/s]</h3>
+            </div>
+            
+            <div id="AscensionReset" class="content" style="display: none; color: yellow;">
+                <h3 id="AscensionDisplayTxt">Ascend [Ascension Points: 0.00]</h3>
+                <p>Resets Everything at this point.</p>
+                <p id="AscensionReqTxt" style="color: magenta;">12 Rebirth Points</p>
+                <button class="ResetLayerBtn" id="AscensionResetBtn" style="background-color: rgb(220, 220, 21); border-color: rgb(240, 210, 0); font-size: 20pt;" onclick="AscensionReset(false, false)">Ascend</button>
+
+                <h3>Ascension Milestones</h3>
+                <section style="overflow-y: auto; height: 250px; width: 800px;">
+                    <h3 class="milestone" id="AscensionMilestone1" style="background-color: rgb(220, 220, 21); border-color: rgb(240, 210, 0); height: auto;">
+                        1 Ascension <br>
+                        5x Shards, 3x Prestige Points and 2x Rebirth Points<br><br>
+                    </h3>
+                    <h3 class="milestone" id="AscensionMilestone2" style="background-color: rgb(220, 220, 21); border-color: rgb(240, 210, 0); height: auto;">
+                        2 Ascensions <br>
+                        10x Energy<br><br>
+                    </h3>
+                </section>
             </div>
         </div>
         
@@ -740,5 +760,6 @@
         <script src="GameScripts/World_2/Trials/Prestige.js"></script>
         <script src="GameScripts/World_2/Trials/Energy.js"></script>
         <script src="GameScripts/World_2/Trials/Rebirth.js"></script>
+        <script src="GameScripts/World_2/Trials/Ascension.js"></script>
     </body>
 </html>

@@ -46,6 +46,7 @@ function calcShardMult() {
     if (Data.Upgrades.includes('#22')) mult = mult.times(5);
     if (Data.Upgrades.includes('#25')) mult = mult.times(8);
     if (Data.Upgrades.includes('#29')) mult = mult.times(ShardRebirthSynergyCalc());
+    if (hasMilestone('AscensionMilestone1', 'Trials')) mult = mult.times(5);
     
     return mult;
 }

@@ -148,8 +148,8 @@ function hasMilestone(id, world) {
     return Data.Milestones[world].includes(id)
 }
 
-function achieveMilestone(id, curr, req, otherReqs={challengeReq:null}, worldId, htmlMilestone, style={borderColor:null}) {
-    if (Data[curr].gte(req)) {
+function achieveMilestone(id, curr, req, otherReqs={challengeReq:null}, worldId, htmlMilestone, style={borderColor:null}, location=Data) {
+    if (location[curr].gte(req)) {
         if (otherReqs===null) return;
 
         for (let r in otherReqs) {
