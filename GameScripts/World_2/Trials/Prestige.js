@@ -7,6 +7,7 @@ function calcPrestigeMult() {
     if (Data.Upgrades.includes('#18')) mult = mult.times(1.25);
     if (Data.Upgrades.includes('#21')) mult = mult.times(3);
     if (Data.Upgrades.includes('#23')) mult = mult.times(2);
+    if (Data.Upgrades.includes('#25')) mult = mult.times(1.5);
     
     return mult;
 }
@@ -57,7 +58,7 @@ function updateUpgTreeHtmlPrestige() {
     updateUpgTreeBuyables("#15", "#15CostTxt", ["TrialUpgrade#16", "TrialUpgrade#17"], "50 Prestige Points");
     updateUpgTreeBuyables("#16", "#16CostTxt", undefined, "10 Energy");
     updateUpgTreeBuyables("#17", "#17CostTxt", "TrialUpgrade#18", "30 Energy");
-    updateUpgTreeBuyables("#18", "#18CostTxt", "TrialUpgrade#19", "100 Energy");
+    updateUpgTreeBuyables("#18", "#18CostTxt", "TrialUpgrade#19", "80 Energy");
     updateUpgTreeBuyables("#19", "#19CostTxt", "TrialUpgrade#20", "500 Prestige Points");
     updateUpgTreeBuyables("#20", "#20CostTxt", "TrialUpgrade#21", "1,000 Energy");
     updateUpgTreeBuyables("#21", "#21CostTxt", undefined, "600 Prestige Points");

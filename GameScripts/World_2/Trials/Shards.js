@@ -38,6 +38,7 @@ function calcShardMult() {
     if (Data.Upgrades.includes('#14')) mult = mult.times(ShardPrestigeSynergyCalc());
     if (Data.Upgrades.includes('#16')) mult = mult.times(1.5);
     if (Data.Upgrades.includes('#22')) mult = mult.times(5);
+    if (Data.Upgrades.includes('#25')) mult = mult.times(8);
     
     return mult;
 }

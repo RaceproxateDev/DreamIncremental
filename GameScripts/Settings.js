@@ -34,7 +34,7 @@ function updateHtmlSettings() {
     TeleportSTitle2.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
     W1Teleporter.style.display = (hasMilestone('NightmareMilestone4', 'World2')) ? "inline-block" : "none"
 
-    shardUpgsAutobuyerEnabler.style.display = (Data.Automation.includes("ShardsUpgAutobuy")) ? "inline-block" : "none"
+    shardUpgsAutobuyerEnabler.style.display = (Data.TrialsData.Automation.includes("ShardsUpgAutobuy")) ? "inline-block" : "none"
     shardUpgsAutobuyerEnabler.textContent = (Data.Settings.TrialShardUpgradesAutobuyer == true) ? "Shards Upgrades Autobuyer: ON" : "Shards Upgrades Autobuyer: OFF"
 }
 
