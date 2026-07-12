@@ -57,7 +57,8 @@ function updateTreeHtml() {
     updateUpgTreeBuyables('#26', '#26CostTxt', ["TrialUpgrade#27", "TrialUpgrade#28", "TrialUpgrade#29"], '5 Rebirth Points')
     updateUpgTreeBuyables('#27', '#27CostTxt', undefined, '5 Rebirth Points')
     updateUpgTreeBuyables('#28', '#28CostTxt', undefined, '5 Rebirth Points')
-    updateUpgTreeBuyables('#29', '#29CostTxt', undefined, '8 Rebirth Points')
+    updateUpgTreeBuyables('#29', '#29CostTxt', "TrialUpgrade#30", '8 Rebirth Points')
+    updateUpgTreeBuyables('#30', '#30CostTxt', undefined, '10 Rebirth Points')
     
 }
 
