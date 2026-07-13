@@ -63,9 +63,28 @@ function AscensionReset(force, noReq) {
     }
 }
 
+function unlockAutomation() {
+    if (hasMilestone('AscensionMilestone2', 'Trials') && !Data.TrialsData.Automation.includes('PrestigeUpgsAutobuyer')) {
+        Data.TrialsData.Automation.push('PrestigeUpgsAutobuyer')
+    }
+}
+
+function autobuyPrestigeUpgrades() {
+    if (Data.TrialsData.Automation.includes('PrestigeUpgsAutobuyer') && Data.Settings.TrialPrestigeUpgradesAutobuyer === true) {
+        for (let i = 11; i <= 21; i++) {
+            let upg = document.getElementById(`TrialUpgrade#${i}`);
+            if (upg === null) continue;
+            
+            upg.click()
+        }
+    }
+}
+
 
 setInterval(() => {
     updateAscensionHtml();
     calcAscensionBulk();
     calcAscensionReq();
+    unlockAutomation();
+    autobuyPrestigeUpgrades();
 }, 100)

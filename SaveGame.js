@@ -109,6 +109,7 @@ var Data = {
 
         // Trials
         TrialShardUpgradesAutobuyer: true,
+        TrialPrestigeUpgradesAutobuyer: true,
     },
 
     Caps: {

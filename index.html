@@ -509,6 +509,7 @@
 
                 <h3>Automation</h3>
                 <button class="tab" id="ShardsUpgsAutobuyEnabler" onclick="enableDisable('TrialShardUpgradesAutobuyer')">Shards Upgrades Autobuyer: ON</button>
+                <button class="tab" id="PrestigeUpgsAutobuyEnabler" onclick="enableDisable('TrialPrestigeUpgradesAutobuyer')" style="background-color: seagreen; border-color: darkgreen;">Prestige Upgrades Autobuyer: ON</button>
             </div>
 
             <div id="UpgradeTree" class="content" style="display: none; overflow-y: auto; height: 500px; width: 1200px;">
@@ -606,24 +607,24 @@
                     </button>
                 </div>
                 <div class="UpgRow">
-                    <button class="UpgradeBtn" currencyUsing="PrestigePoints" id="TrialUpgrade#15" onclick="buyOneTimeUpg('#15', 'PrestigePoints', 50, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1);">
+                    <button class="UpgradeBtn" currencyUsing="PrestigePoints" id="TrialUpgrade#15" onclick="buyOneTimeUpg('#15', 'PrestigePoints', 50, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); color: black;">
                         <h4>Energetic #15</h4>
                         <p>Unlock Energy</p>
                         <p id="#15CostTxt">50 Prestige Points</p>
                     </button>
                 </div>
                 <div class="UpgRow">
-                    <button class="UpgradeBtn" currencyUsing="Energy" id="TrialUpgrade#16" onclick="buyOneTimeUpg('#16', 'Energy', 10, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1);">
+                    <button class="UpgradeBtn" currencyUsing="Energy" id="TrialUpgrade#16" onclick="buyOneTimeUpg('#16', 'Energy', 10, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); color: black;">
                         <h4>Energy is useful #16</h4>
                         <p>1.5x Shards</p>
                         <p id="#16CostTxt">10 Energy</p>
                     </button>
-                    <button class="UpgradeBtn" currencyUsing="Energy" id="TrialUpgrade#17" onclick="buyOneTimeUpg('#17', 'Energy', 30, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1);">
+                    <button class="UpgradeBtn" currencyUsing="Energy" id="TrialUpgrade#17" onclick="buyOneTimeUpg('#17', 'Energy', 30, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); color: black;">
                         <h4>Powerful #17</h4>
                         <p>2x Energy</p>
                         <p id="#17CostTxt">30 Energy</p>
                     </button>
-                    <button class="UpgradeBtn" currencyUsing="Energy" id="TrialUpgrade#18" onclick="buyOneTimeUpg('#18', 'Energy', 80, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1);">
+                    <button class="UpgradeBtn" currencyUsing="Energy" id="TrialUpgrade#18" onclick="buyOneTimeUpg('#18', 'Energy', 80, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); color: black;">
                         <h4>Prestigeful #18</h4>
                         <p>1.25x Prestige Points</p>
                         <p id="#18CostTxt">80 Energy</p>
@@ -635,7 +636,7 @@
                         <p>4x Energy</p>
                         <p id="#19CostTxt">500 Prestige Points</p>
                     </button>
-                    <button class="UpgradeBtn" currencyUsing="Energy" id="TrialUpgrade#20" onclick="buyOneTimeUpg('#20', 'Energy', 800, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1);">
+                    <button class="UpgradeBtn" currencyUsing="Energy" id="TrialUpgrade#20" onclick="buyOneTimeUpg('#20', 'Energy', 800, Data.TrialsData)" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); color: black;">
                         <h4>Automated #20</h4>
                         <p>Automatically buy Shard Upgrades</p>
                         <p id="#20CostTxt">800 Energy</p>
@@ -720,17 +721,17 @@
                 <h3 id="AscensionDisplayTxt">Ascend [Ascension Points: 0.00]</h3>
                 <p>Resets Everything at this point.</p>
                 <p id="AscensionReqTxt" style="color: magenta;">12 Rebirth Points</p>
-                <button class="ResetLayerBtn" id="AscensionResetBtn" style="background-color: rgb(220, 220, 21); border-color: rgb(240, 210, 0); font-size: 20pt;" onclick="AscensionReset(false, false)">Ascend</button>
+                <button class="ResetLayerBtn" id="AscensionResetBtn" style="background-color: rgb(220, 220, 21); border-color: rgb(240, 210, 0); font-size: 20pt; color: black;" onclick="AscensionReset(false, false)">Ascend</button>
 
                 <h3>Ascension Milestones</h3>
                 <section style="overflow-y: auto; height: 250px; width: 800px;">
-                    <h3 class="milestone" id="AscensionMilestone1" style="background-color: rgb(220, 220, 21); border-color: rgb(240, 210, 0); height: auto;">
+                    <h3 class="milestone" id="AscensionMilestone1" style="background-color: rgb(220, 220, 21); border-color: rgb(240, 210, 0); height: auto; color: black;">
                         1 Ascension <br>
                         5x Shards, 3x Prestige Points and 2x Rebirth Points<br><br>
                     </h3>
-                    <h3 class="milestone" id="AscensionMilestone2" style="background-color: rgb(220, 220, 21); border-color: rgb(240, 210, 0); height: auto;">
+                    <h3 class="milestone" id="AscensionMilestone2" style="background-color: rgb(220, 220, 21); border-color: rgb(240, 210, 0); height: auto; color: black;">
                         2 Ascensions <br>
-                        10x Energy<br><br>
+                        10x Energy, autobuy Prestige Upgrades<br><br>
                     </h3>
                 </section>
             </div>
