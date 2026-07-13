@@ -75,7 +75,7 @@ function updatePrestigeHtml() {
     updateUpgTreeHtmlPrestige();
 }
 
-function unlockAutomation() {
+function unlockAutomationPrestige() {
     if (Data.Upgrades.includes('#20') && !Data.TrialsData.Automation.includes('ShardsUpgAutobuy')) {
         Data.TrialsData.Automation.push('ShardsUpgAutobuy')
     }
@@ -105,6 +105,6 @@ function autobuyShardUpgrades() {
 setInterval(() => {
     updatePrestigeHtml()
     calcPrestigeGain()
-    unlockAutomation()
+    unlockAutomationPrestige()
     autobuyShardUpgrades()
 }, 100);
