@@ -28,6 +28,10 @@ button:hover {
     min-height: 30px;
 }
 
+button:hover {
+    scale: 1.1;
+}
+
 .BuyableBtn {
     color: white;
     background-color: black;

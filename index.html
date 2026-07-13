@@ -12,7 +12,7 @@
         <div id="world1" class="world">
             <h3 id="MemoriesDisplayTxt">Memory: 0 [+1/s]</h3>
 
-            <div class="tabContainer" style="width: 1250px;">
+            <div class="tabContainer" style="width: 1250px; overflow-y: hidden;">
                 <button class="tab" onclick="displayContent('Settings')">Settings</button>
                 <button class="tab" onclick="displayContent('MemoryUpgrades')">Memory Upgrades</button>
                 <button class="tab" onclick="displayContent('DreamReset')" style="background-image: linear-gradient(purple, pink, purple); border-color: purple; display: none;" id="DreamifyTab">Dreamify</button>
@@ -342,11 +342,11 @@
         <div id="world2" class="world" style="display: none; color: black;">
             <h3 id="voidDisplayTxt">Void: 0 [+1/s] [/1 Void]</h3>
 
-            <div class="tabContainer" style="width: 1250px;">
+            <div class="tabContainer" style="width: 1250px; overflow-y: hidden;">
                 <button class="tab" onclick="displayContent('Settings')">Settings</button>
                 <button class="tab" onclick="displayContent('VoidUpgrades')" style="border-color: rgb(43, 43, 43);">Void Upgrades</button>
-                <button class="tab" id="ThinkResetTab" onclick="displayContent('ThinkReset')" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">Think</button>
-                <button class="tab" id="ThinkEnergyTab" onclick="displayContent('ThinkEnergy')" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">Thinking Energy</button>
+                <button class="tab" id="ThinkResetTab" onclick="displayContent('ThinkReset')" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); display: none;">Think</button>
+                <button class="tab" id="ThinkEnergyTab" onclick="displayContent('ThinkEnergy')" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 200), rgb(43, 165, 110)); display: none;">Thinking Energy</button>
                 <button class="tab" id="NightmareResetTab" onclick="displayContent('NightmareReset')" style="border-color: darkmagenta; background-image: linear-gradient(magenta, darkmagenta, magenta); display: none;">Nightmare</button>
                 <button class="tab" id="NightmareTrialsTab" onclick="displayContent('NightmareTrials')" style="border-color: darkmagenta; background-image: linear-gradient(magenta, darkmagenta, magenta); display: none;">Nightmare Trials</button>
             </div>
@@ -386,48 +386,48 @@
                 </button>
             </div>
 
-            <div id="ThinkReset" class="content" style="display: none; color: rgb(0, 255, 183);">
+            <div id="ThinkReset" class="content" style="display: none; color: rgb(0, 220, 200);">
                 <h2>Think</h2>
                 <h3>Thinking will reset your void and void Upgrades.</h3>
                 <h3 id="ThinkReqTxt" style="color: black;">You need 300 Void</h3>
-                <button class="ResetLayerBtn" id="ThinkResetBtn" style="font-size: 15pt; background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); border-color: rgb(0, 255, 183);" onclick="ThinkReset(false)">Think</button>
+                <button class="ResetLayerBtn" id="ThinkResetBtn" style="font-size: 15pt; background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); border-color: rgb(0, 220, 200);" onclick="ThinkReset(false)">Think</button>
 
                 <h3 id="ThoughtsDisplayTxt">Thinking Milestones [0 Thoughts]</h3>
 
                 <div style="overflow-y: auto; height: 250px;">
-                    <h4 class="milestone" id="ThinkMilestone1" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110));">
+                    <h4 class="milestone" id="ThinkMilestone1" style="border-color: rgb(0, 220, 200); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110));">
                         1 Thought <br>
                         3x Void
                     </h4>
-                    <h4 class="milestone" id="ThinkMilestone2" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                    <h4 class="milestone" id="ThinkMilestone2" style="border-color: rgb(0, 220, 200); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); display: none;">
                         2 Thoughts <br>
                         -^0.01 Void divider
                     </h4>
-                    <h4 class="milestone" id="ThinkMilestone3" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                    <h4 class="milestone" id="ThinkMilestone3" style="border-color: rgb(0, 220, 200); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); display: none;">
                         3 Thoughts <br>
                         2x Void, Unlock Thinking Energy
                     </h4>
-                    <h4 class="milestone" id="ThinkMilestone4" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                    <h4 class="milestone" id="ThinkMilestone4" style="border-color: rgb(0, 220, 200); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); display: none;">
                         4 Thoughts <br>
                         5x Void, 2x Thinking Energy
                     </h4>
-                    <h4 class="milestone" id="ThinkMilestone5" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                    <h4 class="milestone" id="ThinkMilestone5" style="border-color: rgb(0, 220, 200); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); display: none;">
                         8 Thoughts <br>
                         -^0.14 Void divider, 3.5x Thinking Energy
                     </h4>
-                    <h4 class="milestone" id="ThinkMilestone6" style="height: auto; border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                    <h4 class="milestone" id="ThinkMilestone6" style="height: auto; border-color: rgb(0, 220, 200); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); display: none;">
                         9 Thoughts <br>
                         negate Void divider but disable Void upgrade #2 and 100x Think scalings.
                     </h4>
-                    <h4 class="milestone" id="ThinkMilestone7" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                    <h4 class="milestone" id="ThinkMilestone7" style="border-color: rgb(0, 220, 200); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); display: none;">
                         12 Thoughts <br>
                         2x Thinking Energy and 10x Void.
                     </h4>
-                    <h4 class="milestone" id="ThinkMilestone8" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                    <h4 class="milestone" id="ThinkMilestone8" style="border-color: rgb(0, 220, 200); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); display: none;">
                         15 Thoughts <br>
                         Autobuy Void Upgrades (Just the first Upgrade).
                     </h4>
-                    <h4 class="milestone" id="ThinkMilestone9" style="border-color: rgb(0, 255, 183); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 255, 183), rgb(43, 165, 110)); display: none;">
+                    <h4 class="milestone" id="ThinkMilestone9" style="border-color: rgb(0, 220, 200); background-image: linear-gradient(rgb(43, 165, 110), rgb(0, 220, 200), rgb(43, 165, 110)); display: none;">
                         20 Thoughts <br>
                         ^1.1 Void, Unlock ???
                     </h4>
@@ -453,7 +453,6 @@
                         /2 Memories <br>
                         /2 Void <br>
                         /3 Dreams <br>
-                        /2 Rest <br>
                         Dreamify formula is improved ((Memories/10,000)^0.6) -> ((Memories/8,000)^0.65)<br>
                         5x Memories if Memories are less than 1,000 <br><br>
                     </h4>
@@ -496,8 +495,8 @@
             <section>
                 <button class="tab" onclick="displayContent('Settings')">Settings</button>
                 <button class="tab" onclick="displayContent('UpgradeTree')">Upgrade Tree</button>
-                <button class="tab" id="EnergyTab" onclick="displayContent('EnergyContent')" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); display: none;">Energy</button>
-                <button class="tab" id="AscensionTab" onclick="displayContent('AscensionReset')" style="border-color: rgb(240, 210, 0); background-color: rgb(210, 210, 1); display: none;">Ascension</button>
+                <button class="tab" id="EnergyTab" onclick="displayContent('EnergyContent')" style="border-color: darkkhaki; background-color: rgb(210, 210, 1); display: none; color: black;">Energy</button>
+                <button class="tab" id="AscensionTab" onclick="displayContent('AscensionReset')" style="border-color: rgb(240, 210, 0); background-color: rgb(210, 210, 1); display: none; color: black;">Ascension</button>
             </section>
 
             <div id="Settings" class="content" style="display: none;">
