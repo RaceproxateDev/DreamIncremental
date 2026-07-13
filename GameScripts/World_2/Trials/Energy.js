@@ -48,6 +48,8 @@ function calcSuperEnergyBoostEnergy() {
 function updateEnergyHtml() {
     EnergyTab.style.display = (Data.Upgrades.includes('#15')) ? 'inline-block' : 'none';
     EnergyDisplayTxt.textContent = `Energy: ${format(Data.TrialsData.Energy)} [+${format(calcEnergyMult().times(5))}/s]`;
+
+    SuperEnergyDisplayTxt.style.display = (hasMilestone('AscensionMilestone4', 'Trials') && Data.Upgrades.includes('#15')) ? 'inline-block' : 'none';
     SuperEnergyDisplayTxt.textContent = `Super Energy: ${format(Data.TrialsData.SuperEnergy)} [+${format(calcSuperEnergyMult().times(5))}/s] [${format(calcSuperEnergyBoostEnergy())}x Energy]`;
 }
 
