@@ -9,6 +9,7 @@ function calcPrestigeMult() {
     if (Data.Upgrades.includes('#23')) mult = mult.times(2);
     if (Data.Upgrades.includes('#25')) mult = mult.times(1.5);
     if (hasMilestone('AscensionMilestone1', 'Trials')) mult = mult.times(3);
+    if (hasMilestone('AscensionMilestone3', 'Trials')) mult = mult.times(2);
     
     return mult;
 }
