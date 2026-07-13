@@ -185,9 +185,12 @@ function fixSave(data, template) {
             if (!Array.isArray(data[key])) {
                 data[key] = []
             }
+
+            let subKeyData = data[key];
+            let subKeyTemplate = template[key];
             
-            for (let i = 0; i < template[key].length; i++) {
-                data[key][i] = fixSave(data[key][i], template[key][i]);
+            for (let i = 0; i < subKeyTemplate.length; i++) {
+                data[key][i] = fixSave(subKeyData[i], subKeyTemplate[i]);
             }
             
             continue;
