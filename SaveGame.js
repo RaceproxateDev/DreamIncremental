@@ -172,23 +172,38 @@ function saveData() {
 
 function fixSave(data, template) {
     for (let key in template) {
-        if (template[key] instanceof OmegaNum && (data[key] === undefined || data[key] === null)) {
-            data[key] = new OmegaNum(template[key])
+        if (template[key] instanceof OmegaNum) {
+            if ((data[key] === undefined || data[key] === null)) {
+                data[key] = new OmegaNum(template[key])
+            }
+            else if (!(data[key] instanceof OmegaNum)) {
+                data[key] = new OmegaNum(data[key])
+            }
         }
-        else if (template[key] instanceof OmegaNum && typeof data[key] === 'string') {
-            data[key] = new OmegaNum(data[key])
+
+        else if (Array.isArray(template[key])) {
+            if (!Array.isArray(data[key])) {
+                data[key] = []
+            }
+            
+            for (let i = 0; i < template[key].length; i++) {
+                data[key][i] = fixSave(data[key][i], template[key][i]);
+            }
+            
+            continue;
         }
 
         else if (typeof template[key] === 'object' && (template[key] !== undefined && template[key] !== null)) {
-            let isArr = Array.isArray(template[key])
             if (typeof data[key] !== 'object' || (data[key] === null || data[key] === undefined)) {
-                data[key] = isArr ? [] : {}
+                data[key] = {}
             }
-            data[key] = fixSave(data[key], template[key])
+            fixSave(data[key], template[key]);
         }
 
         else if (data[key] === undefined || data[key] === null) {
-            data[key] = template[key]
+            if (template[key] !== undefined && template[key] !== null) {
+                data[key] = template[key]
+            }
         }
     }
     return data;
