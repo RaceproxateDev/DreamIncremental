@@ -104,7 +104,7 @@ function completeChallenge(name, req, curr, location=Data) {
     if (location[curr].gte(req)) {
         if (isInChallenge(name)) {
             if (!hasChallenge(name)) {
-                location.Challenges.completedChallenges.push(name)
+                Data.Challenges.completedChallenges.push(name)
             }
         }
     }
