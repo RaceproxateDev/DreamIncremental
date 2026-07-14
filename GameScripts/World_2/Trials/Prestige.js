@@ -102,9 +102,21 @@ function autobuyShardUpgrades() {
     }
 }
 
+function passivePrestigeGen() {
+    let p = new OmegaNum(0);
+    if (hasMilestone('AscensionMilestone5', 'Trials')) p = p.add(0.1);
+
+    Data.TrialsData.PrestigePoints = Data.TrialsData.PrestigePoints.add(calcPrestigeGain().times(p).div(5));
+    return p;
+}
+
 setInterval(() => {
     updatePrestigeHtml()
     calcPrestigeGain()
     unlockAutomationPrestige()
     autobuyShardUpgrades()
 }, 100);
+
+setInterval(() => {
+    passivePrestigeGen()
+}, 1000/5)

@@ -17,6 +17,7 @@ function calcEnergyMult() {
 
 function calcSuperEnergyMult() {
     let mult = new OmegaNum(1).div(5);
+    if (hasMilestone('AscensionMilestone6', 'Trials')) mult = mult.times(10);
     
     return mult;
 }

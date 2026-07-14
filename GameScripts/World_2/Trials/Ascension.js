@@ -35,6 +35,15 @@ function updateAscensionHtml() {
 
     unlockNextMilestone('AscensionMilestone3', AscensionMilestone4, 'Trials')
     achieveMilestone('AscensionMilestone4', 'AscensionPoints', new OmegaNum(4), undefined, 'Trials', AscensionMilestone4, milestonesDesign, Data.TrialsData)
+
+    unlockNextMilestone('AscensionMilestone4', AscensionMilestone5, 'Trials')
+    achieveMilestone('AscensionMilestone5', 'AscensionPoints', new OmegaNum(6), undefined, 'Trials', AscensionMilestone5, milestonesDesign, Data.TrialsData)
+
+    unlockNextMilestone('AscensionMilestone5', AscensionMilestone6, 'Trials')
+    achieveMilestone('AscensionMilestone6', 'AscensionPoints', new OmegaNum(8), undefined, 'Trials', AscensionMilestone6, milestonesDesign, Data.TrialsData)
+
+    unlockNextMilestone('AscensionMilestone6', AscensionMilestone7, 'Trials')
+    achieveMilestone('AscensionMilestone7', 'AscensionPoints', new OmegaNum(12), undefined, 'Trials', AscensionMilestone7, milestonesDesign, Data.TrialsData)
 }
 
 function AscensionReset(force, noReq) {

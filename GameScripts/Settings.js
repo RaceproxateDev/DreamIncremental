@@ -9,6 +9,8 @@ let voidUpgsAutobuyEnabler = document.getElementById("VoidUpgsAutobuyEnabler")
 let shardUpgsAutobuyerEnabler = document.getElementById("ShardsUpgsAutobuyEnabler")
 let prestigeUpgsAutobuyerEnabler = document.getElementById("PrestigeUpgsAutobuyEnabler")
 
+let ExitTrial1Tab = document.getElementById("ExitTrial1Tab")
+
 // Teleports
 let TeleportSTitle = document.getElementById("TeleportSTitle")
 let TeleportSTitle2 = document.getElementById("TeleportSTitle2")
@@ -40,6 +42,8 @@ function updateHtmlSettings() {
 
     prestigeUpgsAutobuyerEnabler.style.display = (Data.TrialsData.Automation.includes("PrestigeUpgsAutobuyer")) ? "inline-block" : "none"
     prestigeUpgsAutobuyerEnabler.textContent = (Data.Settings.TrialPrestigeUpgradesAutobuyer == true) ? "Prestige Upgrades Autobuyer: ON" : "Prestige Upgrades Autobuyer: OFF"
+
+    ExitTrial1Tab.style.display = (Data.TrialsData.Shards.gte('1e10000')) ? "inline-block" : "none"
 }
 
 function updateHtmlSettingsW2() {
