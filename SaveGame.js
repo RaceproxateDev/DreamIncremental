@@ -221,8 +221,8 @@ function loadData() {
 
 function resetData() {
     if (confirm("Are you sure you want to reset your Data?")) {
-        localStorage.removeItem("DreamIncremental")
         preventSave = true
+        localStorage.removeItem("DreamIncremental")
         location.reload()
     }
 }
