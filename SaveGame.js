@@ -1,162 +1,152 @@
 let preventSave = false
 
-var Data = {
-    Memory: new OmegaNum(0),
-    Dreams: new OmegaNum(0),
-    Rest: new OmegaNum(0),
-    LucidDreams: new OmegaNum(0), LucidEnergy: new OmegaNum(0),
-    InfinityDreams: new OmegaNum(0), Infinities: new OmegaNum(0),
-
-    // World 2 Currency
-    Void: new OmegaNum(0),
-    Thoughts: new OmegaNum(0), ThinkingEnergy: new OmegaNum(0),
-    Nightmares: new OmegaNum(0),
-
-    Buyables: {
-        1: {
-            // Memory Buyable 1
-            amount: new OmegaNum(0),
-            max: new OmegaNum(100),
-            price: new OmegaNum(10),
-            scale: new OmegaNum(2),
+function getData() {
+    return {
+        Memory: new OmegaNum(0),
+        Dreams: new OmegaNum(0),
+        Rest: new OmegaNum(0),
+        LucidDreams: new OmegaNum(0), LucidEnergy: new OmegaNum(0),
+        InfinityDreams: new OmegaNum(0), Infinities: new OmegaNum(0),
+    
+        // World 2 Currency
+        Void: new OmegaNum(0),
+        Thoughts: new OmegaNum(0), ThinkingEnergy: new OmegaNum(0),
+        Nightmares: new OmegaNum(0),
+    
+        Buyables: {
+            1: {
+                // Memory Buyable 1
+                amount: new OmegaNum(0),
+                max: new OmegaNum(100),
+                price: new OmegaNum(10),
+                scale: new OmegaNum(2),
+            },
+    
+            2: {
+                // Memory Buyable 2
+                amount: new OmegaNum(0),
+                max: new OmegaNum(50),
+                price: new OmegaNum(50),
+                scale: new OmegaNum(2.5),
+            },
+    
+            3: {
+                // Dream Buyable 1
+                amount: new OmegaNum(0),
+                max: new OmegaNum(1000),
+                price: new OmegaNum(1),
+                scale: new OmegaNum(2),
+            },
+    
+            4: {
+                // Dream Buyable 2
+                amount: new OmegaNum(0),
+                max: new OmegaNum(50),
+                price: new OmegaNum(3),
+                scale: new OmegaNum(3),
+            },
+    
+            5: {
+                // Lucid Dream Buyable 1
+                amount: new OmegaNum(0),
+                max: new OmegaNum(200),
+                price: new OmegaNum(1),
+                scale: new OmegaNum(2),
+            },
+    
+            6: {
+                // Lucid Dream Buyable 2
+                amount: new OmegaNum(0),
+                max: new OmegaNum(200),
+                price: new OmegaNum(1.5),
+                scale: new OmegaNum(2.5),
+            },
+    
+            7: {
+                // Lucid Dream Buyable 3
+                amount: new OmegaNum(0),
+                max: new OmegaNum(5),
+                price: new OmegaNum(3),
+                scale: new OmegaNum(4),
+            },
+    
+            8: {
+                // Infinity Memory Buyable 1
+                amount: new OmegaNum(0),
+                max: new OmegaNum(100),
+                price: new OmegaNum(1),
+                scale: new OmegaNum(3),
+            },
+    
+            // World 2 Buyables
+    
+            9: {
+                // Void Buyable 1
+                amount: new OmegaNum(0),
+                max: new OmegaNum(100),
+                price: new OmegaNum(5),
+                scale: new OmegaNum(2.5),
+            },
+    
+            10: {
+                // Void Buyable 2
+                amount: new OmegaNum(0),
+                max: new OmegaNum(5),
+                price: new OmegaNum(30),
+                scale: new OmegaNum(4),
+            },
         },
-
-        2: {
-            // Memory Buyable 2
-            amount: new OmegaNum(0),
-            max: new OmegaNum(50),
-            price: new OmegaNum(50),
-            scale: new OmegaNum(2.5),
-        },
-
-        3: {
-            // Dream Buyable 1
-            amount: new OmegaNum(0),
-            max: new OmegaNum(1000),
-            price: new OmegaNum(1),
-            scale: new OmegaNum(2),
-        },
-
-        4: {
-            // Dream Buyable 2
-            amount: new OmegaNum(0),
-            max: new OmegaNum(50),
-            price: new OmegaNum(3),
-            scale: new OmegaNum(3),
-        },
-
-        5: {
-            // Lucid Dream Buyable 1
-            amount: new OmegaNum(0),
-            max: new OmegaNum(200),
-            price: new OmegaNum(1),
-            scale: new OmegaNum(2),
-        },
-
-        6: {
-            // Lucid Dream Buyable 2
-            amount: new OmegaNum(0),
-            max: new OmegaNum(200),
-            price: new OmegaNum(1.5),
-            scale: new OmegaNum(2.5),
-        },
-
-        7: {
-            // Lucid Dream Buyable 3
-            amount: new OmegaNum(0),
-            max: new OmegaNum(5),
-            price: new OmegaNum(3),
-            scale: new OmegaNum(4),
-        },
-
-        8: {
-            // Infinity Memory Buyable 1
-            amount: new OmegaNum(0),
-            max: new OmegaNum(100),
-            price: new OmegaNum(1),
-            scale: new OmegaNum(3),
-        },
-
-        // World 2 Buyables
-
-        9: {
-            // Void Buyable 1
-            amount: new OmegaNum(0),
-            max: new OmegaNum(100),
-            price: new OmegaNum(5),
-            scale: new OmegaNum(2.5),
-        },
-
-        10: {
-            // Void Buyable 2
-            amount: new OmegaNum(0),
-            max: new OmegaNum(5),
-            price: new OmegaNum(30),
-            scale: new OmegaNum(4),
-        },
-    },
-
-    Upgrades: [],
-    Unlocks: [],
-    Automation: [],
-    Settings: {
-        MemoryUpgsAutobuyer: true,
-        DreamUpgsAutobuyer: true,
-        AutoRest: true,
-
-        // World 2
-        VoidUpgsAutobuyer: true,
-
-        // Trials
-        TrialShardUpgradesAutobuyer: true,
-        TrialPrestigeUpgradesAutobuyer: true,
-    },
-
-    Caps: {
-        Memory: {
-            cap: new OmegaNum(1.79e308),
-            broken: false,
-        },
-    },
-
-    Challenges: {
-        inChallenge: "",
-        completedChallenges: [],
-    },
-
-    isInWorld: 'world1',
-
-    Milestones: {
-        World2: [],
-        Trials: [],
-    },
-
-    TrialsData: {
-        Shards: new OmegaNum(0),
-        PrestigePoints: new OmegaNum(0),
-        Energy: new OmegaNum(0),
-        RebirthPoints: new OmegaNum(0),
-        AscensionPoints: new OmegaNum(0),
-        SuperEnergy: new OmegaNum(0),
-
+    
+        Upgrades: [],
+        Unlocks: [],
         Automation: [],
-    }
-}
-
-function deepCopy(obj) {
-    if (obj instanceof OmegaNum) return new OmegaNum(obj);
-    if (Array.isArray(obj)) return obj.map(item => deepCopy(item));
-    if (typeof obj === 'object' && obj !== null) {
-        let result = {};
-        for (let key in obj) {
-            result[key] = deepCopy(obj[key]);
+        Settings: {
+            MemoryUpgsAutobuyer: true,
+            DreamUpgsAutobuyer: true,
+            AutoRest: true,
+    
+            // World 2
+            VoidUpgsAutobuyer: true,
+    
+            // Trials
+            TrialShardUpgradesAutobuyer: true,
+            TrialPrestigeUpgradesAutobuyer: true,
+        },
+    
+        Caps: {
+            Memory: {
+                cap: new OmegaNum(1.79e308),
+                broken: false,
+            },
+        },
+    
+        Challenges: {
+            inChallenge: "",
+            completedChallenges: [],
+        },
+    
+        isInWorld: 'world1',
+    
+        Milestones: {
+            World2: [],
+            Trials: [],
+        },
+    
+        TrialsData: {
+            Shards: new OmegaNum(0),
+            PrestigePoints: new OmegaNum(0),
+            Energy: new OmegaNum(0),
+            RebirthPoints: new OmegaNum(0),
+            AscensionPoints: new OmegaNum(0),
+            SuperEnergy: new OmegaNum(0),
+    
+            Automation: [],
         }
-        return result;
     }
-    return obj;
 }
 
-const Template = deepCopy(Data);
+var Data = getData();
+var Template = getData();
 
 function saveData() {
     if (!preventSave) {
@@ -190,7 +180,7 @@ function fixSave(data, template) {
             let subKeyTemplate = template[key];
             
             for (let i = 0; i < subKeyTemplate.length; i++) {
-                data[key][i] = fixSave(subKeyData[i], subKeyTemplate[i]);
+                subKeyData[i] = fixSave(subKeyData[i], subKeyTemplate[i]);
             }
             
             continue;
@@ -200,7 +190,7 @@ function fixSave(data, template) {
             if (typeof data[key] !== 'object' || (data[key] === null || data[key] === undefined)) {
                 data[key] = {}
             }
-            fixSave(data[key], template[key]);
+            data[key] = fixSave(data[key], template[key]);
         }
 
         else if (data[key] === undefined || data[key] === null) {
