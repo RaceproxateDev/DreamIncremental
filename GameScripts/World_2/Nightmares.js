@@ -33,7 +33,10 @@ function updateNightmareHtml() {
     unlockNextMilestone('NightmareMilestone3', NightmareMilestone4, 'World2')
 
     achieveMilestone('NightmareMilestone4', 'Nightmares', new OmegaNum(4), undefined, 'World2', NightmareMilestone4, NightmareMilestonesStyle)
+    unlockNextMilestone('NightmareMilestone4', NightmareMilestone5, 'World2')
 
+    achieveMilestone('NightmareMilestone5', 'Nightmares', new OmegaNum(6), undefined, 'World2', NightmareMilestone5, NightmareMilestonesStyle)
+    
     // Challenges
     updateChallengeHTML('NightmareTrial1', NightmareTrial1txt, 'Shards', new OmegaNum('1e10000'), NightmareTrial1Btn, Data.TrialsData)
 }

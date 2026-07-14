@@ -476,6 +476,11 @@
                         Unlock a button in settings. <br>
                         Unlock Trials <br><br>
                     </h4>
+                    <h4 class="milestone" id="NightmareMilestone5" style="height: auto; border-color: darkmagenta; background-image: linear-gradient(magenta, darkmagenta, magenta); display: none;">
+                        6 Nightmares <br><br>
+                        ^10 <s>wake up</s> Memory <s>Remember.</s> 
+                        100x Memory second upgrade cap<br><br>
+                    </h4>
                 </section>
             </div>
 
@@ -759,6 +764,12 @@
                 </section>
             </div>
         </div>
+
+        <section id="endScreen" style="display: none;">
+            <h1>You woke up...</h1>
+            <p>Thanks for playing Dream Incremental!</p>
+            <button onclick="resetData()" class="tab">Restart</button>
+        </section>
         
         <link rel="stylesheet" href="gameStyle/main.css">
         <link rel="stylesheet" href="gameStyle/scrollableContent.css">
@@ -784,5 +795,8 @@
         <script src="GameScripts/World_2/Trials/Energy.js"></script>
         <script src="GameScripts/World_2/Trials/Rebirth.js"></script>
         <script src="GameScripts/World_2/Trials/Ascension.js"></script>
+
+        <!-- End -->
+        <script src="GameScripts/end.js"></script>
     </body>
 </html>

@@ -35,6 +35,7 @@ function calcMemoryMult() {
     if (Data.Memory.lt(1000) && hasMilestone('NightmareMilestone1', 'World2')) mult = mult.times(5)
     if (hasMilestone('NightmareMilestone4', 'World2')) mult = mult.div(10)
     if (Data.Memory.lt(1e20) && hasMilestone('NightmareMilestone4', 'World2')) mult = mult.times(100)
+    if (hasMilestone('NightmareMilestone5', 'World2')) mult = mult.pow(10)
     return mult
 }
 
@@ -65,6 +66,7 @@ function UpdateMemoryHtml() {
 function calcMaxMemoryBuyable2() {
     let max = new OmegaNum(50)
     if (Data.Rest.gte(24)) max = max.add(100)
+    if (hasMilestone('NightmareMilestone5', 'World2')) max = max.times(100)
 
     Data.Buyables[2].max = max
     return max
